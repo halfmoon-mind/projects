@@ -13,7 +13,8 @@ const Home = () => {
       <div className="max-w-4xl w-full space-y-12">
         <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="text-center space-y-6">
           <h1 className="text-6xl font-bold">안녕하세요 👋</h1>
-          <p className="text-xl text-gray-400">저는 열정적인 웹 개발자입니다</p>
+          <p className="text-2xl font-medium">심상현 (Eddy)</p>
+          <p className="text-xl text-gray-400">풀스택 개발자 & 플러터 엔지니어</p>
         </motion.div>
 
         <motion.div
@@ -24,7 +25,8 @@ const Home = () => {
         >
           <h2 className="text-2xl font-semibold">About Me</h2>
           <p className="text-gray-400 leading-relaxed">
-            창의적인 문제 해결과 사용자 경험을 중요시하는 개발자입니다. 최신 웹 기술을 활용하여 혁신적인 솔루션을 만드는 것을 좋아합니다.
+            창의적인 문제 해결과 사용자 경험을 중요시하는 개발자입니다. 프로그래밍이라는 기술을 활용해 세상에 도움이 되는 서비스를 만들고 있으며,
+            계속해서 성장하고 발전하는 사람이 되고자 합니다.
           </p>
         </motion.div>
 
