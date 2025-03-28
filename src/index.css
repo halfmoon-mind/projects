@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+.nav-link {
+  @apply relative text-lg;
+}
+
+.nav-link::after {
+  @apply content-[''] absolute bg-white h-[2px] w-0 left-0 -bottom-1 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.page-transition {
+  @apply fixed inset-0 bg-black z-50;
+}
