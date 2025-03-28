@@ -6,6 +6,10 @@ import { motion } from "framer-motion";
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="fixed w-full z-50 bg-black/80 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,16 +44,16 @@ const Navbar = () => {
       {isOpen && (
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black">
-            <NavLink to="/" className="block px-3 py-2 text-white hover:bg-white/10 rounded-md">
+            <NavLink to="/" className="block px-3 py-2 text-white hover:bg-white/10 rounded-md" onClick={closeMenu}>
               Home
             </NavLink>
-            <NavLink to="/resume" className="block px-3 py-2 text-white hover:bg-white/10 rounded-md">
+            <NavLink to="/resume" className="block px-3 py-2 text-white hover:bg-white/10 rounded-md" onClick={closeMenu}>
               Resume
             </NavLink>
-            <NavLink to="/projects" className="block px-3 py-2 text-white hover:bg-white/10 rounded-md">
+            <NavLink to="/projects" className="block px-3 py-2 text-white hover:bg-white/10 rounded-md" onClick={closeMenu}>
               Projects
             </NavLink>
-            <NavLink to="/blog" className="block px-3 py-2 text-white hover:bg-white/10 rounded-md">
+            <NavLink to="/blog" className="block px-3 py-2 text-white hover:bg-white/10 rounded-md" onClick={closeMenu}>
               Blog
             </NavLink>
           </div>
