@@ -1,8 +1,46 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Smartphone, Monitor, Store } from "lucide-react";
 import { projects } from "./Projects";
+
+const getLinkIcon = (linkType: string) => {
+  switch (linkType) {
+    case "github":
+      return <Github size={20} />;
+    case "ios":
+      return <Smartphone size={20} />;
+    case "android":
+      return <Smartphone size={20} />;
+    case "web":
+      return <Monitor size={20} />;
+    case "store":
+      return <Store size={20} />;
+    case "slack":
+      return <ExternalLink size={20} />;
+    default:
+      return <ExternalLink size={20} />;
+  }
+};
+
+const getLinkLabel = (linkType: string) => {
+  switch (linkType) {
+    case "github":
+      return "GitHub 저장소";
+    case "ios":
+      return "iOS 앱 다운로드";
+    case "android":
+      return "Android 앱 다운로드";
+    case "web":
+      return "웹사이트 방문";
+    case "store":
+      return "스토어 방문";
+    case "slack":
+      return "Slack 마켓플레이스";
+    default:
+      return "링크 방문";
+  }
+};
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -45,29 +83,20 @@ const ProjectDetail = () => {
             </div>
           </div>
 
-          <div className="flex space-x-4">
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center space-x-2 ${
-                project.github === "#" ? "bg-white/5 cursor-not-allowed" : "bg-white/10 hover:bg-white/20"
-              } px-6 py-3 rounded-lg transition-colors`}
-            >
-              <Github size={20} />
-              <span>GitHub 저장소</span>
-            </a>
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex items-center space-x-2 ${
-                project.live === "#" ? "bg-white/5 cursor-not-allowed" : "bg-white/10 hover:bg-white/20"
-              } px-6 py-3 rounded-lg transition-colors`}
-            >
-              <ExternalLink size={20} />
-              <span>라이브 데모</span>
-            </a>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {project.links &&
+              Object.entries(project.links).map(([linkType, url], linkIndex) => (
+                <a
+                  key={linkIndex}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 bg-white/10 px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
+                >
+                  {getLinkIcon(linkType)}
+                  <span>{getLinkLabel(linkType)}</span>
+                </a>
+              ))}
           </div>
 
           <div className="prose prose-invert max-w-none">

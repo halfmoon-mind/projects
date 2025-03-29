@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Smartphone, Monitor, Store } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const projects = [
@@ -10,8 +10,11 @@ export const projects = [
     description: "이상형 월드컵 플랫폼",
     image: "https://images.unsplash.com/photo-1541877944-ac82a216a4e8?auto=format&fit=crop&w=800&q=80",
     tech: ["Flutter", "iOS", "Android", "Web"],
-    github: "#",
-    live: "#",
+    links: {
+      ios: "https://apps.apple.com/kr/app/%ED%94%BC%ED%82%A4%EB%B2%84%EC%8A%A4/id6742077036?uo=2",
+      android: "https://play.google.com/store/apps/details?id=com.pickiverse.app",
+      web: "https://pickiverse.com",
+    },
     longDescription: `
       이상형 월드컵 플랫폼인 피키버스는 사용자들이 다양한 주제로 이상형 월드컵을 만들고 공유할 수 있는 서비스입니다.
       모바일과 웹 모두 지원하여 언제 어디서나 쉽게 접근할 수 있습니다.
@@ -27,8 +30,9 @@ export const projects = [
     description: "Slack 봇으로 정산을 간편하게",
     image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=800&q=80",
     tech: ["Slack API", "Node.js", "Database"],
-    github: "#",
-    live: "#",
+    links: {
+      slack: "https://slack.com/marketplace/A087W0YSC7N-",
+    },
     longDescription: `
       정산봇은 Slack 내에서 간편하게 정산을 할 수 있도록 도와주는 봇 서비스입니다.
       팀 내에서 회식, 여행, 선물 등 다양한 상황에서 발생하는 정산을 Slack 메시지만으로 손쉽게 진행할 수 있습니다.
@@ -44,8 +48,11 @@ export const projects = [
     description: "소비로서 친환경을 실천할 수 있게 도와주는 서비스",
     image: "https://images.unsplash.com/photo-1572204292164-b35ba943fca7?auto=format&fit=crop&w=800&q=80",
     tech: ["Flutter", "iOS", "Android", "Maps API"],
-    github: "https://github.com/halfmoon-mind/깨끗해질지도",
-    live: "#",
+    links: {
+      ios: "https://apps.apple.com/kr/app/%EA%B9%A8%EB%81%97%ED%95%B4%EC%A7%88%EC%A7%80%EB%8F%84/id6449622294",
+      android: "https://play.google.com/store/apps/details?id=com.may_be_clean.plant",
+      github: "https://github.com/May-Be-Clean",
+    },
     longDescription: `
       깨끗해질지도는 소비를 통해 친환경을 실천할 수 있는 장소를 지도 기반으로 제공하는 모바일 애플리케이션입니다.
       제로웨이스트 상점, 친환경 제품을 판매하는 가게, 리필스테이션 등 친환경 소비가 가능한 장소를 쉽게 찾을 수 있습니다.
@@ -61,8 +68,9 @@ export const projects = [
     description: "수면 상태를 배터리 형태로 보여주는 수면 측정 트래커",
     image: "https://images.unsplash.com/photo-1585645568877-e5ff21352faf?auto=format&fit=crop&w=800&q=80",
     tech: ["Flutter", "Health API", "Local Storage"],
-    github: "https://github.com/halfmoon-mind/Nightary",
-    live: "#",
+    links: {
+      github: "https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile",
+    },
     longDescription: `
       Nightary는 사용자의 수면 패턴을 분석하고 수면 상태를 배터리 형태로 시각화하여 보여주는 수면 측정 트래커 앱입니다.
       사용자가 자신의 수면 상태를 한눈에 파악하고 개선할 수 있도록 도와줍니다.
@@ -78,8 +86,9 @@ export const projects = [
     description: "숭실대 학생들을 위한 모든 서비스",
     image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?auto=format&fit=crop&w=800&q=80",
     tech: ["Flutter", "Firebase", "RESTful API"],
-    github: "https://github.com/halfmoon-mind/다잇슈",
-    live: "#",
+    links: {
+      github: "https://github.com/DaITssu",
+    },
     longDescription: `
       다잇슈는 숭실대학교 학생들을 위한 종합 서비스 앱으로, 학교 생활에 필요한 다양한 기능을 한 곳에 모았습니다.
       강의 정보, 식단표, 학사 일정, 공지사항 등 학교 생활에 필요한 정보를 손쉽게 확인할 수 있습니다.
@@ -95,8 +104,9 @@ export const projects = [
     description: "이미지 손쉽게 다운로드 할 수 있는 Chrome Extension",
     image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
     tech: ["JavaScript", "Chrome Extension API", "CSS"],
-    github: "#",
-    live: "https://chrome.google.com/webstore/",
+    links: {
+      store: "https://chromewebstore.google.com/detail/easy-image-downloader/lnldmkhkjnkcfndnhibbnaohplecldmb?authuser=0&hl=ko",
+    },
     longDescription: `
       Easy Image Downloader는 웹 페이지 내의 이미지를 손쉽게 다운로드할 수 있는 크롬 확장 프로그램입니다.
       원하는 이미지를 빠르게 찾아 다운로드할 수 있으며, 여러 이미지를 한 번에 다운로드하는 기능도 제공합니다.
@@ -112,8 +122,10 @@ export const projects = [
     description: "광고 없는 QR코드 생성기",
     image: "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=800&q=80",
     tech: ["React", "QR Code API", "PWA"],
-    github: "https://github.com/halfmoon-mind/QR-Maker",
-    live: "#",
+    links: {
+      web: "https://www.qrmaker.site/",
+      github: "https://github.com/halfmoon-mind/qr-maker",
+    },
     longDescription: `
       QR Maker는 불필요한 광고 없이 빠르고 쉽게 QR 코드를 생성할 수 있는 웹 애플리케이션입니다.
       URL, 텍스트, 연락처, Wi-Fi 정보 등 다양한 데이터 유형의 QR 코드를 생성할 수 있습니다.
@@ -129,8 +141,10 @@ export const projects = [
     description: "여러 개의 웹브라우저가 동적으로 연결되는 시스템",
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80",
     tech: ["JavaScript", "WebSocket", "HTML5"],
-    github: "https://github.com/halfmoon-mind/window-connection",
-    live: "#",
+    links: {
+      web: "https://mutliple-windows.s3.ap-northeast-2.amazonaws.com/index.html",
+      github: "https://github.com/halfmoon-mind/multiple-window-connection",
+    },
     longDescription: `
       Multiple Window Connection은 여러 웹 브라우저 창이 실시간으로 데이터를 주고받을 수 있는 시스템입니다.
       여러 디스플레이에 분산된 콘텐츠를 동기화하거나, 협업 작업을 위한 다중 창 환경을 구축할 수 있습니다.
@@ -141,6 +155,44 @@ export const projects = [
     features: ["실시간 창 간 데이터 동기화", "드래그 앤 드롭으로 창 간 콘텐츠 이동", "자동 창 배치 및 관리", "다중 사용자 지원"],
   },
 ];
+
+const getLinkIcon = (linkType: string) => {
+  switch (linkType) {
+    case "github":
+      return <Github size={20} />;
+    case "ios":
+      return <Smartphone size={20} />;
+    case "android":
+      return <Smartphone size={20} />;
+    case "web":
+      return <Monitor size={20} />;
+    case "store":
+      return <Store size={20} />;
+    case "slack":
+      return <ExternalLink size={20} />;
+    default:
+      return <ExternalLink size={20} />;
+  }
+};
+
+const getLinkLabel = (linkType: string) => {
+  switch (linkType) {
+    case "github":
+      return "GitHub";
+    case "ios":
+      return "iOS";
+    case "android":
+      return "Android";
+    case "web":
+      return "웹사이트";
+    case "store":
+      return "스토어";
+    case "slack":
+      return "Slack";
+    default:
+      return "링크";
+  }
+};
 
 const Projects = () => {
   return (
@@ -178,23 +230,21 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  <div className="flex space-x-4 pt-4">
-                    <a
-                      href={project.github}
-                      className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <Github size={20} />
-                      <span>GitHub</span>
-                    </a>
-                    <a
-                      href={project.live}
-                      className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <ExternalLink size={20} />
-                      <span>Live Demo</span>
-                    </a>
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    {project.links &&
+                      Object.entries(project.links).map(([linkType, url], linkIndex) => (
+                        <a
+                          key={linkIndex}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {getLinkIcon(linkType)}
+                          <span>{getLinkLabel(linkType)}</span>
+                        </a>
+                      ))}
                   </div>
                 </div>
               </Link>
