@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Github, ExternalLink, Smartphone, Monitor, Store } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Smartphone, Monitor, Store, Code } from "lucide-react";
 import { projects } from "./Projects";
 
 const getLinkIcon = (linkType: string) => {
@@ -67,20 +67,14 @@ const ProjectDetail = () => {
       </Link>
 
       <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="space-y-8">
-        <div className="relative h-[400px] rounded-xl overflow-hidden">
-          <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+        <div className="relative h-[400px] rounded-xl overflow-hidden bg-white/5">
+          <img src={project.image} alt={project.title} className="w-full h-full object-contain p-4" />
         </div>
 
         <div className="space-y-6">
           <div>
             <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {project.tech.map((tech, index) => (
-                <span key={index} className="bg-white/10 px-4 py-2 rounded-full text-sm">
-                  {tech}
-                </span>
-              ))}
-            </div>
+            <p className="text-gray-300 text-xl mb-6">{project.description}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -101,8 +95,22 @@ const ProjectDetail = () => {
 
           <div className="prose prose-invert max-w-none">
             <div className="bg-white/5 rounded-xl p-8 space-y-6">
+              <h2 className="text-2xl font-semibold flex items-center gap-2">
+                <Code size={24} />
+                기술 스택
+              </h2>
+              <div className="flex flex-wrap gap-3">
+                {project.tech.map((tech, index) => (
+                  <span key={index} className="bg-white/10 px-4 py-2 rounded-full text-sm font-medium">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white/5 rounded-xl p-8 mt-8 space-y-6">
               <h2 className="text-2xl font-semibold">프로젝트 개요</h2>
-              <div className="text-gray-300 whitespace-pre-line">{project.longDescription}</div>
+              <div className="text-gray-300 whitespace-pre-line leading-relaxed">{project.longDescription}</div>
             </div>
 
             <div className="bg-white/5 rounded-xl p-8 mt-8">
