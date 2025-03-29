@@ -84,7 +84,7 @@ const Resume = () => {
     {
       name: "정산봇",
       period: "2024년 12월 - 현재",
-      link: "설명 링크",
+      link: "https://slack.com/marketplace/A087W0YSC7N-",
       description: [
         "bolt.js를 사용해 Slack bot을 통해 정산을 손쉽게 도와주는 서비스",
         "토스 QR코드 송금 기능 리버스 엔지니어링하여 deep link 구조 파악하여 간편송금 기능 구현",
@@ -93,7 +93,7 @@ const Resume = () => {
     {
       name: "Nightary",
       period: "2024년 1월",
-      link: "github 링크",
+      link: "https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile",
       description: [
         "iOS HealthKit 활용하여 수면 시간과 질을 측정하고 적절한 수면 시간 확보 도우미 서비스",
         "수면 시간이 어느 날짜에 해당하는지 결정하는 알고리즘 구현",
@@ -103,7 +103,7 @@ const Resume = () => {
     {
       name: "깨끗해질지도",
       period: "2023년 5월 - 6월",
-      link: "github 링크",
+      link: "https://github.com/May-Be-Clean",
       description: [
         "소비를 통해서 친환경을 실천할 수 있도록 주변의 친환경 가게들을 소개해주는 서비스",
         "google map sdk 활용해 지도를 구현하여 주변 친환경 가게를 찾고, debouncer 활용하여 화면 이동 시 너무 많은 api 호출 안되도록 최적화",
@@ -250,7 +250,7 @@ const Resume = () => {
                   </div>
 
                   <a href={project.link} className="text-indigo-400 hover:text-indigo-300 text-sm block transition-colors">
-                    {project.link}
+                    설명 링크
                   </a>
 
                   <ul className="text-white/70 space-y-2 list-none">
