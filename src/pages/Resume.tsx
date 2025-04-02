@@ -46,80 +46,96 @@ const Resume = () => {
       company: "어터",
       position: "Flutter Mobile Engineer",
       period: "2023년 10월 - 현재",
-      description: [
-        "슈룹 - 숏폼 드라마 플랫폼",
-        "DRM 적용된 HLS/DASH 스트리밍 방식 동영상 플레이어 개발하고, 불안정한 네트워크 환경에서 적절하게 화면이 보여질 수 있도록 지속적으로 기능 개선",
-        "전세계 스토어 대상으로 배포하여 다국어 지원 어플리케이션 개발 경험",
-        "유저가 인앱결제를 시도 할 때, 서버가 응답하지 않을 경우를 대비해 1분마다 영수증 검증 처리 재시도하면서 유저와 인증 정보를 Sentry 서버에 로그로 남기겨 CS 대응에 수월하도록 처리",
-        <>
-          모픽 - 웹소설 콘텐츠 플랫폼 (
-          <a href="https://mofic.io" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">
-            웹사이트
-          </a>{" "}
-          /{" "}
-          <a
-            href="https://apps.apple.com/kr/app/%EB%AA%A8%ED%94%BD-%EB%8D%94-%EB%A7%8E%EC%9D%80-%EC%86%8C%EC%84%A4-%EC%86%8D%EC%9C%BC%EB%A1%9C/id6469601198"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-400 hover:text-purple-300"
-          >
-            AppStore
-          </a>{" "}
-          /{" "}
-          <a
-            href="https://play.google.com/store/apps/details?id=com.toodat.android&hl=ko"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-400 hover:text-purple-300"
-          >
-            PlayStore
-          </a>
-          )
-        </>,
-        "Fastlane을 활용한 CI/CD 파이프라인 구축하여 배포 소요 시간 60% (6분) 감소",
-        "Amplitude를 활용하여 유저 사용시간 분석하고, 야간 시간대 유저 참여를 높이기 위해 주도적으로 다크모드의 기능 우선순위를 조정하여 개발",
-        "기능 추가 이후 야간 시간대 기존와 대비하여 유저 session 35% 증가",
-        "팀 내 모바일 엔지니어링을 주도하며 Clean Architecture, MVVM 구조를 설계하여 앱을 제작",
-        "Geek News, Toss Tech와 같은 뉴스레터, 테크블로그를 읽으며 기존 앱 아키텍쳐를 지속적으로 개선",
-        "Sentry를 로그 레벨과 Stack Trace, Routing history를 적극적으로 활용하여 Sentry 도입 이후 버그 픽스 소요 시간 30% 단축",
-        "신속한 비즈니스 검증 및 요구사항 수정을 빠르게 반영하기 위해 Server Driven UI를 적용",
-        "앱 배포 없이 Admin 페이지에서 손쉽게 메인페이지의 화면 구성을 수정할 수 있도록 구현",
-        "Flutter에서 지원하는 EPUB 파일 뷰어 패키지가 없어 웹소설 뷰어 패키지 제작",
-        "초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도 40% 감소",
-        "앱 리브랜딩 경험",
-        "하드 코딩된 데이터 제거하고, 관리 포인트를 각 페이지가 아니라 하나의 모듈에서 관리하도록 설정",
+      projects: [
+        {
+          name: "슈룹 - 숏폼 드라마 플랫폼",
+          description: [
+            "DRM 적용된 HLS/DASH 스트리밍 방식 동영상 플레이어 개발하고, 불안정한 네트워크 환경에서 적절하게 화면이 보여질 수 있도록 지속적으로 기능 개선",
+            "전세계 스토어 대상으로 배포하여 다국어 지원 어플리케이션 개발 경험",
+            "유저가 인앱결제를 시도 할 때, 서버가 응답하지 않을 경우를 대비해 1분마다 영수증 검증 처리 재시도하면서 유저와 인증 정보를 Sentry 서버에 로그로 남기겨 CS 대응에 수월하도록 처리",
+          ],
+        },
+        {
+          name: (
+            <>
+              모픽 - 웹소설 콘텐츠 플랫폼 (
+              <a href="https://mofic.io" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">
+                웹사이트
+              </a>{" "}
+              /{" "}
+              <a
+                href="https://apps.apple.com/kr/app/%EB%AA%A8%ED%94%BD-%EB%8D%94-%EB%A7%8E%EC%9D%80-%EC%86%8C%EC%84%A4-%EC%86%8D%EC%9C%BC%EB%A1%9C/id6469601198"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300"
+              >
+                AppStore
+              </a>{" "}
+              /{" "}
+              <a
+                href="https://play.google.com/store/apps/details?id=com.toodat.android&hl=ko"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300"
+              >
+                PlayStore
+              </a>
+              )
+            </>
+          ),
+          description: [
+            "Fastlane을 활용한 CI/CD 파이프라인 구축하여 배포 소요 시간 60% (6분) 감소",
+            "Amplitude를 활용하여 유저 사용시간 분석하고, 야간 시간대 유저 참여를 높이기 위해 주도적으로 다크모드의 기능 우선순위를 조정하여 개발",
+            "기능 추가 이후 야간 시간대 기존와 대비하여 유저 session 35% 증가",
+            "팀 내 모바일 엔지니어링을 주도하며 Clean Architecture, MVVM 구조를 설계하여 앱을 제작",
+            "Geek News, Toss Tech와 같은 뉴스레터, 테크블로그를 읽으며 기존 앱 아키텍쳐를 지속적으로 개선",
+            "Sentry를 로그 레벨과 Stack Trace, Routing history를 적극적으로 활용하여 Sentry 도입 이후 버그 픽스 소요 시간 30% 단축",
+            "신속한 비즈니스 검증 및 요구사항 수정을 빠르게 반영하기 위해 Server Driven UI를 적용",
+            "앱 배포 없이 Admin 페이지에서 손쉽게 메인페이지의 화면 구성을 수정할 수 있도록 구현",
+            "Flutter에서 지원하는 EPUB 파일 뷰어 패키지가 없어 웹소설 뷰어 패키지 제작",
+            "초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도 40% 감소",
+            "앱 리브랜딩 경험",
+            "하드 코딩된 데이터 제거하고, 관리 포인트를 각 페이지가 아니라 하나의 모듈에서 관리하도록 설정",
+          ],
+        },
       ],
     },
     {
       company: "허슬러즈",
       position: "Software Engineer",
       period: "2022년 4월 - 2023년 5월 (1년 1개월)",
-      description: [
-        <>
-          게더링 - 소셜 공유 캘린더 플랫폼 (
-          <a
-            href="https://apps.apple.com/kr/app/%EA%B2%8C%EB%8D%94%EB%A7%81-%ED%95%A8%EA%BB%98-%EC%93%B0%EB%8A%94-%EA%B3%B5%EC%9C%A0-%EC%BA%98%EB%A6%B0%EB%8D%94/id1643475991"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-400 hover:text-purple-300"
-          >
-            AppStore
-          </a>{" "}
-          /{" "}
-          <a
-            href="https://play.google.com/store/apps/details?id=day.gathering.app&hl=ko"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-400 hover:text-purple-300"
-          >
-            PlayStore
-          </a>
-          )
-        </>,
-        "일간/주간/월간 커스텀 캘린더 제작",
-        "기존에 모든 반복 일정이 각각 다른 일정으로 처리되는 것에 불편함을 느껴 반복 일정 관리 알고리즘 개발",
-        "DB 레코드 40% 감소",
-        "그룹 서비스(그룹 일정 추가, 게시글) Full Stack 개발 (Node.js, Flutter)",
+      projects: [
+        {
+          name: (
+            <>
+              게더링 - 소셜 공유 캘린더 플랫폼 (
+              <a
+                href="https://apps.apple.com/kr/app/%EA%B2%8C%EB%8D%94%EB%A7%81-%ED%95%A8%EA%BB%98-%EC%93%B0%EB%8A%94-%EA%B3%B5%EC%9C%A0-%EC%BA%98%EB%A6%B0%EB%8D%94/id1643475991"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300"
+              >
+                AppStore
+              </a>{" "}
+              /{" "}
+              <a
+                href="https://play.google.com/store/apps/details?id=day.gathering.app&hl=ko"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-400 hover:text-purple-300"
+              >
+                PlayStore
+              </a>
+              )
+            </>
+          ),
+          description: [
+            "일간/주간/월간 커스텀 캘린더 제작",
+            "기존에 모든 반복 일정이 각각 다른 일정으로 처리되는 것에 불편함을 느껴 반복 일정 관리 알고리즘 개발",
+            "DB 레코드 40% 감소",
+            "그룹 서비스(그룹 일정 추가, 게시글) Full Stack 개발 (Node.js, Flutter)",
+          ],
+        },
       ],
     },
   ];
@@ -256,7 +272,7 @@ const Resume = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-white/5 hover:bg-white/10 rounded-lg p-6 space-y-4 transition-all duration-300 border border-white/5 hover:border-purple-500/20 shadow-lg hover:shadow-purple-500/5"
+                  className="bg-white/5 hover:bg-white/10 rounded-lg p-6 space-y-6 transition-all duration-300 border border-white/5 hover:border-purple-500/20 shadow-lg hover:shadow-purple-500/5"
                 >
                   <div className="flex flex-col md:flex-row justify-between md:items-center">
                     <h3 className="text-xl font-bold text-white">{exp.position}</h3>
@@ -267,16 +283,27 @@ const Resume = () => {
                     </div>
                   </div>
 
-                  <ul className="text-white/70 space-y-2 list-none ml-1">
-                    {exp.description.map((desc, i) => (
-                      <li
-                        key={i}
-                        className="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-[0.6rem] before:w-2 before:h-2 before:bg-purple-400/50 before:rounded-full hover:text-white transition-colors duration-200"
-                      >
-                        {desc}
-                      </li>
+                  <div className="space-y-6">
+                    {exp.projects.map((project, pIndex) => (
+                      <div key={pIndex} className="space-y-3">
+                        <div className="flex items-center space-x-3 bg-gradient-to-r from-purple-500/20 to-transparent px-3 py-2 rounded-lg">
+                          <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
+                          <h4 className="text-lg font-semibold text-purple-200">{project.name}</h4>
+                        </div>
+
+                        <ul className="text-white/70 space-y-2 list-none ml-4 pl-2 border-l-2 border-purple-500/20">
+                          {project.description.map((desc, i) => (
+                            <li
+                              key={i}
+                              className="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-[0.6rem] before:w-2 before:h-2 before:bg-purple-400/50 before:rounded-full hover:text-white transition-colors duration-200"
+                            >
+                              {desc}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </motion.div>
               ))}
             </div>
