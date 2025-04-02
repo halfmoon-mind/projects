@@ -297,12 +297,12 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
               <h1 className="text-6xl md:text-7xl font-bold text-white tracking-tight">심상현</h1>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mt-14">
+            <div className="grid grid-cols-1 md:grid-cols-7 gap-10 mt-14">
               <motion.div
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
-                className="text-white/90 space-y-4"
+                className="text-white/90 space-y-4 md:col-span-2"
               >
                 <h3 className="text-xs uppercase tracking-widest text-white/60 mb-4 font-medium">연락처</h3>
                 <div className="flex items-center space-x-4 group">
@@ -343,7 +343,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                 </div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }} className="md:col-span-3">
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }} className="md:col-span-5">
                 <h3 className="text-xs uppercase tracking-widest text-white/60 mb-5 font-medium">소개</h3>
                 <p
                   className="text-white/95 leading-relaxed text-base tracking-wide font-light whitespace-pre-line"
