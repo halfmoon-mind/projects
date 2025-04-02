@@ -175,11 +175,26 @@ const Resume = () => {
   ];
 
   const talks = [
-    "2025 YourSSU 홈커밍 - 주니어와 취준생에게 전하는 Flutter 사용 경험",
-    "2024 GDXC - 과거의 나, 현재의 나",
-    "GDSC 2024 Final Event - 학교에서 배운 내용으로 현업에서 써먹기",
-    "2024 SSU DEVCON - Flutter로 다채로운 이벤트 페이지 구축하기",
-    "2023 GDSC SSUMall Seminar - 플러터, 어디까지 배워볼래?",
+    {
+      title: "2025 YourSSU 홈커밍 - 주니어와 취준생에게 전하는 Flutter 사용 경험",
+      link: "",
+    },
+    {
+      title: "2024 GDXC - 과거의 나, 현재의 나",
+      link: "",
+    },
+    {
+      title: "GDSC 2024 Final Event - 학교에서 배운 내용으로 현업에서 써먹기",
+      link: "https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/EDDY_3%E1%84%80%E1%85%B5_GDSC_FinalEvent.pdf",
+    },
+    {
+      title: "2024 SSU DEVCON - Flutter로 다채로운 이벤트 페이지 구축하기",
+      link: "https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%AE%E1%86%BC%E1%84%89%E1%85%B5%E1%86%AFDEVCON+-+%E1%84%89%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%92%E1%85%A7%E1%86%AB+%E1%84%87%E1%85%A1%E1%86%AF%E1%84%91%E1%85%AD.pdf",
+    },
+    {
+      title: "2023 GDSC SSUMall Seminar - 플러터, 어디까지 배워볼래?",
+      link: "https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%90%E1%85%A5_%E1%84%8B%E1%85%A5%E1%84%83%E1%85%B5%E1%84%81%E1%85%A1%E1%84%8C%E1%85%B5_%E1%84%87%E1%85%A2%E1%84%8B%E1%85%AF%E1%84%87%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A2.pdf",
+    },
   ];
 
   const skills = ["React.js", "Next.js", "AWS (EC2, S3, Lambda 등)", "Flutter", "SwiftUI", "Amplitude", "Google Analytics", "Appsflyer"];
@@ -366,10 +381,29 @@ const Resume = () => {
                   key={index}
                   variants={itemVariants}
                   whileHover={{ x: 5, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-                  className="relative overflow-hidden group rounded-lg p-4 transition-all"
+                  className="relative overflow-hidden group rounded-lg p-4 transition-all cursor-pointer"
                 >
                   <div className="absolute inset-0 w-1 bg-gradient-to-b from-purple-400 to-blue-500 group-hover:w-full opacity-20 transition-all duration-300" />
-                  <p className="relative z-10 text-white/80 group-hover:text-white transition-colors">{talk}</p>
+                  <a
+                    href={talk.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative z-10 text-white/80 group-hover:text-white transition-colors block ${talk.link ? "" : "pointer-events-none"}`}
+                  >
+                    {talk.title}
+                    {talk.link && (
+                      <span className="ml-2 inline-block text-purple-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </span>
+                    )}
+                  </a>
                 </motion.div>
               ))}
             </div>
