@@ -80,9 +80,9 @@ const Resume = () => {
         {
           name: "슈룹 - 숏폼 드라마 플랫폼",
           description: [
-            "DRM 적용된 HLS/DASH 스트리밍 방식 동영상 플레이어 개발하고, 불안정한 네트워크 환경에서 적절하게 화면이 보여질 수 있도록 지속적으로 기능 개선",
-            "전세계 스토어 대상으로 배포하여 다국어 지원 어플리케이션 개발 경험",
-            "유저가 인앱결제를 시도 할 때, 서버가 응답하지 않을 경우를 대비해 1분마다 영수증 검증 처리 재시도하면서 유저와 인증 정보를 Sentry 서버에 로그로 남기겨 CS 대응에 수월하도록 처리",
+            "<strong class='text-[#61dafb]'>DRM</strong> 적용된 <strong class='text-[#61dafb]'>HLS/DASH 스트리밍</strong> 방식 동영상 플레이어 개발하고, 불안정한 네트워크 환경에서 적절하게 화면이 보여질 수 있도록 지속적으로 기능 개선",
+            "전세계 스토어 대상으로 배포하여 <strong class='text-[#61dafb]'>다국어 지원</strong> 어플리케이션 개발 경험",
+            "유저가 인앱결제를 시도 할 때, 서버가 응답하지 않을 경우를 대비해 1분마다 <strong class='text-[#61dafb]'>영수증 검증 처리 재시도</strong>하면서 유저와 인증 정보를 <strong class='text-[#61dafb]'>Sentry</strong> 서버에 로그로 남기겨 CS 대응에 수월하도록 처리",
           ],
         },
         {
@@ -114,18 +114,18 @@ const Resume = () => {
             </>
           ),
           description: [
-            "Fastlane을 활용한 CI/CD 파이프라인 구축하여 배포 소요 시간 60% (6분) 감소",
-            "Amplitude를 활용하여 유저 사용시간 분석하고, 야간 시간대 유저 참여를 높이기 위해 주도적으로 다크모드의 기능 우선순위를 조정하여 개발",
-            "기능 추가 이후 야간 시간대 기존와 대비하여 유저 session 35% 증가",
-            "팀 내 모바일 엔지니어링을 주도하며 Clean Architecture, MVVM 구조를 설계하여 앱을 제작",
+            "<strong class='text-[#61dafb]'>Fastlane</strong>을 활용한 <strong class='text-[#61dafb]'>CI/CD 파이프라인</strong> 구축하여 배포 소요 시간 <strong class='text-[#61dafb]'>60% (6분) 감소</strong>",
+            "<strong class='text-[#61dafb]'>Amplitude</strong>를 활용하여 유저 사용시간 분석하고, 야간 시간대 유저 참여를 높이기 위해 주도적으로 <strong class='text-[#61dafb]'>다크모드</strong>의 기능 우선순위를 조정하여 개발",
+            "기능 추가 이후 야간 시간대 기존와 대비하여 유저 session <strong class='text-[#61dafb]'>35% 증가</strong>",
+            "팀 내 모바일 엔지니어링을 주도하며 <strong class='text-[#61dafb]'>Clean Architecture</strong>, <strong class='text-[#61dafb]'>MVVM</strong> 구조를 설계하여 앱을 제작",
             "Geek News, Toss Tech와 같은 뉴스레터, 테크블로그를 읽으며 기존 앱 아키텍쳐를 지속적으로 개선",
-            "Sentry를 로그 레벨과 Stack Trace, Routing history를 적극적으로 활용하여 Sentry 도입 이후 버그 픽스 소요 시간 30% 단축",
-            "신속한 비즈니스 검증 및 요구사항 수정을 빠르게 반영하기 위해 Server Driven UI를 적용",
-            "앱 배포 없이 Admin 페이지에서 손쉽게 메인페이지의 화면 구성을 수정할 수 있도록 구현",
-            "Flutter에서 지원하는 EPUB 파일 뷰어 패키지가 없어 웹소설 뷰어 패키지 제작",
-            "초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도 40% 감소",
+            "<strong class='text-[#61dafb]'>Sentry</strong>를 로그 레벨과 <strong class='text-[#61dafb]'>Stack Trace</strong>, <strong class='text-[#61dafb]'>Routing history</strong>를 적극적으로 활용하여 Sentry 도입 이후 버그 픽스 소요 시간 <strong class='text-[#61dafb]'>30% 단축</strong>",
+            "신속한 비즈니스 검증 및 요구사항 수정을 빠르게 반영하기 위해 <strong class='text-[#61dafb]'>Server Driven UI</strong>를 적용",
+            "앱 배포 없이 <strong class='text-[#61dafb]'>Admin 페이지</strong>에서 손쉽게 메인페이지의 화면 구성을 수정할 수 있도록 구현",
+            "Flutter에서 지원하는 <strong class='text-[#61dafb]'>EPUB</strong> 파일 뷰어 패키지가 없어 웹소설 뷰어 패키지 제작",
+            "초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도 <strong class='text-[#61dafb]'>40% 감소</strong>",
             "앱 리브랜딩 경험",
-            "하드 코딩된 데이터 제거하고, 관리 포인트를 각 페이지가 아니라 하나의 모듈에서 관리하도록 설정",
+            "하드 코딩된 데이터 제거하고, 관리 포인트를 각 페이지가 아니라 <strong class='text-[#61dafb]'>하나의 모듈</strong>에서 관리하도록 설정",
           ],
         },
       ],
@@ -160,10 +160,10 @@ const Resume = () => {
             </>
           ),
           description: [
-            "일간/주간/월간 커스텀 캘린더 제작",
-            "기존에 모든 반복 일정이 각각 다른 일정으로 처리되는 것에 불편함을 느껴 반복 일정 관리 알고리즘 개발",
-            "DB 레코드 40% 감소",
-            "그룹 서비스(그룹 일정 추가, 게시글) Full Stack 개발 (Node.js, Flutter)",
+            "<strong class='text-[#61dafb]'>일간/주간/월간</strong> 커스텀 캘린더 제작",
+            "기존에 모든 반복 일정이 각각 다른 일정으로 처리되는 것에 불편함을 느껴 <strong class='text-[#61dafb]'>반복 일정 관리 알고리즘</strong> 개발",
+            "DB 레코드 <strong class='text-[#61dafb]'>40% 감소</strong>",
+            "그룹 서비스(그룹 일정 추가, 게시글) <strong class='text-[#61dafb]'>Full Stack</strong> 개발 (Node.js, Flutter)",
           ],
         },
       ],
@@ -176,11 +176,11 @@ const Resume = () => {
       period: "2023년 - 현재",
       link: "https://slack.com/marketplace/A087W0YSC7N-",
       description: [
-        "슬랙 워크스페이스에서 팀원들과의 비용 정산을 쉽고 빠르게 처리할 수 있도록 도와주는 봇",
-        "주요 기능: 계좌 등록, 정산 요청, 토스 송금 연동",
-        "사용자 계좌 정보를 AES-256 암호화 알고리즘으로 안전하게 저장하고 관리",
-        "토스 송금 페이지 연동으로 버튼 클릭 한 번으로 자동 송금 기능 구현",
-        "1인당 금액 자동 계산 및 정산 대상자들에게 자동 DM 발송 기능 구현",
+        "<strong class='text-[#61dafb]'>슬랙 워크스페이스</strong>에서 팀원들과의 비용 정산을 쉽고 빠르게 처리할 수 있도록 도와주는 봇",
+        "주요 기능: 계좌 등록, 정산 요청, <strong class='text-[#61dafb]'>토스 송금 연동</strong>",
+        "사용자 계좌 정보를 <strong class='text-[#61dafb]'>AES-256 암호화 알고리즘</strong>으로 안전하게 저장하고 관리",
+        "<strong class='text-[#61dafb]'>토스 송금 페이지 연동</strong>으로 버튼 클릭 한 번으로 자동 송금 기능 구현",
+        "1인당 금액 자동 계산 및 정산 대상자들에게 <strong class='text-[#61dafb]'>자동 DM 발송</strong> 기능 구현",
       ],
     },
     {
@@ -188,9 +188,9 @@ const Resume = () => {
       period: "2024년 1월",
       link: "https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile",
       description: [
-        "iOS HealthKit 활용하여 수면 시간과 질을 측정하고 적절한 수면 시간 확보 도우미 서비스",
-        "수면 시간이 어느 날짜에 해당하는지 결정하는 알고리즘 구현",
-        "iOS WidgetKit 활용해 유저가 수면이 부족한 시간에 도달하면 홈화면에서 바로 볼 수 있도록 구현",
+        "<strong class='text-[#61dafb]'>iOS HealthKit</strong> 활용하여 수면 시간과 질을 측정하고 적절한 수면 시간 확보 도우미 서비스",
+        "수면 시간이 어느 날짜에 해당하는지 결정하는 <strong class='text-[#61dafb]'>알고리즘</strong> 구현",
+        "<strong class='text-[#61dafb]'>iOS WidgetKit</strong> 활용해 유저가 수면이 부족한 시간에 도달하면 홈화면에서 바로 볼 수 있도록 구현",
       ],
     },
     {
@@ -198,8 +198,8 @@ const Resume = () => {
       period: "2023년 5월 - 6월",
       link: "https://github.com/May-Be-Clean",
       description: [
-        "소비를 통해서 친환경을 실천할 수 있도록 주변의 친환경 가게들을 소개해주는 서비스",
-        "google map sdk 활용해 지도를 구현하여 주변 친환경 가게를 찾고, debouncer 활용하여 화면 이동 시 너무 많은 api 호출 안되도록 최적화",
+        "소비를 통해서 친환경을 실천할 수 있도록 주변의 <strong class='text-[#61dafb]'>친환경 가게</strong>들을 소개해주는 서비스",
+        "<strong class='text-[#61dafb]'>google map sdk</strong> 활용해 지도를 구현하여 주변 친환경 가게를 찾고, <strong class='text-[#61dafb]'>debouncer</strong> 활용하여 화면 이동 시 너무 많은 api 호출 안되도록 최적화",
       ],
     },
   ];
@@ -248,13 +248,12 @@ const Resume = () => {
     },
   ];
 
-  const intro = `Flutter Engineer로 2년간 근무하면서 3개의 프로덕션 서비스를 배포 및 유지보수 하고 있습니다.
-Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 엔지니어링 퀄리티를 높이고 있습니다.
-엔지니어로서의 관점 뿐만 아니라 비즈니스의 본질을 이해하고 유연하게 문제를 해결합니다.
+  const intro = `<strong class='text-[#61dafb]'>Flutter Engineer</strong>로 2년간 근무하면서 3개의 프로덕션 서비스를 배포 및 유지보수 하고 있습니다.
+Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='text-[#61dafb]'>엔지니어링 퀄리티</strong>를 높이고 있습니다.
+엔지니어로서의 관점 뿐만 아니라 <strong class='text-[#61dafb]'>비즈니스의 본질</strong>을 이해하고 유연하게 문제를 해결합니다.
 
-일상생활 속의 불편함을 인지하고 이를 기술로서 풀어내는 제너럴리스트입니다.
-또한 AI를 적극적으로 활용하여 Product에 빠르게 비즈니스 임팩트를 낼 수 있는 방안을 항상 고민하고 
-적극적으로 제시하는 Product Engineer입니다.`;
+일상생활 속의 불편함을 인지하고 이를 기술로서 풀어내는 <strong class='text-[#61dafb]'>제너럴리스트</strong>입니다.
+또한 <strong class='text-[#61dafb]'>AI</strong>를 적극적으로 활용하여 Product에 빠르게 <strong class='text-[#61dafb]'>비즈니스 임팩트</strong>를 낼 수 있는 방안을 항상 고민하고 적극적으로 제시하는 <strong class='text-[#61dafb]'>Product Engineer</strong>입니다.`;
 
   const contact = {
     phone: "010-5378-8095",
@@ -346,7 +345,10 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 엔지니어링
 
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }} className="md:col-span-3">
                 <h3 className="text-xs uppercase tracking-widest text-white/60 mb-5 font-medium">소개</h3>
-                <p className="text-white/95 leading-relaxed text-base tracking-wide font-light whitespace-pre-line">{intro}</p>
+                <p
+                  className="text-white/95 leading-relaxed text-base tracking-wide font-light whitespace-pre-line"
+                  dangerouslySetInnerHTML={{ __html: intro }}
+                />
               </motion.div>
             </div>
           </div>
@@ -394,9 +396,8 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 엔지니어링
                               viewport={{ once: true }}
                               transition={{ delay: i * 0.05 }}
                               className="relative pl-5 text-sm before:content-[''] before:absolute before:left-0 before:top-[0.5rem] before:w-1.5 before:h-1.5 before:bg-white before:rounded-full hover:text-white transition-colors duration-200 tracking-wide leading-relaxed"
-                            >
-                              {desc}
-                            </motion.li>
+                              dangerouslySetInnerHTML={{ __html: desc }}
+                            />
                           ))}
                         </ul>
                       </div>
@@ -448,9 +449,8 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 엔지니어링
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.05 }}
                         className="relative pl-5 text-sm before:content-[''] before:absolute before:left-0 before:top-[0.5rem] before:w-1.5 before:h-1.5 before:bg-white before:rounded-full tracking-wide leading-relaxed"
-                      >
-                        {desc}
-                      </motion.li>
+                        dangerouslySetInnerHTML={{ __html: desc }}
+                      />
                     ))}
                   </ul>
                 </motion.div>
