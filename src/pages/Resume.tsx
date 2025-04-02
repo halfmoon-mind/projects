@@ -199,7 +199,16 @@ const Resume = () => {
 
   const skills = ["React.js", "Next.js", "AWS (EC2, S3, Lambda 등)", "Flutter", "SwiftUI", "Amplitude", "Google Analytics", "Appsflyer"];
 
-  const awards = ["Nightary, 2024 GDSC 해커톤 대상", "깨끗해질지도, 제11회 K-해커톤 장려상 [과학기술정보통신부]"];
+  const awards = [
+    {
+      title: "Nightary, 2024 GDSC 해커톤 대상",
+      link: "https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile",
+    },
+    {
+      title: "깨끗해질지도, 제11회 K-해커톤 장려상 [과학기술정보통신부]",
+      link: "https://github.com/May-Be-Clean",
+    },
+  ];
 
   const education = [
     {
@@ -418,10 +427,20 @@ const Resume = () => {
                   variants={itemVariants}
                   className="bg-gradient-to-r from-purple-500/10 to-transparent border-l-2 border-purple-500 pl-4 py-3 rounded-r-lg"
                 >
-                  <p className="text-white/80">
-                    <span className="font-semibold text-purple-300">{award.split(",")[0]}</span>
-                    <span>{", " + award.split(",")[1]}</span>
-                  </p>
+                  <a href={award.link} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors block">
+                    <span className="font-semibold text-purple-300">{award.title.split(",")[0]}</span>
+                    <span>{", " + award.title.split(",")[1]}</span>
+                    <span className="ml-2 inline-block text-purple-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </span>
+                  </a>
                 </motion.div>
               ))}
             </div>
