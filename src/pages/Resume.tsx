@@ -71,7 +71,27 @@ const Resume = () => {
       position: "Software Engineer",
       period: "2022년 4월 - 2023년 5월 (1년 1개월)",
       description: [
-        "게더링 - 소셜 공유 캘린더 플랫폼 (AppStore / PlayStore)",
+        <>
+          게더링 - 소셜 공유 캘린더 플랫폼 (
+          <a
+            href="https://apps.apple.com/kr/app/%EA%B2%8C%EB%8D%94%EB%A7%81-%ED%95%A8%EA%BB%98-%EC%93%B0%EB%8A%94-%EA%B3%B5%EC%9C%A0-%EC%BA%98%EB%A6%B0%EB%8D%94/id1643475991"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-400 hover:text-purple-300"
+          >
+            AppStore
+          </a>{" "}
+          /{" "}
+          <a
+            href="https://play.google.com/store/apps/details?id=day.gathering.app&hl=ko"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-400 hover:text-purple-300"
+          >
+            PlayStore
+          </a>
+          )
+        </>,
         "일간/주간/월간 커스텀 캘린더 제작",
         "기존에 모든 반복 일정이 각각 다른 일정으로 처리되는 것에 불편함을 느껴 반복 일정 관리 알고리즘 개발",
         "DB 레코드 40% 감소",
