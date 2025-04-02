@@ -47,11 +47,35 @@ const Resume = () => {
       position: "Flutter Mobile Engineer",
       period: "2023년 10월 - 현재",
       description: [
-        "슈룹 - 숏폼 드라마 플랫폼 (AppStore / PlayStore)",
+        "슈룹 - 숏폼 드라마 플랫폼",
         "DRM 적용된 HLS/DASH 스트리밍 방식 동영상 플레이어 개발하고, 불안정한 네트워크 환경에서 적절하게 화면이 보여질 수 있도록 지속적으로 기능 개선",
         "전세계 스토어 대상으로 배포하여 다국어 지원 어플리케이션 개발 경험",
         "유저가 인앱결제를 시도 할 때, 서버가 응답하지 않을 경우를 대비해 1분마다 영수증 검증 처리 재시도하면서 유저와 인증 정보를 Sentry 서버에 로그로 남기겨 CS 대응에 수월하도록 처리",
-        "모픽 - 웹소설 콘텐츠 플랫폼 (https://www.mofic.io/ / AppStore / PlayStore)",
+        <>
+          모픽 - 웹소설 콘텐츠 플랫폼 (
+          <a href="https://mofic.io" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300">
+            웹사이트
+          </a>{" "}
+          /{" "}
+          <a
+            href="https://apps.apple.com/kr/app/%EB%AA%A8%ED%94%BD-%EB%8D%94-%EB%A7%8E%EC%9D%80-%EC%86%8C%EC%84%A4-%EC%86%8D%EC%9C%BC%EB%A1%9C/id6469601198"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-400 hover:text-purple-300"
+          >
+            AppStore
+          </a>{" "}
+          /{" "}
+          <a
+            href="https://play.google.com/store/apps/details?id=com.toodat.android&hl=ko"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-400 hover:text-purple-300"
+          >
+            PlayStore
+          </a>
+          )
+        </>,
         "Fastlane을 활용한 CI/CD 파이프라인 구축하여 배포 소요 시간 60% (6분) 감소",
         "Amplitude를 활용하여 유저 사용시간 분석하고, 야간 시간대 유저 참여를 높이기 위해 주도적으로 다크모드의 기능 우선순위를 조정하여 개발",
         "기능 추가 이후 야간 시간대 기존와 대비하여 유저 session 35% 증가",
