@@ -8,10 +8,12 @@ import ProjectDetail from './pages/ProjectDetail';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import { AnimatePresence } from 'framer-motion';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-black">
         <Navbar />
         <AnimatePresence mode="wait">
@@ -29,4 +31,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
