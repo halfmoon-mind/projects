@@ -1,17 +1,17 @@
-import React, { CSSProperties } from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Smartphone, Monitor, Store, Youtube } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React, { CSSProperties } from "react";
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Smartphone, Monitor, Store, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // 이미지 임포트 추가
-import nightaryImg from '../assets/nightary.png';
-import mayBeCleanImg from '../assets/may_be_clean.png';
-import easyImageDownloaderImg from '../assets/easy_image_downloader.png';
-import pickiverseImg from '../assets/pickiverse.png';
-import payBotImg from '../assets/pay_bot.png';
-import qrMakerImg from '../assets/qr_maker.png';
-import multiWindowImg from '../assets/multi_window.png';
-import daitssuImg from '../assets/daitssu.png';
+import nightaryImg from "../assets/nightary.png";
+import mayBeCleanImg from "../assets/may_be_clean.png";
+import easyImageDownloaderImg from "../assets/easy_image_downloader.png";
+import pickiverseImg from "../assets/pickiverse.png";
+import payBotImg from "../assets/pay_bot.png";
+import qrMakerImg from "../assets/qr_maker.png";
+import multiWindowImg from "../assets/multi_window.png";
+import daitssuImg from "../assets/daitssu.png";
 
 // 프로젝트 타입 정의
 interface Project {
@@ -31,16 +31,16 @@ interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'pickiverse',
-    title: '피키버스',
-    description: '이상형 월드컵 플랫폼',
+    id: "pickiverse",
+    title: "피키버스",
+    description: "이상형 월드컵 플랫폼",
     image: pickiverseImg,
-    containerStyle: { backgroundColor: 'white' },
-    tech: ['Flutter', 'iOS', 'Android', 'Web', 'Firebase'],
+    containerStyle: { backgroundColor: "white" },
+    tech: ["Flutter", "iOS", "Android", "Web", "Firebase"],
     links: {
-      ios: 'https://apps.apple.com/kr/app/%ED%94%BC%ED%82%A4%EB%B2%84%EC%8A%A4/id6742077036?uo=2',
-      android: 'https://play.google.com/store/apps/details?id=com.pickiverse.app',
-      web: 'https://pickiverse.com',
+      ios: "https://apps.apple.com/kr/app/%ED%94%BC%ED%82%A4%EB%B2%84%EC%8A%A4/id6742077036?uo=2",
+      android: "https://play.google.com/store/apps/details?id=com.pickiverse.app",
+      web: "https://pickiverse.com",
     },
     longDescription: `
       피키버스는 사용자들이 자신만의 이상형 월드컵을 쉽게 만들고 공유할 수 있는 플랫폼입니다.
@@ -66,51 +66,54 @@ export const projects: Project[] = [
       특히 iOS App Store와 Google Play Store의 심사 기준을 모두 충족시키기 위해 여러 차례 앱 구조를 재설계해야 했습니다.
     `,
     features: [
-      '다양한 이상형 월드컵 템플릿 제공',
-      '사용자 커스텀 이상형 월드컵 생성',
-      '실시간 결과 공유 및 통계',
-      '크로스 플랫폼 지원 (iOS/Android/Web)',
-      '소셜 로그인 및 계정 연동',
+      "다양한 이상형 월드컵 템플릿 제공",
+      "사용자 커스텀 이상형 월드컵 생성",
+      "실시간 결과 공유 및 통계",
+      "크로스 플랫폼 지원 (iOS/Android/Web)",
+      "소셜 로그인 및 계정 연동",
     ],
   },
   {
-    id: 'paybot',
-    title: '정산봇',
-    description: 'Slack 봇으로 정산을 간편하게',
+    id: "paybot",
+    title: "정산봇",
+    description: "Slack 봇으로 정산을 간편하게",
     image: payBotImg,
-    tech: ['Slack API', 'Node.js', 'Express', 'MongoDB'],
+    tech: ["Slack API", "Bolt.js", "Node.js", "MongoDB", "nginx"],
     links: {
-      slack: 'https://slack.com/marketplace/A087W0YSC7N-',
+      slack: "https://slack.com/marketplace/A087W0YSC7N-",
     },
     longDescription: `
       정산봇은 Slack 워크스페이스 내에서 팀원들 간의 정산을 간편하게 도와주는 봇 서비스입니다.
-      회식, 여행, 선물 등 다양한 상황에서 발생하는 복잡한 정산 과정을 Slack 메시지만으로 손쉽게 진행할 수 있습니다.
+      회식, 선물, 식사 등 다양한 상황에서 발생하는 복잡한 정산 과정을 Slack 메시지만으로 손쉽게 진행할 수 있습니다.
 
-      Slack API를 활용하여 개발되었으며, 직관적인 명령어 체계와 사용자 친화적인 인터페이스를 구현했습니다.
-      Node.js와 Express로 서버를 구축하고, MongoDB를 데이터베이스로 활용하여 정산 내역을 안전하게 관리합니다.
+      Slack API와 Bolt.js 프레임워크를 활용하여 개발되었으며, 사용자가 '/계좌등록' 명령어를 통해 자신의 계좌를 안전하게 등록하고
+      '/정산하기' 명령어로 특정 유저와 1/N로 정산 요청을 할 수 있습니다. 정산 요청 시 자동으로 대상 유저에게 DM을 보내
+      요청자의 계좌 정보와 함께 토스 송금 페이지로 바로 이동할 수 있는 링크를 제공합니다.
       
-      복잡한 더치페이 계산, 분할 결제, 잔액 관리 등 다양한 정산 시나리오를 지원하며,
-      정산 내역을 시각적으로 명확하게 보여주어 팀원 간 금전적 문제를 투명하게 해결할 수 있습니다.
+      Node.js 기반 서버는 nginx를 통해 홈서버에 배포되었으며, MongoDB를 데이터베이스로 활용하여 
+      사용자의 계좌 정보를 암호화하여 안전하게 저장하고 정산 내역을 체계적으로 관리합니다.
+      반복적이고 귀찮은 정산 과정을 자동화하여 팀 협업 시 발생하는 금전적 문제를 
+      투명하고 효율적으로 해결할 수 있도록 돕습니다.
     `,
     features: [
-      '간편한 정산 명령어 시스템',
-      '자동 더치페이 및 분할 정산 계산',
-      '정산 내역 시각화 및 관리',
-      '정산 알림 및 리마인더 기능',
-      '팀별 정산 그룹 관리',
+      "'/계좌등록' 명령어로 계좌 정보 암호화 저장",
+      "'/정산하기' 명령어로 특정 유저와 1/N 정산 요청",
+      "정산 요청 시 자동 DM 발송 기능",
+      "토스 송금 페이지 자동 연동",
+      "암호화된 계좌 정보 관리 시스템",
     ],
   },
   {
-    id: 'may-be-clean',
-    title: '깨끗해질지도',
-    description: '소비로서 친환경을 실천할 수 있게 도와주는 서비스',
+    id: "may-be-clean",
+    title: "깨끗해질지도",
+    description: "소비로서 친환경을 실천할 수 있게 도와주는 서비스",
     image: mayBeCleanImg,
-    isVertical: true, // 세로로 긴 이미지
-    tech: ['Flutter', 'iOS', 'Android', 'Firebase', 'Google Maps API'],
+    isVertical: true,
+    tech: ["Flutter", "iOS", "Android", "Firebase", "Google Maps API"],
     links: {
-      ios: 'https://apps.apple.com/kr/app/%EA%B9%A8%EB%81%97%ED%95%B4%EC%A7%88%EC%A7%80%EB%8F%84/id6449622294',
-      android: 'https://play.google.com/store/apps/details?id=com.may_be_clean.plant',
-      github: 'https://github.com/May-Be-Clean',
+      ios: "https://apps.apple.com/kr/app/%EA%B9%A8%EB%81%97%ED%95%B4%EC%A7%88%EC%A7%80%EB%8F%84/id6449622294",
+      android: "https://play.google.com/store/apps/details?id=com.may_be_clean.plant",
+      github: "https://github.com/May-Be-Clean",
     },
     longDescription: `
       깨끗해질지도는 친환경 소비를 실천할 수 있는 장소들을 지도 기반으로 제공하는 모바일 애플리케이션입니다.
@@ -123,21 +126,21 @@ export const projects: Project[] = [
       친환경 소비에 대한 정보와 팁을 제공하여 사용자들의 환경 의식을 높이는 데 기여하고 있습니다.
     `,
     features: [
-      '지도 기반 친환경 장소 탐색',
-      '카테고리 및 거리별 필터링',
-      '사용자 리뷰 및 평가 시스템',
-      '새로운 친환경 장소 등록 기능',
-      '친환경 소비 가이드 및 정보 제공',
+      "지도 기반 친환경 장소 탐색",
+      "카테고리 및 거리별 필터링",
+      "사용자 리뷰 및 평가 시스템",
+      "새로운 친환경 장소 등록 기능",
+      "친환경 소비 가이드 및 정보 제공",
     ],
   },
   {
-    id: 'nightary',
-    title: 'Nightary',
-    description: '수면 상태를 배터리 형태로 보여주는 수면 측정 트래커',
+    id: "nightary",
+    title: "Nightary",
+    description: "수면 상태를 배터리 형태로 보여주는 수면 측정 트래커",
     image: nightaryImg,
-    tech: ['Flutter', 'Health API', 'Firebase', 'Local Storage'],
+    tech: ["Flutter", "Health API", "Firebase", "Local Storage"],
     links: {
-      github: 'https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile',
+      github: "https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile",
     },
     longDescription: `
       Nightary는 사용자의 수면 패턴을 분석하고 수면 상태를 배터리 형태로 시각화하여 보여주는 수면 측정 트래커 앱입니다.
@@ -151,21 +154,21 @@ export const projects: Project[] = [
       사용자가 규칙적인 수면 습관을 유지할 수 있도록 도와줍니다.
     `,
     features: [
-      '배터리 형태의 직관적인 수면 상태 시각화',
-      '수면 패턴 분석 및 통계',
-      '맞춤형 수면 개선 조언',
-      '수면 목표 설정 및 알림',
-      '야간 모드 및 수면 환경 최적화 기능',
+      "배터리 형태의 직관적인 수면 상태 시각화",
+      "수면 패턴 분석 및 통계",
+      "맞춤형 수면 개선 조언",
+      "수면 목표 설정 및 알림",
+      "야간 모드 및 수면 환경 최적화 기능",
     ],
   },
   {
-    id: 'da-it-ssu',
-    title: '다잇슈',
-    description: '숭실대 학생들을 위한 모든 서비스',
+    id: "da-it-ssu",
+    title: "다잇슈",
+    description: "숭실대 학생들을 위한 모든 서비스",
     image: daitssuImg,
-    tech: ['Flutter', 'Firebase', 'Node.js', 'RESTful API'],
+    tech: ["Flutter", "Firebase", "Node.js", "RESTful API"],
     links: {
-      github: 'https://github.com/DaITssu',
+      github: "https://github.com/DaITssu",
     },
     longDescription: `
       다잇슈는 숭실대학교 학생들을 위한 종합 서비스 앱으로, 학교 생활에 필요한 다양한 기능을 한 곳에 모았습니다.
@@ -178,23 +181,22 @@ export const projects: Project[] = [
       학생들의 캠퍼스 라이프를 더욱 편리하게 만들어주는 다양한 기능을 지속적으로 개발하고 있습니다.
     `,
     features: [
-      '실시간 학사 일정 및 공지사항 알림',
-      '강의 정보 검색 및 강의평가',
-      '학교 식당 메뉴 및 운영 시간 정보',
-      '캠퍼스 지도 및 시설 안내',
-      '학생 커뮤니티 및 정보 공유 기능',
+      "실시간 학사 일정 및 공지사항 알림",
+      "강의 정보 검색 및 강의평가",
+      "학교 식당 메뉴 및 운영 시간 정보",
+      "캠퍼스 지도 및 시설 안내",
+      "학생 커뮤니티 및 정보 공유 기능",
     ],
   },
   {
-    id: 'easy-image-downloader',
-    title: 'Easy Image Downloader',
-    description: '이미지 손쉽게 다운로드 할 수 있는 Chrome Extension',
+    id: "easy-image-downloader",
+    title: "Easy Image Downloader",
+    description: "이미지 손쉽게 다운로드 할 수 있는 Chrome Extension",
     image: easyImageDownloaderImg,
-    tech: ['JavaScript', 'Chrome Extension API', 'HTML', 'CSS'],
+    tech: ["JavaScript", "Chrome Extension API", "HTML", "CSS"],
     links: {
-      store:
-        'https://chromewebstore.google.com/detail/easy-image-downloader/lnldmkhkjnkcfndnhibbnaohplecldmb?authuser=0&hl=ko',
-      youtube: 'https://www.youtube.com/watch?v=iLoTBTHKjzk&ab_channel=HALFMOON',
+      store: "https://chromewebstore.google.com/detail/easy-image-downloader/lnldmkhkjnkcfndnhibbnaohplecldmb?authuser=0&hl=ko",
+      youtube: "https://www.youtube.com/watch?v=iLoTBTHKjzk&ab_channel=HALFMOON",
     },
     longDescription: `
       Easy Image Downloader는 웹 페이지 내의 이미지를 손쉽게 다운로드할 수 있는 크롬 확장 프로그램입니다.
@@ -208,22 +210,22 @@ export const projects: Project[] = [
       사용자가 필요에 맞게 이미지를 관리할 수 있도록 도와줍니다.
     `,
     features: [
-      '원클릭 이미지 다운로드',
-      '페이지 내 모든 이미지 자동 감지',
-      '이미지 해상도 및 크기별 필터링',
-      '다중 이미지 일괄 다운로드',
-      '맞춤형 저장 경로 및 파일명 설정',
+      "원클릭 이미지 다운로드",
+      "페이지 내 모든 이미지 자동 감지",
+      "이미지 해상도 및 크기별 필터링",
+      "다중 이미지 일괄 다운로드",
+      "맞춤형 저장 경로 및 파일명 설정",
     ],
   },
   {
-    id: 'qr-maker',
-    title: 'QR Maker',
-    description: '광고 없는 QR코드 생성기',
+    id: "qr-maker",
+    title: "QR Maker",
+    description: "광고 없는 QR코드 생성기",
     image: qrMakerImg,
-    tech: ['React', 'Next.js', 'QR Code API', 'PWA'],
+    tech: ["React", "Next.js", "QR Code API", "PWA"],
     links: {
-      web: 'https://www.qrmaker.site/',
-      github: 'https://github.com/halfmoon-mind/qr-maker',
+      web: "https://www.qrmaker.site/",
+      github: "https://github.com/halfmoon-mind/qr-maker",
     },
     longDescription: `
       QR Maker는 불필요한 광고 없이 빠르고 쉽게 QR 코드를 생성할 수 있는 웹 애플리케이션입니다.
@@ -237,22 +239,22 @@ export const projects: Project[] = [
       전문적인 QR 코드 생성에 필요한 다양한 기능을 무료로 제공합니다.
     `,
     features: [
-      '다양한 데이터 유형 QR 코드 생성 (URL, 텍스트, 연락처, Wi-Fi 등)',
-      '커스텀 색상 및 디자인 옵션',
-      '고해상도 이미지 다운로드 (PNG, SVG, PDF)',
-      '오프라인 지원 (PWA)',
-      '광고 없는 깨끗한 사용자 경험',
+      "다양한 데이터 유형 QR 코드 생성 (URL, 텍스트, 연락처, Wi-Fi 등)",
+      "커스텀 색상 및 디자인 옵션",
+      "고해상도 이미지 다운로드 (PNG, SVG, PDF)",
+      "오프라인 지원 (PWA)",
+      "광고 없는 깨끗한 사용자 경험",
     ],
   },
   {
-    id: 'multiple-window-connection',
-    title: 'Multiple Window Connection',
-    description: '여러 개의 웹브라우저가 동적으로 연결되는 시스템',
+    id: "multiple-window-connection",
+    title: "Multiple Window Connection",
+    description: "여러 개의 웹브라우저가 동적으로 연결되는 시스템",
     image: multiWindowImg,
-    tech: ['JavaScript', 'WebSocket', 'HTML5', 'CSS3'],
+    tech: ["JavaScript", "WebSocket", "HTML5", "CSS3"],
     links: {
-      web: 'https://mutliple-windows.s3.ap-northeast-2.amazonaws.com/index.html',
-      github: 'https://github.com/halfmoon-mind/multiple-window-connection',
+      web: "https://mutliple-windows.s3.ap-northeast-2.amazonaws.com/index.html",
+      github: "https://github.com/halfmoon-mind/multiple-window-connection",
     },
     longDescription: `
       Multiple Window Connection은 여러 웹 브라우저 창이 실시간으로 데이터를 주고받을 수 있는 시스템입니다.
@@ -267,30 +269,30 @@ export const projects: Project[] = [
       가능성을 보여주는 실험적 프로젝트입니다.
     `,
     features: [
-      '실시간 창 간 데이터 동기화',
-      '드래그 앤 드롭으로 창 간 콘텐츠 이동',
-      '자동 창 배치 및 관리',
-      '다중 사용자 지원',
-      '화면 분할 및 동기화 뷰',
+      "실시간 창 간 데이터 동기화",
+      "드래그 앤 드롭으로 창 간 콘텐츠 이동",
+      "자동 창 배치 및 관리",
+      "다중 사용자 지원",
+      "화면 분할 및 동기화 뷰",
     ],
   },
 ];
 
 const getLinkIcon = (linkType: string) => {
   switch (linkType) {
-    case 'github':
+    case "github":
       return <Github size={20} />;
-    case 'ios':
+    case "ios":
       return <Smartphone size={20} />;
-    case 'android':
+    case "android":
       return <Smartphone size={20} />;
-    case 'web':
+    case "web":
       return <Monitor size={20} />;
-    case 'store':
+    case "store":
       return <Store size={20} />;
-    case 'slack':
+    case "slack":
       return <ExternalLink size={20} />;
-    case 'youtube':
+    case "youtube":
       return <Youtube size={20} />;
     default:
       return <ExternalLink size={20} />;
@@ -299,40 +301,30 @@ const getLinkIcon = (linkType: string) => {
 
 const getLinkLabel = (linkType: string) => {
   switch (linkType) {
-    case 'github':
-      return 'GitHub';
-    case 'ios':
-      return 'iOS';
-    case 'android':
-      return 'Android';
-    case 'web':
-      return '웹사이트';
-    case 'store':
-      return '스토어';
-    case 'slack':
-      return 'Slack';
-    case 'youtube':
-      return '데모 영상';
+    case "github":
+      return "GitHub";
+    case "ios":
+      return "iOS";
+    case "android":
+      return "Android";
+    case "web":
+      return "웹사이트";
+    case "store":
+      return "스토어";
+    case "slack":
+      return "Slack";
+    case "youtube":
+      return "데모 영상";
     default:
-      return '링크';
+      return "링크";
   }
 };
 
 const Projects = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto"
-    >
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto">
       <div className="space-y-12">
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-center space-y-4"
-        >
+        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="text-center space-y-4">
           <h1 className="text-4xl font-bold">Projects</h1>
           <p className="text-gray-400">제가 작업한 주요 프로젝트들입니다</p>
         </motion.div>
@@ -349,7 +341,7 @@ const Projects = () => {
               <Link to={`/projects/${project.id}`} className="block">
                 <div
                   className={`relative overflow-hidden h-48 flex items-center justify-center ${
-                    project.id === 'pickeebus' ? 'bg-white' : 'bg-gray-700/30'
+                    project.id === "pickeebus" ? "bg-white" : "bg-gray-700/30"
                   }`}
                   style={project.containerStyle}
                 >
@@ -357,7 +349,7 @@ const Projects = () => {
                     src={project.image}
                     alt={project.title}
                     className={`transform group-hover:scale-110 transition-transform duration-500 ${
-                      project.isVertical ? 'h-full object-contain' : 'w-full object-contain'
+                      project.isVertical ? "h-full object-contain" : "w-full object-contain"
                     }`}
                     style={project.imageStyle}
                   />
