@@ -84,8 +84,18 @@ const ProjectDetail = () => {
         transition={{ delay: 0.2 }}
         className="space-y-8"
       >
-        <div className="relative h-[400px] rounded-xl overflow-hidden bg-white/5" style={project.containerStyle}>
-          <img src={project.image} alt={project.title} className="p-4" style={project.imageStyle} />
+        <div
+          className={`relative h-[400px] rounded-xl overflow-hidden ${
+            project.id === 'pickeebus' ? 'bg-white' : 'bg-white/5'
+          }`}
+          style={project.containerStyle}
+        >
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-contain p-4"
+            style={project.imageStyle}
+          />
         </div>
 
         <div className="space-y-6">

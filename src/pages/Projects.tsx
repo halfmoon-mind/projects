@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Github, Smartphone, Monitor, Store, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// 이미지 임포트 추가
+import nightaryImg from '../assets/nightary.png';
+import mayBeCleanImg from '../assets/may_be_clean.png';
+import easyImageDownloaderImg from '../assets/easy_image_downloader.png';
+import pickiverseImg from '../assets/pickiverse.png';
+
 // 프로젝트 타입 정의
 interface Project {
   id: string;
@@ -11,6 +17,7 @@ interface Project {
   image: string;
   imageStyle?: CSSProperties;
   containerStyle?: CSSProperties;
+  isVertical?: boolean; // 세로로 긴 이미지인지 여부
   tech: string[];
   links: Record<string, string>;
   longDescription: string;
@@ -22,8 +29,8 @@ export const projects: Project[] = [
     id: 'pickeebus',
     title: '피키버스',
     description: '이상형 월드컵 플랫폼',
-    image:
-      'https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/38/99/af/3899af0d-fd1c-2ca8-3a78-ef3dc283e3f0/AppIcon-0-1x_U007emarketing-0-7-0-sRGB-85-220.png/1200x630wa.png',
+    image: pickiverseImg,
+    containerStyle: { backgroundColor: 'white' },
     tech: ['Flutter', 'iOS', 'Android', 'Web', 'Firebase'],
     links: {
       ios: 'https://apps.apple.com/kr/app/%ED%94%BC%ED%82%A4%EB%B2%84%EC%8A%A4/id6742077036?uo=2',
@@ -79,8 +86,8 @@ export const projects: Project[] = [
     id: 'eco-map',
     title: '깨끗해질지도',
     description: '소비로서 친환경을 실천할 수 있게 도와주는 서비스',
-    image:
-      'https://play-lh.googleusercontent.com/K6yVlE8BxHhnbM8bxVcmZgQw_yKVWJhFAFTNhM8iQX9ixTEQKt5VzibLOVTEZKwc5KYb=w480-h960-rw',
+    image: mayBeCleanImg,
+    isVertical: true, // 세로로 긴 이미지
     tech: ['Flutter', 'iOS', 'Android', 'Firebase', 'Google Maps API'],
     links: {
       ios: 'https://apps.apple.com/kr/app/%EA%B9%A8%EB%81%97%ED%95%B4%EC%A7%88%EC%A7%80%EB%8F%84/id6449622294',
@@ -109,7 +116,7 @@ export const projects: Project[] = [
     id: 'nightary',
     title: 'Nightary',
     description: '수면 상태를 배터리 형태로 보여주는 수면 측정 트래커',
-    image: 'https://raw.githubusercontent.com/GDSC-snowflowerthon/Nightary-team12-mobile/main/assets/MainPage.png',
+    image: nightaryImg,
     tech: ['Flutter', 'Health API', 'Firebase', 'Local Storage'],
     links: {
       github: 'https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile',
@@ -164,22 +171,7 @@ export const projects: Project[] = [
     id: 'easy-image-downloader',
     title: 'Easy Image Downloader',
     description: '이미지 손쉽게 다운로드 할 수 있는 Chrome Extension',
-    image:
-      'https://lh3.googleusercontent.com/bDGF9m9AZa-ZJPgGTrhgyyvIZMsi5eCW9qAkuJHpb85jvvUCfeF6lEbxaFH27SWiS19QL5-EboXA152lPbRD6qyE=s120',
-    imageStyle: {
-      objectFit: 'contain' as const,
-      maxHeight: '80%',
-      maxWidth: '80%',
-    },
-    containerStyle: {
-      backgroundColor: 'rgba(128, 128, 128, 0.3)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '1rem',
-      height: '100%',
-      width: '100%',
-    },
+    image: easyImageDownloaderImg,
     tech: ['JavaScript', 'Chrome Extension API', 'HTML', 'CSS'],
     links: {
       store:
@@ -338,11 +330,18 @@ const Projects = () => {
               className="bg-white/5 rounded-xl overflow-hidden group"
             >
               <Link to={`/projects/${project.id}`} className="block">
-                <div className="relative overflow-hidden h-48" style={project.containerStyle}>
+                <div
+                  className={`relative overflow-hidden h-48 flex items-center justify-center ${
+                    project.id === 'pickeebus' ? 'bg-white' : 'bg-gray-700/30'
+                  }`}
+                  style={project.containerStyle}
+                >
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="transform group-hover:scale-110 transition-transform duration-500"
+                    className={`transform group-hover:scale-110 transition-transform duration-500 ${
+                      project.isVertical ? 'h-full object-contain' : 'w-full object-contain'
+                    }`}
                     style={project.imageStyle}
                   />
                 </div>
