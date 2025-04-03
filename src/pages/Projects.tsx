@@ -11,6 +11,7 @@ import pickiverseImg from '../assets/pickiverse.png';
 import payBotImg from '../assets/pay_bot.png';
 import qrMakerImg from '../assets/qr_maker.png';
 import multiWindowImg from '../assets/multi_window.png';
+import daitssuImg from '../assets/daitssu.png';
 
 // 프로젝트 타입 정의
 interface Project {
@@ -161,7 +162,7 @@ export const projects: Project[] = [
     id: 'da-it-ssu',
     title: '다잇슈',
     description: '숭실대 학생들을 위한 모든 서비스',
-    image: 'https://avatars.githubusercontent.com/u/110601808?s=200&v=4',
+    image: daitssuImg,
     tech: ['Flutter', 'Firebase', 'Node.js', 'RESTful API'],
     links: {
       github: 'https://github.com/DaITssu',
