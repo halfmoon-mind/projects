@@ -9,6 +9,8 @@ import mayBeCleanImg from '../assets/may_be_clean.png';
 import easyImageDownloaderImg from '../assets/easy_image_downloader.png';
 import pickiverseImg from '../assets/pickiverse.png';
 import payBotImg from '../assets/pay_bot.png';
+import qrMakerImg from '../assets/qr_maker.png';
+import multiWindowImg from '../assets/multi_window.png';
 
 // 프로젝트 타입 정의
 interface Project {
@@ -202,7 +204,7 @@ export const projects: Project[] = [
     id: 'qr-maker',
     title: 'QR Maker',
     description: '광고 없는 QR코드 생성기',
-    image: 'https://www.qrmaker.site/og-image.png',
+    image: qrMakerImg,
     tech: ['React', 'Next.js', 'QR Code API', 'PWA'],
     links: {
       web: 'https://www.qrmaker.site/',
@@ -231,8 +233,7 @@ export const projects: Project[] = [
     id: 'window-connection',
     title: 'Multiple Window Connection',
     description: '여러 개의 웹브라우저가 동적으로 연결되는 시스템',
-    image:
-      'https://cdn.dribbble.com/users/267805/screenshots/3669190/media/14a6ae273269b3c49adc3f15c006c9a4.png?resize=400x300&vertical=center',
+    image: multiWindowImg,
     tech: ['JavaScript', 'WebSocket', 'HTML5', 'CSS3'],
     links: {
       web: 'https://mutliple-windows.s3.ap-northeast-2.amazonaws.com/index.html',
