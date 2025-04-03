@@ -1,23 +1,25 @@
-import React from "react";
-import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowLeft, Github, ExternalLink, Smartphone, Monitor, Store, Code } from "lucide-react";
-import { projects } from "./Projects";
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowLeft, Github, ExternalLink, Smartphone, Monitor, Store, Code, Youtube } from 'lucide-react';
+import { projects } from './Projects';
 
 const getLinkIcon = (linkType: string) => {
   switch (linkType) {
-    case "github":
+    case 'github':
       return <Github size={20} />;
-    case "ios":
+    case 'ios':
       return <Smartphone size={20} />;
-    case "android":
+    case 'android':
       return <Smartphone size={20} />;
-    case "web":
+    case 'web':
       return <Monitor size={20} />;
-    case "store":
+    case 'store':
       return <Store size={20} />;
-    case "slack":
+    case 'slack':
       return <ExternalLink size={20} />;
+    case 'youtube':
+      return <Youtube size={20} />;
     default:
       return <ExternalLink size={20} />;
   }
@@ -25,20 +27,22 @@ const getLinkIcon = (linkType: string) => {
 
 const getLinkLabel = (linkType: string) => {
   switch (linkType) {
-    case "github":
-      return "GitHub 저장소";
-    case "ios":
-      return "iOS 앱 다운로드";
-    case "android":
-      return "Android 앱 다운로드";
-    case "web":
-      return "웹사이트 방문";
-    case "store":
-      return "스토어 방문";
-    case "slack":
-      return "Slack 마켓플레이스";
+    case 'github':
+      return 'GitHub 저장소';
+    case 'ios':
+      return 'iOS 앱 다운로드';
+    case 'android':
+      return 'Android 앱 다운로드';
+    case 'web':
+      return '웹사이트 방문';
+    case 'store':
+      return '스토어 방문';
+    case 'slack':
+      return 'Slack 마켓플레이스';
+    case 'youtube':
+      return '데모 영상 보기';
     default:
-      return "링크 방문";
+      return '링크 방문';
   }
 };
 
@@ -60,15 +64,28 @@ const ProjectDetail = () => {
   }
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 px-4 max-w-4xl mx-auto pb-20">
-      <Link to="/projects" className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors mb-8">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen pt-20 px-4 max-w-4xl mx-auto pb-20"
+    >
+      <Link
+        to="/projects"
+        className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors mb-8"
+      >
         <ArrowLeft size={20} />
         <span>프로젝트 목록으로 돌아가기</span>
       </Link>
 
-      <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="space-y-8">
-        <div className="relative h-[400px] rounded-xl overflow-hidden bg-white/5">
-          <img src={project.image} alt={project.title} className="w-full h-full object-contain p-4" />
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        className="space-y-8"
+      >
+        <div className="relative h-[400px] rounded-xl overflow-hidden bg-white/5" style={project.containerStyle}>
+          <img src={project.image} alt={project.title} className="p-4" style={project.imageStyle} />
         </div>
 
         <div className="space-y-6">
