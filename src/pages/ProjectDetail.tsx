@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Github, ExternalLink, Smartphone, Monitor, Store, Code, Youtube } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, Smartphone, Monitor, Store, Code, Youtube, Brain } from 'lucide-react';
 import { projects } from './Projects';
 
 const getLinkIcon = (linkType: string) => {
@@ -139,6 +139,16 @@ const ProjectDetail = () => {
               <h2 className="text-2xl font-semibold">프로젝트 개요</h2>
               <div className="text-gray-300 whitespace-pre-line leading-relaxed">{project.longDescription}</div>
             </div>
+
+            {project.challenges && (
+              <div className="bg-white/5 rounded-xl p-8 mt-8 space-y-6">
+                <h2 className="text-2xl font-semibold flex items-center gap-2">
+                  <Brain size={24} />
+                  개발 과정에서의 고민들
+                </h2>
+                <div className="text-gray-300 whitespace-pre-line leading-relaxed">{project.challenges}</div>
+              </div>
+            )}
 
             <div className="bg-white/5 rounded-xl p-8 mt-8">
               <h2 className="text-2xl font-semibold mb-6">주요 기능</h2>

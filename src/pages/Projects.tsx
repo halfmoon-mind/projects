@@ -25,11 +25,12 @@ interface Project {
   links: Record<string, string>;
   longDescription: string;
   features: string[];
+  challenges?: string; // 프로젝트를 진행하면서 겪은 고민과 해결 과정
 }
 
 export const projects: Project[] = [
   {
-    id: 'pickeebus',
+    id: 'pickiverse',
     title: '피키버스',
     description: '이상형 월드컵 플랫폼',
     image: pickiverseImg,
@@ -50,6 +51,19 @@ export const projects: Project[] = [
       부드러운 애니메이션과 직관적인 인터페이스로 사용자들이 쉽게 접근하고 이용할 수 있도록 설계했으며,
       사용자들의 피드백을 지속적으로 반영하여 기능을 개선하고 있습니다.
     `,
+    challenges: `
+      피키버스를 개발하면서 가장 큰 고민은 다양한 플랫폼(iOS, Android, 웹)에서 일관된 사용자 경험을 제공하는 것이었습니다.
+      특히 이상형 월드컵의 핵심인 이미지 전환 애니메이션을 모든 플랫폼에서 부드럽게 구현하는 데 많은 시간을 투자했습니다.
+      
+      초기에는 성능 최적화 문제로 웹에서 이미지 로딩 속도와 애니메이션 프레임 드롭 현상이 발생했습니다.
+      이를 해결하기 위해 이미지 프리로딩, 캐싱 전략, 그리고 GPU 가속을 활용한 렌더링 최적화를 적용했습니다.
+      
+      또한 사용자 생성 콘텐츠를 관리하는 과정에서 부적절한 콘텐츠 필터링 문제가 있었습니다.
+      이를 위해 Firebase Cloud Functions를 활용한 이미지 분석 및 필터링 시스템을 구축하여 해결했습니다.
+      
+      마지막으로 멀티플랫폼 배포 과정에서 각 플랫폼별 요구사항과 제약조건을 맞추는 것이 도전적이었습니다.
+      특히 iOS App Store와 Google Play Store의 심사 기준을 모두 충족시키기 위해 여러 차례 앱 구조를 재설계해야 했습니다.
+    `,
     features: [
       '다양한 이상형 월드컵 템플릿 제공',
       '사용자 커스텀 이상형 월드컵 생성',
@@ -59,7 +73,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'settlement-bot',
+    id: 'paybot',
     title: '정산봇',
     description: 'Slack 봇으로 정산을 간편하게',
     image: payBotImg,
@@ -86,7 +100,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'eco-map',
+    id: 'may-be-clean',
     title: '깨끗해질지도',
     description: '소비로서 친환경을 실천할 수 있게 도와주는 서비스',
     image: mayBeCleanImg,
@@ -144,7 +158,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'doitssue',
+    id: 'da-it-ssu',
     title: '다잇슈',
     description: '숭실대 학생들을 위한 모든 서비스',
     image: 'https://avatars.githubusercontent.com/u/110601808?s=200&v=4',
@@ -230,7 +244,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: 'window-connection',
+    id: 'multiple-window-connection',
     title: 'Multiple Window Connection',
     description: '여러 개의 웹브라우저가 동적으로 연결되는 시스템',
     image: multiWindowImg,
