@@ -8,6 +8,7 @@ import nightaryImg from '../assets/nightary.png';
 import mayBeCleanImg from '../assets/may_be_clean.png';
 import easyImageDownloaderImg from '../assets/easy_image_downloader.png';
 import pickiverseImg from '../assets/pickiverse.png';
+import payBotImg from '../assets/pay_bot.png';
 
 // 프로젝트 타입 정의
 interface Project {
@@ -59,7 +60,7 @@ export const projects: Project[] = [
     id: 'settlement-bot',
     title: '정산봇',
     description: 'Slack 봇으로 정산을 간편하게',
-    image: 'https://a.slack-edge.com/05078/marketing/img/meta/slack_hash_256.png',
+    image: payBotImg,
     tech: ['Slack API', 'Node.js', 'Express', 'MongoDB'],
     links: {
       slack: 'https://slack.com/marketplace/A087W0YSC7N-',
