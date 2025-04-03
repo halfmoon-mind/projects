@@ -324,7 +324,7 @@ const Projects = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen pt-20 px-4 max-w-6xl mx-auto"
+      className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto"
     >
       <div className="space-y-12">
         <motion.div
