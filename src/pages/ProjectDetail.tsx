@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { ArrowLeft, Github, ExternalLink, Smartphone, Monitor, Store, Code, Youtube, Brain } from "lucide-react";
 import { projects } from "./Projects";
 
@@ -50,12 +49,17 @@ const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   if (!project) {
     return (
-      <div className="min-h-screen pt-20 px-4 flex items-center justify-center">
+      <div className="min-h-screen pt-20 px-4 flex items-center justify-center bg-[#111111]">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">프로젝트를 찾을 수 없습니다</h1>
-          <Link to="/projects" className="text-blue-400 hover:text-blue-300">
+          <h1 className="text-3xl font-medium tracking-tight mb-4 text-white">프로젝트를 찾을 수 없습니다</h1>
+          <Link to="/projects" className="text-blue-400 hover:text-blue-300 font-medium transition-all duration-300 inline-flex items-center">
+            <ArrowLeft size={16} className="mr-2" />
             프로젝트 목록으로 돌아가기
           </Link>
         </div>
@@ -64,93 +68,117 @@ const ProjectDetail = () => {
   }
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 px-4 max-w-4xl mx-auto pb-20">
-      <Link to="/projects" className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors mb-8">
-        <ArrowLeft size={20} />
-        <span>프로젝트 목록으로 돌아가기</span>
-      </Link>
+    <div className="min-h-screen bg-[#111111] overflow-hidden">
+      {/* 헤더 영역 */}
+      <header className="fixed top-0 left-0 right-0 z-10 backdrop-blur-md bg-black/70 border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+          <Link to="/projects" className="group inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-all duration-300">
+            <ArrowLeft size={18} />
+            <span className="font-medium">프로젝트 목록</span>
+          </Link>
 
-      <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="space-y-8">
+          <h1 className="text-white text-lg font-medium">{project.title}</h1>
+        </div>
+      </header>
+
+      {/* 이미지 섹션 (축소됨) */}
+      <div className="w-full pt-28 pb-10 px-6 bg-black">
         <div
-          className={`relative h-[400px] rounded-xl overflow-hidden ${project.id === "pickeebus" ? "bg-white" : "bg-white/5"}`}
+          className={`relative w-full max-w-3xl h-[300px] mx-auto rounded-2xl overflow-hidden ${
+            project.id === "pickiverse" ? "bg-white" : "bg-white/5"
+          } border border-white/10 shadow-xl`}
           style={project.containerStyle}
         >
-          <img src={project.image} alt={project.title} className="w-full h-full object-contain p-4" style={project.imageStyle} />
+          <img src={project.image} alt={project.title} className="w-full h-full object-contain p-6" style={project.imageStyle} />
         </div>
+      </div>
 
-        <div className="space-y-6">
-          <div>
-            <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-            <p className="text-gray-300 text-xl mb-6">{project.description}</p>
-          </div>
+      {/* 내용 섹션 */}
+      <div className="bg-black min-h-screen pb-32">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="grid grid-cols-1 gap-y-20">
+            {/* 프로젝트 타이틀과 설명 */}
+            <div className="pt-10">
+              <h1 className="text-5xl font-bold mb-5 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">{project.title}</h1>
+              <p className="text-gray-300 text-xl font-light leading-relaxed">{project.description}</p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {project.links &&
-              Object.entries(project.links).map(([linkType, url], linkIndex) => (
-                <a
-                  key={linkIndex}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-2 bg-white/10 px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
-                >
-                  {getLinkIcon(linkType)}
-                  <span>{getLinkLabel(linkType)}</span>
-                </a>
-              ))}
-          </div>
+            {/* 링크 섹션 */}
+            {project.links && Object.keys(project.links).length > 0 && (
+              <div>
+                <h2 className="text-xl font-medium text-white mb-6">링크</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {Object.entries(project.links).map(([linkType, url], linkIndex) => (
+                    <a
+                      key={linkIndex}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 bg-white/5 px-6 py-4 rounded-xl border border-white/10 hover:border-blue-500/50 hover:bg-blue-900/10 transition-all duration-300"
+                    >
+                      <div className="text-blue-400">{getLinkIcon(linkType)}</div>
+                      <span className="text-white font-medium">{getLinkLabel(linkType)}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
 
-          <div className="prose prose-invert max-w-none">
-            <div className="bg-white/5 rounded-xl p-5 pt-4 space-y-3">
-              <h2 className="text-2xl font-semibold flex items-center gap-2">
-                <Code size={24} />
+            {/* 기술 스택 */}
+            <div className="space-y-6">
+              <h2 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
+                <Code size={20} className="text-blue-400" />
                 기술 스택
               </h2>
               <div className="flex flex-wrap gap-3">
                 {project.tech.map((tech, index) => (
-                  <span key={index} className="bg-white/10 px-4 py-2 rounded-full text-sm font-medium">
+                  <span
+                    key={index}
+                    className="bg-white/5 border border-white/10 px-4 py-2 rounded-full text-sm font-medium text-white hover:bg-blue-900/20 hover:border-blue-500/50 transition-colors duration-300"
+                  >
                     {tech}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white/5 rounded-xl p-5 pt-4 mt-4 space-y-3">
-              <h2 className="text-2xl font-semibold">프로젝트 개요</h2>
-              <div className="text-gray-300 whitespace-pre-line leading-relaxed">{project.longDescription}</div>
+            {/* 프로젝트 개요 */}
+            <div className="space-y-6">
+              <h2 className="text-xl font-medium text-white mb-2">프로젝트 개요</h2>
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 text-gray-300 whitespace-pre-line leading-relaxed shadow-lg">
+                {project.longDescription}
+              </div>
             </div>
 
+            {/* 개발 과정에서의 고민들 */}
             {project.challenges && (
-              <div className="bg-white/5 rounded-xl p-5 pt-4 mt-4 space-y-3">
-                <h2 className="text-2xl font-semibold flex items-center gap-2">
-                  <Brain size={24} />
+              <div className="space-y-6">
+                <h2 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
+                  <Brain size={20} className="text-blue-400" />
                   개발 과정에서의 고민들
                 </h2>
-                <div className="text-gray-300 whitespace-pre-line leading-relaxed">{project.challenges}</div>
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10 text-gray-300 whitespace-pre-line leading-relaxed shadow-lg">
+                  {project.challenges}
+                </div>
               </div>
             )}
 
-            <div className="bg-white/5 rounded-xl p-5 pt-4 mt-4">
-              <h2 className="text-2xl font-semibold mb-3">주요 기능</h2>
-              <ul className="space-y-3">
+            {/* 주요 기능 */}
+            <div className="space-y-6">
+              <h2 className="text-xl font-medium text-white mb-6">주요 기능</h2>
+              <ul className="space-y-5">
                 {project.features.map((feature, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.3 + index * 0.1 }}
-                    className="flex items-center space-x-3 text-gray-300"
-                  >
-                    <span className="w-2 h-2 bg-white rounded-full" />
-                    <span>{feature}</span>
-                  </motion.li>
+                  <li key={index} className="flex items-start space-x-4 text-gray-300 group">
+                    <div className="w-2 h-2 mt-[0.6rem] bg-blue-400 rounded-full flex-shrink-0" />
+                    <span className="group-hover:text-white transition-colors duration-300">{feature}</span>
+                  </li>
                 ))}
               </ul>
             </div>
           </div>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 

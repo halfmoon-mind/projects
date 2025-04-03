@@ -351,7 +351,7 @@ const Projects = () => {
               <Link to={`/projects/${project.id}`} className="block">
                 <div
                   className={`relative overflow-hidden h-48 flex items-center justify-center ${
-                    project.id === "pickeebus" ? "bg-white" : "bg-gray-700/30"
+                    project.id === "pickiverse" ? "bg-white" : "bg-gray-700/30"
                   }`}
                   style={project.containerStyle}
                 >
