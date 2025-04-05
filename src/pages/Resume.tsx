@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import Meta from "../components/Meta";
 
 // 애니메이션 변수
 const containerVariants = {
@@ -262,335 +263,344 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
   };
 
   return (
-    <div className="min-h-screen bg-[#121212] text-white py-24 px-5 sm:px-8 overflow-hidden">
-      <div className="w-full max-w-5xl mx-auto relative">
-        {/* 배경 요소들 */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.07 }}
-            transition={{ duration: 2 }}
-            className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-white blur-3xl"
-          />
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.04 }}
-            transition={{ duration: 2, delay: 0.5 }}
-            className="absolute bottom-1/3 left-1/4 w-80 h-80 rounded-full bg-white blur-3xl"
-          />
-        </div>
-
-        {/* 헤더 섹션 */}
-        <motion.header
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-16 pb-10 border-b border-white/10"
-        >
-          <div className="relative">
+    <>
+      <Meta
+        title="이력서 | 심상현 (Eddy) | 풀스택 개발자 & 플러터 엔지니어"
+        description="심상현(Eddy)의 개발자 이력서와 경력, 프로젝트 정보를 확인하세요. Flutter, React, TypeScript 등의 기술을 활용한 개발 경험을 소개합니다."
+        keywords="심상현, 이력서, Flutter 개발자, 리액트 개발자, 풀스택 개발자, 모바일 앱 개발, 웹 개발"
+      />
+      <div className="min-h-screen bg-[#121212] text-white py-24 px-5 sm:px-8 overflow-hidden">
+        <div className="w-full max-w-5xl mx-auto relative">
+          {/* 배경 요소들 */}
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="flex justify-center items-center mb-8 md:mb-10"
-            >
-              <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight">심상현</h1>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
-              <motion.div
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-                className="text-gray-400 space-y-3 md:col-span-1"
-              >
-                <h3 className="text-xs uppercase tracking-widest text-white/60 mb-3 font-medium">연락처</h3>
-                <div className="flex items-center space-x-3 group">
-                  <span className="text-white/70">📞</span>
-                  <p className="text-sm tracking-wide">{contact.phone}</p>
-                </div>
-                <div className="flex items-center space-x-3 group">
-                  <span className="text-white/70">✉️</span>
-                  <a href={`mailto:${contact.email}`} className="text-sm tracking-wide text-gray-400 hover:text-white transition-colors">
-                    {contact.email}
-                  </a>
-                </div>
-                <div className="flex items-center space-x-3 group">
-                  <span className="text-white/70">💻</span>
-                  <a
-                    href={contact.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm tracking-wide text-gray-400 hover:text-white transition-colors"
-                  >
-                    Github
-                  </a>
-                </div>
-              </motion.div>
-
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }} className="md:col-span-2">
-                <h3 className="text-xs uppercase tracking-widest text-white/60 mb-4 font-medium">소개</h3>
-                <p
-                  className="text-gray-400 leading-relaxed text-base tracking-wide font-light whitespace-pre-line"
-                  dangerouslySetInnerHTML={{ __html: intro }}
-                />
-              </motion.div>
-            </div>
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.07 }}
+              transition={{ duration: 2 }}
+              className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-white blur-3xl"
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.04 }}
+              transition={{ duration: 2, delay: 0.5 }}
+              className="absolute bottom-1/3 left-1/4 w-80 h-80 rounded-full bg-white blur-3xl"
+            />
           </div>
-        </motion.header>
 
-        {/* 메인 콘텐츠 */}
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-16">
-          {/* 경력 섹션 */}
-          <Section title="경력" delay={0.4} className="experience-section">
-            <div className="space-y-10">
-              {experiences.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={hoverScale}
-                  className="bg-white/[0.03] hover:bg-white/[0.06] rounded-lg p-6 space-y-6 transition-all duration-300 border border-white/5 shadow-md shadow-black/10"
-                >
-                  <div className="flex flex-col md:flex-row justify-between md:items-center gap-3">
-                    <div className="space-y-1">
-                      <h3 className="text-xl font-medium text-white tracking-wide">{exp.position}</h3>
-                      <span className="text-gray-400 text-sm tracking-wide">{exp.company}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="px-3 py-1 rounded-full bg-white/10 text-gray-400 text-xs font-medium">{exp.period}</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-6">
-                    {exp.projects.map((project, pIndex) => (
-                      <div key={pIndex} className="space-y-4">
-                        <motion.div
-                          className="flex items-center space-x-3 bg-white/[0.04] px-4 py-3 rounded-md border-l-2 border-white/50"
-                          whileHover={{ x: 3 }}
-                          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                        >
-                          <h4 className="text-base font-medium text-white tracking-wide">{project.name}</h4>
-                        </motion.div>
-
-                        <ul className="text-gray-400 space-y-3 list-none pl-4">
-                          {project.description.map((desc, i) => (
-                            <motion.li
-                              key={i}
-                              initial={{ opacity: 0, x: -5 }}
-                              whileInView={{ opacity: 1, x: 0 }}
-                              viewport={{ once: true }}
-                              transition={{ delay: i * 0.05 }}
-                              className="relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 tracking-wide leading-relaxed"
-                              dangerouslySetInnerHTML={{ __html: desc }}
-                            />
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </Section>
-
-          {/* 사이드 프로젝트 섹션 */}
-          <Section title="사이드 프로젝트" delay={0.6}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={hoverScale}
-                  className="bg-white/[0.03] hover:bg-white/[0.06] rounded-lg p-6 space-y-4 transition-all duration-300 border border-white/5 h-full shadow-md shadow-black/10"
-                >
-                  <div className="flex justify-between items-start gap-3">
-                    <motion.h3
-                      className="text-lg font-medium text-white tracking-wide"
-                      whileHover={{ x: 2 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      {project.name}
-                    </motion.h3>
-                    <span className="px-3 py-1 rounded-md bg-white/10 text-gray-400 text-xs whitespace-nowrap">{project.period}</span>
-                  </div>
-
-                  <motion.a
-                    href={project.link}
-                    className="text-gray-400 hover:text-white text-sm flex items-center space-x-1.5 transition-colors"
-                    whileHover={{ x: 2 }}
-                  >
-                    <span>자세히 보기</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </motion.a>
-
-                  <ul className="text-gray-400 space-y-2.5 list-none">
-                    {project.description.map((desc, i) => (
-                      <motion.li
-                        key={i}
-                        initial={{ opacity: 0, x: -5 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.05 }}
-                        className="relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 tracking-wide leading-relaxed"
-                        dangerouslySetInnerHTML={{ __html: desc }}
-                      />
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </Section>
-
-          {/* 기술 스택 섹션 */}
-          <Section title="기술" delay={0.7}>
-            <div className="flex flex-wrap gap-2.5">
-              {skills.map((skill, index) => (
-                <motion.span
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.12)" }}
-                  className="bg-white/[0.06] px-4 py-2 rounded-md text-sm border border-white/10 hover:border-white/30 transition-all cursor-default tracking-wide text-white/90"
-                >
-                  {skill}
-                </motion.span>
-              ))}
-            </div>
-          </Section>
-
-          {/* 발표 이력 */}
-          <Section title="발표" delay={0.8}>
-            <div className="space-y-3">
-              {talks.map((talk, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={{ x: 5, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-                  className="relative overflow-hidden group rounded-md p-4 transition-all cursor-pointer"
-                >
-                  <a
-                    href={talk.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`relative z-10 text-gray-400 group-hover:text-white transition-colors block ${talk.link ? "" : "pointer-events-none"}`}
-                  >
-                    <div className="flex justify-between items-center">
-                      <span className="tracking-wide text-sm">{talk.title}</span>
-                      <div className="flex items-center">
-                        {talk.youtube && (
-                          <a
-                            href={talk.youtube}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center p-2 text-red-400 hover:text-red-300"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="20"
-                              fill="currentColor"
-                              className="bi bi-youtube"
-                              viewBox="0 0 16 16"
-                            >
-                              <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
-                            </svg>
-                          </a>
-                        )}
-                        {talk.link && (
-                          <motion.span
-                            initial={{ opacity: 0, x: -10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className="ml-2 inline-block text-white/40 group-hover:text-white/80"
-                          >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={1.5}
-                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                              />
-                            </svg>
-                          </motion.span>
-                        )}
-                      </div>
-                    </div>
-                  </a>
-                </motion.div>
-              ))}
-            </div>
-          </Section>
-
-          {/* 수상 내역 */}
-          <Section title="수상 내역" delay={0.9}>
-            <div className="space-y-4">
-              {awards.map((award, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={{ x: 5 }}
-                  className="bg-white/[0.04] border-l-2 border-white/50 px-5 py-4 rounded-r-md"
-                >
-                  <a
-                    href={award.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors block group"
-                  >
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <span className="font-medium text-white/90 tracking-wide text-sm">{award.title.split(",")[0]}</span>
-                        <span className="text-gray-400 tracking-wide text-sm">{", " + award.title.split(",")[1]}</span>
-                      </div>
-                      <motion.span
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                        className="text-white/40 group-hover:text-white/80"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </motion.span>
-                    </div>
-                  </a>
-                </motion.div>
-              ))}
-            </div>
-          </Section>
-
-          {/* 학력 */}
-          <Section title="학력" delay={1.0}>
-            {education.map((edu, index) => (
+          {/* 헤더 섹션 */}
+          <motion.header
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-16 pb-10 border-b border-white/10"
+          >
+            <div className="relative">
               <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={hoverScale}
-                className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-2 md:space-y-0 bg-white/[0.04] px-6 py-5 rounded-lg border border-white/5 shadow-md shadow-black/10"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="flex justify-center items-center mb-8 md:mb-10"
               >
-                <div className="space-y-0.5">
-                  <h3 className="text-lg font-medium text-white tracking-wide">{edu.school}</h3>
-                  <p className="text-gray-400 text-sm tracking-wide">{edu.major}</p>
-                </div>
-                <span className="px-3 py-1 rounded-full bg-white/10 text-gray-400 text-xs">{edu.period}</span>
+                <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight">심상현</h1>
               </motion.div>
-            ))}
-          </Section>
-        </motion.div>
 
-        {/* 바닥글 */}
-        <motion.footer
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="mt-24 pt-10 border-t border-white/10 text-center text-gray-500 text-xs"
-        >
-          <p>© 2025 심상현. All rights reserved.</p>
-        </motion.footer>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                  className="text-gray-400 space-y-3 md:col-span-1"
+                >
+                  <h3 className="text-xs uppercase tracking-widest text-white/60 mb-3 font-medium">연락처</h3>
+                  <div className="flex items-center space-x-3 group">
+                    <span className="text-white/70">📞</span>
+                    <p className="text-sm tracking-wide">{contact.phone}</p>
+                  </div>
+                  <div className="flex items-center space-x-3 group">
+                    <span className="text-white/70">✉️</span>
+                    <a href={`mailto:${contact.email}`} className="text-sm tracking-wide text-gray-400 hover:text-white transition-colors">
+                      {contact.email}
+                    </a>
+                  </div>
+                  <div className="flex items-center space-x-3 group">
+                    <span className="text-white/70">💻</span>
+                    <a
+                      href={contact.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm tracking-wide text-gray-400 hover:text-white transition-colors"
+                    >
+                      Github
+                    </a>
+                  </div>
+                </motion.div>
+
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }} className="md:col-span-2">
+                  <h3 className="text-xs uppercase tracking-widest text-white/60 mb-4 font-medium">소개</h3>
+                  <p
+                    className="text-gray-400 leading-relaxed text-base tracking-wide font-light whitespace-pre-line"
+                    dangerouslySetInnerHTML={{ __html: intro }}
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </motion.header>
+
+          {/* 메인 콘텐츠 */}
+          <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-16">
+            {/* 경력 섹션 */}
+            <Section title="경력" delay={0.4} className="experience-section">
+              <div className="space-y-10">
+                {experiences.map((exp, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    whileHover={hoverScale}
+                    className="bg-white/[0.03] hover:bg-white/[0.06] rounded-lg p-6 space-y-6 transition-all duration-300 border border-white/5 shadow-md shadow-black/10"
+                  >
+                    <div className="flex flex-col md:flex-row justify-between md:items-center gap-3">
+                      <div className="space-y-1">
+                        <h3 className="text-xl font-medium text-white tracking-wide">{exp.position}</h3>
+                        <span className="text-gray-400 text-sm tracking-wide">{exp.company}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <span className="px-3 py-1 rounded-full bg-white/10 text-gray-400 text-xs font-medium">{exp.period}</span>
+                      </div>
+                    </div>
+
+                    <div className="space-y-6">
+                      {exp.projects.map((project, pIndex) => (
+                        <div key={pIndex} className="space-y-4">
+                          <motion.div
+                            className="flex items-center space-x-3 bg-white/[0.04] px-4 py-3 rounded-md border-l-2 border-white/50"
+                            whileHover={{ x: 3 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                          >
+                            <h4 className="text-base font-medium text-white tracking-wide">{project.name}</h4>
+                          </motion.div>
+
+                          <ul className="text-gray-400 space-y-3 list-none pl-4">
+                            {project.description.map((desc, i) => (
+                              <motion.li
+                                key={i}
+                                initial={{ opacity: 0, x: -5 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.05 }}
+                                className="relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 tracking-wide leading-relaxed"
+                                dangerouslySetInnerHTML={{ __html: desc }}
+                              />
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </Section>
+
+            {/* 사이드 프로젝트 섹션 */}
+            <Section title="사이드 프로젝트" delay={0.6}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {projects.map((project, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    whileHover={hoverScale}
+                    className="bg-white/[0.03] hover:bg-white/[0.06] rounded-lg p-6 space-y-4 transition-all duration-300 border border-white/5 h-full shadow-md shadow-black/10"
+                  >
+                    <div className="flex justify-between items-start gap-3">
+                      <motion.h3
+                        className="text-lg font-medium text-white tracking-wide"
+                        whileHover={{ x: 2 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        {project.name}
+                      </motion.h3>
+                      <span className="px-3 py-1 rounded-md bg-white/10 text-gray-400 text-xs whitespace-nowrap">{project.period}</span>
+                    </div>
+
+                    <motion.a
+                      href={project.link}
+                      className="text-gray-400 hover:text-white text-sm flex items-center space-x-1.5 transition-colors"
+                      whileHover={{ x: 2 }}
+                    >
+                      <span>자세히 보기</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </motion.a>
+
+                    <ul className="text-gray-400 space-y-2.5 list-none">
+                      {project.description.map((desc, i) => (
+                        <motion.li
+                          key={i}
+                          initial={{ opacity: 0, x: -5 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: i * 0.05 }}
+                          className="relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 tracking-wide leading-relaxed"
+                          dangerouslySetInnerHTML={{ __html: desc }}
+                        />
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </div>
+            </Section>
+
+            {/* 기술 스택 섹션 */}
+            <Section title="기술" delay={0.7}>
+              <div className="flex flex-wrap gap-2.5">
+                {skills.map((skill, index) => (
+                  <motion.span
+                    key={index}
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.12)" }}
+                    className="bg-white/[0.06] px-4 py-2 rounded-md text-sm border border-white/10 hover:border-white/30 transition-all cursor-default tracking-wide text-white/90"
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+            </Section>
+
+            {/* 발표 이력 */}
+            <Section title="발표" delay={0.8}>
+              <div className="space-y-3">
+                {talks.map((talk, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    whileHover={{ x: 5, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+                    className="relative overflow-hidden group rounded-md p-4 transition-all cursor-pointer"
+                  >
+                    <a
+                      href={talk.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`relative z-10 text-gray-400 group-hover:text-white transition-colors block ${
+                        talk.link ? "" : "pointer-events-none"
+                      }`}
+                    >
+                      <div className="flex justify-between items-center">
+                        <span className="tracking-wide text-sm">{talk.title}</span>
+                        <div className="flex items-center">
+                          {talk.youtube && (
+                            <a
+                              href={talk.youtube}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center p-2 text-red-400 hover:text-red-300"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                fill="currentColor"
+                                className="bi bi-youtube"
+                                viewBox="0 0 16 16"
+                              >
+                                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+                              </svg>
+                            </a>
+                          )}
+                          {talk.link && (
+                            <motion.span
+                              initial={{ opacity: 0, x: -10 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              transition={{ delay: 0.2 }}
+                              className="ml-2 inline-block text-white/40 group-hover:text-white/80"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={1.5}
+                                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                />
+                              </svg>
+                            </motion.span>
+                          )}
+                        </div>
+                      </div>
+                    </a>
+                  </motion.div>
+                ))}
+              </div>
+            </Section>
+
+            {/* 수상 내역 */}
+            <Section title="수상 내역" delay={0.9}>
+              <div className="space-y-4">
+                {awards.map((award, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    whileHover={{ x: 5 }}
+                    className="bg-white/[0.04] border-l-2 border-white/50 px-5 py-4 rounded-r-md"
+                  >
+                    <a
+                      href={award.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors block group"
+                    >
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <span className="font-medium text-white/90 tracking-wide text-sm">{award.title.split(",")[0]}</span>
+                          <span className="text-gray-400 tracking-wide text-sm">{", " + award.title.split(",")[1]}</span>
+                        </div>
+                        <motion.span
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ delay: 0.3 }}
+                          className="text-white/40 group-hover:text-white/80"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </motion.span>
+                      </div>
+                    </a>
+                  </motion.div>
+                ))}
+              </div>
+            </Section>
+
+            {/* 학력 */}
+            <Section title="학력" delay={1.0}>
+              {education.map((edu, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={hoverScale}
+                  className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-2 md:space-y-0 bg-white/[0.04] px-6 py-5 rounded-lg border border-white/5 shadow-md shadow-black/10"
+                >
+                  <div className="space-y-0.5">
+                    <h3 className="text-lg font-medium text-white tracking-wide">{edu.school}</h3>
+                    <p className="text-gray-400 text-sm tracking-wide">{edu.major}</p>
+                  </div>
+                  <span className="px-3 py-1 rounded-full bg-white/10 text-gray-400 text-xs">{edu.period}</span>
+                </motion.div>
+              ))}
+            </Section>
+          </motion.div>
+
+          {/* 바닥글 */}
+          <motion.footer
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5 }}
+            className="mt-24 pt-10 border-t border-white/10 text-center text-gray-500 text-xs"
+          >
+            <p>© 2025 심상현. All rights reserved.</p>
+          </motion.footer>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { CSSProperties } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Smartphone, Monitor, Store, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
+import Meta from "../components/Meta";
 
 // 이미지 임포트 추가
 import nightaryImg from "../assets/nightary.png";
@@ -332,71 +333,78 @@ const getLinkLabel = (linkType: string) => {
 
 const Projects = () => {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto">
-      <div className="space-y-12">
-        <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="text-center space-y-4">
-          <h1 className="text-4xl font-bold">Projects</h1>
-          <p className="text-gray-400">제가 작업한 주요 프로젝트들입니다</p>
-        </motion.div>
+    <>
+      <Meta
+        title="프로젝트 | 심상현 (Eddy) | 풀스택 개발자 & 플러터 엔지니어"
+        description="심상현(Eddy)의 주요 개발 프로젝트 모음입니다. 다양한 기술스택과 플랫폼을 활용한 프로젝트를 확인하세요."
+        keywords="프로젝트, Flutter, React, 모바일 앱, 웹 애플리케이션, 포트폴리오"
+      />
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto">
+        <div className="space-y-12">
+          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="text-center space-y-4">
+            <h1 className="text-4xl font-bold">Projects</h1>
+            <p className="text-gray-400">제가 작업한 주요 프로젝트들입니다</p>
+          </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2 + index * 0.1 }}
-              className="bg-white/5 rounded-xl overflow-hidden group"
-            >
-              <Link to={`/projects/${project.id}`} className="block">
-                <div
-                  className={`relative overflow-hidden h-48 flex items-center justify-center ${
-                    project.id === "pickiverse" ? "bg-white" : "bg-gray-700/30"
-                  }`}
-                  style={project.containerStyle}
-                >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className={`transform group-hover:scale-110 transition-transform duration-500 ${
-                      project.isVertical ? "h-full object-contain" : "w-full object-contain"
+          <div className="grid md:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.2 + index * 0.1 }}
+                className="bg-white/5 rounded-xl overflow-hidden group"
+              >
+                <Link to={`/projects/${project.id}`} className="block">
+                  <div
+                    className={`relative overflow-hidden h-48 flex items-center justify-center ${
+                      project.id === "pickiverse" ? "bg-white" : "bg-gray-700/30"
                     }`}
-                    style={project.imageStyle}
-                  />
-                </div>
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <p className="text-gray-400">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span key={techIndex} className="bg-white/10 px-3 py-1 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
+                    style={project.containerStyle}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className={`transform group-hover:scale-110 transition-transform duration-500 ${
+                        project.isVertical ? "h-full object-contain" : "w-full object-contain"
+                      }`}
+                      style={project.imageStyle}
+                    />
                   </div>
-                  <div className="flex flex-wrap gap-4 pt-4">
-                    {project.links &&
-                      Object.entries(project.links).map(([linkType, url], linkIndex) => (
-                        <a
-                          key={linkIndex}
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          {getLinkIcon(linkType)}
-                          <span>{getLinkLabel(linkType)}</span>
-                        </a>
+                  <div className="p-6 space-y-4">
+                    <h3 className="text-xl font-semibold">{project.title}</h3>
+                    <p className="text-gray-400">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <span key={techIndex} className="bg-white/10 px-3 py-1 rounded-full text-sm">
+                          {tech}
+                        </span>
                       ))}
+                    </div>
+                    <div className="flex flex-wrap gap-4 pt-4">
+                      {project.links &&
+                        Object.entries(project.links).map(([linkType, url], linkIndex) => (
+                          <a
+                            key={linkIndex}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {getLinkIcon(linkType)}
+                            <span>{getLinkLabel(linkType)}</span>
+                          </a>
+                        ))}
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 };
 
