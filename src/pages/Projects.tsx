@@ -9,10 +9,10 @@ import nightaryImg from "../assets/nightary.png";
 import mayBeCleanImg from "../assets/may_be_clean.png";
 import easyImageDownloaderImg from "../assets/easy_image_downloader.png";
 import pickiverseImg from "../assets/pickiverse.png";
-import payBotImg from "../assets/pay_bot.png";
+import paybotImg from "../assets/paybot.png";
 import qrMakerImg from "../assets/qr_maker.png";
-import multiWindowImg from "../assets/multi_window.png";
-import daitssuImg from "../assets/daitssu.png";
+import multipleWindowConnectionImg from "../assets/multiple_window_connection.png";
+import daItssuImg from "../assets/da_it_ssu.png";
 
 // 프로젝트 타입 정의
 interface Project {
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     id: "paybot",
     title: "정산봇",
     description: "Slack 봇으로 정산을 간편하게",
-    image: payBotImg,
+    image: paybotImg,
     tech: ["Slack API", "Bolt.js", "Node.js", "MongoDB", "nginx"],
     links: {
       slack: "https://slack.com/marketplace/A087W0YSC7N-",
@@ -176,7 +176,7 @@ export const projects: Project[] = [
     id: "da-it-ssu",
     title: "다잇슈",
     description: "숭실대 학생들을 위한 모든 서비스",
-    image: daitssuImg,
+    image: daItssuImg,
     tech: ["Flutter", "Firebase", "Node.js", "RESTful API"],
     links: {
       github: "https://github.com/DaITssu",
@@ -261,7 +261,7 @@ export const projects: Project[] = [
     id: "multiple-window-connection",
     title: "Multiple Window Connection",
     description: "여러 개의 웹브라우저가 동적으로 연결되는 시스템",
-    image: multiWindowImg,
+    image: multipleWindowConnectionImg,
     tech: ["JavaScript", "WebSocket", "HTML5", "CSS3"],
     links: {
       web: "https://mutliple-windows.s3.ap-northeast-2.amazonaws.com/index.html",
