@@ -46,7 +46,7 @@ const Section = ({ title, children, delay = 0, className = "" }: SectionProps) =
       initial="hidden"
       animate={controls}
       variants={itemVariants}
-      className={`space-y-4 p-6 rounded-xl bg-white/5 backdrop-blur-sm overflow-hidden ${className}`}
+      className={`space-y-4 p-3 md:p-6 rounded-xl bg-white/5 backdrop-blur-sm overflow-hidden ${className}`}
     >
       <h2 className="text-2xl font-semibold text-white border-b border-white/10 pb-2 mb-4">{title}</h2>
       <div className="relative z-10">{children}</div>
@@ -316,7 +316,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
           <Section title="경력" delay={0.2} className="experience-section">
             <div className="space-y-6">
               {experiences.map((exp, index) => (
-                <motion.div key={index} variants={itemVariants} className="bg-white/[0.03] rounded-lg p-5 space-y-4 border border-white/5">
+                <motion.div key={index} variants={itemVariants} className="bg-white/[0.03] rounded-lg p-3 md:p-5 space-y-4 border border-white/5">
                   <div className="flex flex-col md:flex-row justify-between md:items-center gap-3">
                     <div className="space-y-1">
                       <h3 className="text-lg font-medium text-white">{exp.position}</h3>
@@ -330,11 +330,11 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                   <div className="space-y-4">
                     {exp.projects.map((project, pIndex) => (
                       <div key={pIndex} className="space-y-3">
-                        <h4 className="text-base font-medium text-white bg-white/[0.04] px-4 py-2 rounded-md border-l-2 border-white/50">
+                        <h4 className="text-base font-medium text-white bg-white/[0.04] px-2 md:px-4 py-1.5 md:py-2 rounded-md border-l-2 border-white/50">
                           {project.name}
                         </h4>
 
-                        <ul className="text-gray-400 space-y-2 list-none pl-4">
+                        <ul className="text-gray-400 space-y-2 list-none">
                           {project.description.map((desc, i) => (
                             <motion.li
                               key={i}
@@ -359,7 +359,11 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
           <Section title="사이드 프로젝트" delay={0.3}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {projects.map((project, index) => (
-                <motion.div key={index} variants={itemVariants} className="bg-white/[0.03] rounded-lg p-5 space-y-3 border border-white/5 h-full">
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="bg-white/[0.03] rounded-lg p-3 md:p-5 space-y-3 border border-white/5 h-full"
+                >
                   <div className="flex justify-between items-start gap-2 flex-wrap">
                     <h3 className="text-lg font-medium text-white">{project.name}</h3>
                     <span className="px-3 py-1 rounded-md bg-white/10 text-gray-400 text-xs">{project.period}</span>
@@ -412,7 +416,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
           <Section title="발표" delay={0.5}>
             <div className="space-y-3">
               {talks.map((talk, index) => (
-                <motion.div key={index} variants={itemVariants} className="group rounded-md p-3 transition-all hover:bg-white/[0.05]">
+                <motion.div key={index} variants={itemVariants} className="group rounded-md p-2 md:p-3 transition-all hover:bg-white/[0.05]">
                   <a
                     href={talk.link}
                     target="_blank"
@@ -468,7 +472,11 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
           <Section title="수상 내역" delay={0.6}>
             <div className="space-y-3">
               {awards.map((award, index) => (
-                <motion.div key={index} variants={itemVariants} className="bg-white/[0.04] border-l-2 border-white/50 px-4 py-3 rounded-r-md">
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="bg-white/[0.04] border-l-2 border-white/50 px-3 md:px-4 py-2 md:py-3 rounded-r-md"
+                >
                   <a
                     href={award.link}
                     target="_blank"
@@ -498,7 +506,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-2 md:space-y-0 bg-white/[0.04] px-5 py-4 rounded-lg border border-white/5"
+                className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-2 md:space-y-0 bg-white/[0.04] px-3 md:px-5 py-3 md:py-4 rounded-lg border border-white/5"
               >
                 <div className="space-y-0.5">
                   <h3 className="text-lg font-medium text-white">{edu.school}</h3>
