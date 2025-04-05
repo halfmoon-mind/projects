@@ -37,7 +37,7 @@ export const projects: Project[] = [
     description: "이상형 월드컵 플랫폼",
     image: pickiverseImg,
     containerStyle: { backgroundColor: "white" },
-    tech: ["Flutter", "iOS", "Android", "Web", "Firebase"],
+    tech: ["Flutter", "Fastlane", "Nest.js", "Next.js", "Cloudflare Images"],
     links: {
       ios: "https://apps.apple.com/kr/app/%ED%94%BC%ED%82%A4%EB%B2%84%EC%8A%A4/id6742077036?uo=2",
       android: "https://play.google.com/store/apps/details?id=com.pickiverse.app",
@@ -54,6 +54,7 @@ export const projects: Project[] = [
       사용자들의 피드백을 지속적으로 반영하여 기능을 개선하고 있습니다.
     `,
     challenges: `
+      ### 1. S3 비용 문제
       피키버스를 개발하면서 가장 큰 고민은 다양한 플랫폼(iOS, Android, 웹)에서 일관된 사용자 경험을 제공하는 것이었습니다.
       특히 이상형 월드컵의 핵심인 이미지 전환 애니메이션을 모든 플랫폼에서 부드럽게 구현하는 데 많은 시간을 투자했습니다.
       
