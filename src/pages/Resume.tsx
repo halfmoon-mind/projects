@@ -219,6 +219,7 @@ const Resume = () => {
     {
       title: "2024 SSU DEVCON - Flutter로 다채로운 이벤트 페이지 구축하기",
       link: "https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%AE%E1%86%BC%E1%84%89%E1%85%B5%E1%86%AFDEVCON+-+%E1%84%89%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%92%E1%85%A7%E1%86%AB+%E1%84%87%E1%85%A1%E1%86%AF%E1%84%91%E1%85%AD.pdf",
+      youtube: "https://www.youtube.com/watch?v=JpzyT2XPNqw&ab_channel=GDSCSoongsil",
     },
     {
       title: "2023 GDSC SSUMall Seminar - 플러터, 어디까지 배워볼래?",
@@ -310,7 +311,9 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                 </div>
                 <div className="flex items-center space-x-3 group">
                   <span className="text-white/70">✉️</span>
-                  <p className="text-sm tracking-wide">{contact.email}</p>
+                  <a href={`mailto:${contact.email}`} className="text-sm tracking-wide text-gray-400 hover:text-white transition-colors">
+                    {contact.email}
+                  </a>
                 </div>
                 <div className="flex items-center space-x-3 group">
                   <span className="text-white/70">💻</span>
@@ -474,23 +477,45 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                   >
                     <div className="flex justify-between items-center">
                       <span className="tracking-wide text-sm">{talk.title}</span>
-                      {talk.link && (
-                        <motion.span
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.2 }}
-                          className="ml-2 inline-block text-white/40 group-hover:text-white/80"
-                        >
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={1.5}
-                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                            />
-                          </svg>
-                        </motion.span>
-                      )}
+                      <div className="flex items-center">
+                        {talk.youtube && (
+                          <a
+                            href={talk.youtube}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center p-2 text-red-400 hover:text-red-300"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              fill="currentColor"
+                              className="bi bi-youtube"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+                            </svg>
+                          </a>
+                        )}
+                        {talk.link && (
+                          <motion.span
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="ml-2 inline-block text-white/40 group-hover:text-white/80"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={1.5}
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                              />
+                            </svg>
+                          </motion.span>
+                        )}
+                      </div>
                     </div>
                   </a>
                 </motion.div>
