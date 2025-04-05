@@ -188,7 +188,7 @@ const ProjectDetail = () => {
                     <Code size={20} className="text-blue-400" />
                     프로젝트 개요
                   </h2>
-                  <div className="bg-[#1a1a1a] backdrop-blur-sm rounded-xl p-5 sm:p-8 border border-[#333333] text-gray-100 leading-7 shadow-xl">
+                  <div className="bg-[#1a1a1a] backdrop-blur-sm rounded-xl px-5 py-0 sm:p-8 border border-[#333333] text-gray-100 leading-7 shadow-xl">
                     <div className="prose prose-invert prose-sm sm:prose-base max-w-none markdown-body">
                       <ReactMarkdown>{project.longDescription.trim()}</ReactMarkdown>
                     </div>
@@ -202,7 +202,7 @@ const ProjectDetail = () => {
                       <Brain size={20} className="text-blue-400" />
                       개발 과정에서의 고민들
                     </h2>
-                    <div className="bg-[#1a1a1a] backdrop-blur-sm rounded-xl p-5 sm:p-8 border border-[#333333] text-gray-100 leading-7 shadow-xl">
+                    <div className="bg-[#1a1a1a] backdrop-blur-sm rounded-xl px-5 py-0 sm:p-8 border border-[#333333] text-gray-100 leading-7 shadow-xl">
                       <div className="prose prose-invert prose-sm sm:prose-base max-w-none markdown-body">
                         <ReactMarkdown>{project.challenges.trim()}</ReactMarkdown>
                       </div>
