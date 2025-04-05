@@ -64,10 +64,10 @@ const Resume = () => {
         {
           name: "[비공개] - 영화 커뮤니티",
           description: [
-            "프로젝트 내 유일 앱 개발자로 프로젝트 내 모든 기능 구현",
-            "앱인앱 구조로 커뮤니티 내 슈룹 서비스 구현하여 2가지(Bloc+GoRouter, GetX) 상태 관리를 동시에 사용할 수 있도록 구현",
-            "cursor와 같은 AI Agent를 적극적으로 활용하여 빠르게 프로젝트를 구축",
-            "커뮤니티 내 게시글 보기, 게시글 작성용 html 렌더링 기능 구현",
+            "프로젝트 내 <strong class='text-[#61dafb]'>유일 앱 개발자</strong>로 프로젝트 내 모든 기능 구현",
+            "<strong class='text-[#61dafb]'>앱인앱 구조</strong>로 커뮤니티 내 슈룹 서비스 구현하여 2가지(<strong class='text-[#61dafb]'>Bloc+GoRouter, GetX</strong>) 상태 관리를 동시에 사용할 수 있도록 구현",
+            "cursor와 같은 <strong class='text-[#61dafb]'>AI Agent</strong>를 적극적으로 활용하여 빠르게 프로젝트를 구축",
+            "커뮤니티 내 게시글 보기, 게시글 작성용 <strong class='text-[#61dafb]'>html 렌더링</strong> 기능 구현",
           ],
         },
         {
