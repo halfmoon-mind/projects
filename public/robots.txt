@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://halfmoon-mind.vercel.app/sitemap.xml 

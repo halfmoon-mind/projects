@@ -1,55 +1,7 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <!-- 배경 -->
-  <rect width="1200" height="630" fill="#0F0F0F"/>
-  
-  <!-- 그라데이션 효과를 위한 필터 -->
-  <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#121212" />
-      <stop offset="100%" stop-color="#000000" />
-    </linearGradient>
-    
-    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="100%" stop-color="#AAAAAA" />
-    </linearGradient>
-    
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="10" result="blur"/>
-      <feFlood flood-color="#4A63E9" flood-opacity="0.3"/>
-      <feComposite in2="blur" operator="in"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-  </defs>
-  
-  <!-- 배경 그라디언트 -->
-  <rect width="1200" height="630" fill="url(#bgGradient)"/>
-  
-  
-  <!-- 메인 정보 -->
-  <g>
-    <text x="100" y="150" font-family="'Pretendard', sans-serif" font-size="72" font-weight="bold" fill="url(#textGradient)">심상현 (Eddy)</text>
-    <text x="100" y="230" font-family="'Pretendard', sans-serif" font-size="42" fill="#9FA6B2">풀스택 개발자 &amp; 플러터 엔지니어</text>
-    
-    <!-- 기술 스택 키워드 -->
-    <g fill="#666">
-      <text x="100" y="340" font-family="'Pretendard', sans-serif" font-size="32" fill="#4A63E9">React</text>
-      <text x="200" y="340" font-family="'Pretendard', sans-serif" font-size="32" fill="#29B6F6">Flutter</text>
-      <text x="320" y="340" font-family="'Pretendard', sans-serif" font-size="32" fill="#007ACC">TypeScript</text>
-    </g>
-    
-    <!-- 짧은 소개 -->
-    <text x="100" y="400" font-family="'Pretendard', sans-serif" font-size="28" fill="#CCCCCC" letter-spacing="0.5">
-      창의적인 문제 해결과 사용자 경험을 중요시하는 개발자
-    </text>
-    <text x="100" y="450" font-family="'Pretendard', sans-serif" font-size="28" fill="#CCCCCC" letter-spacing="0.5">
-      프로그래밍이라는 기술을 활용해 세상에 도움이 되는 서비스를 만듭니다
-    </text>
-    
-    <!-- 웹사이트 URL -->
-    <text x="600" y="540" font-family="'Pretendard', sans-serif" font-size="32" fill="#AAAAAA" text-anchor="middle">
-      halfmoon-mind.vercel.app
-    </text>
-  </g>
-  
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#000000"/>
+  <rect x="50" y="50" width="1100" height="530" stroke="#333333" stroke-width="2"/>
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="60" fill="white" text-anchor="middle" dominant-baseline="middle">심상현 (Eddy)</text>
+  <text x="600" y="340" font-family="Arial, sans-serif" font-size="40" fill="#AAAAAA" text-anchor="middle" dominant-baseline="middle">풀스택 개발자 &amp; 플러터 엔지니어</text>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="30" fill="#666666" text-anchor="middle" dominant-baseline="middle">포트폴리오</text>
 </svg> 
