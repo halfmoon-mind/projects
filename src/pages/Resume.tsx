@@ -255,8 +255,10 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
     <>
       <Meta
         title="이력서 | 심상현 (Eddy) | 풀스택 개발자 & 플러터 엔지니어"
-        description="심상현(Eddy)의 개발자 이력서와 경력, 프로젝트 정보를 확인하세요. Flutter, React, TypeScript 등의 기술을 활용한 개발 경험을 소개합니다."
-        keywords="심상현, 이력서, Flutter 개발자, 리액트 개발자, 풀스택 개발자, 모바일 앱 개발, 웹 개발"
+        description="심상현(Eddy)의 개발자 이력서입니다. Flutter 모바일 엔지니어링 경험과 다양한 프로젝트 개발 경험, 기술 스택, 수상 내역 및 발표 경력을 확인하세요."
+        keywords="심상현, 이력서, Flutter 개발자, 리액트 개발자, 풀스택 개발자, 모바일 앱 개발, 웹 개발, 플러터 엔지니어, 개발자 포트폴리오"
+        ogImage="/assets/og-image.png"
+        ogUrl="https://halfmoon-mind.vercel.app/resume"
       />
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto">
         {/* 헤더 섹션 */}

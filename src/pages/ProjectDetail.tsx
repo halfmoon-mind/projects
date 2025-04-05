@@ -4,6 +4,14 @@ import { ArrowLeft, ExternalLink, Github, Smartphone, Store, Monitor, Youtube, C
 import { projects } from "./Projects";
 import Meta from "../components/Meta";
 
+// 프로젝트 이미지 기반 OG 이미지 URL 생성 함수
+const getOgImageUrl = (projectId: string) => {
+  // 공개 URL로 매핑
+  // 참고: 이 방식을 사용하려면 프로젝트 이미지들이 public/assets/projects/ 디렉토리에
+  // 프로젝트 ID와 같은 이름으로 저장되어 있어야 합니다.
+  return `/assets/projects/${projectId}.png`;
+};
+
 const getLinkIcon = (linkType: string) => {
   switch (linkType) {
     case "github":
@@ -77,7 +85,8 @@ const ProjectDetail = () => {
         title={`${project.title} | 심상현 (Eddy) 프로젝트`}
         description={project.description}
         keywords={project.tech.join(", ")}
-        ogImage={project.image}
+        ogImage={getOgImageUrl(project.id)}
+        ogUrl={`https://halfmoon-mind.vercel.app/projects/${project.id}`}
       />
       <div className="min-h-screen bg-[#111111] overflow-hidden">
         {/* 헤더 영역 */}

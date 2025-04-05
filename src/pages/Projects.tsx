@@ -336,8 +336,10 @@ const Projects = () => {
     <>
       <Meta
         title="프로젝트 | 심상현 (Eddy) | 풀스택 개발자 & 플러터 엔지니어"
-        description="심상현(Eddy)의 주요 개발 프로젝트 모음입니다. 다양한 기술스택과 플랫폼을 활용한 프로젝트를 확인하세요."
-        keywords="프로젝트, Flutter, React, 모바일 앱, 웹 애플리케이션, 포트폴리오"
+        description="심상현(Eddy)의 주요 개발 프로젝트 포트폴리오입니다. Flutter, React, Firebase를 활용한 모바일 앱과 웹 애플리케이션, 크롬 확장 프로그램 등 다양한 프로젝트를 확인해보세요."
+        keywords="프로젝트, Flutter, React, 모바일 앱, 웹 애플리케이션, 포트폴리오, Firebase, 크롬 확장 프로그램, 풀스택 개발"
+        ogImage="/assets/og-image.png"
+        ogUrl="https://halfmoon-mind.vercel.app/projects"
       />
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto">
         <div className="space-y-12">
