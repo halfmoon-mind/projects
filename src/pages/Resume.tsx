@@ -62,6 +62,15 @@ const Resume = () => {
       period: "2023년 10월 - 현재",
       projects: [
         {
+          name: "[비공개] - 영화 커뮤니티",
+          description: [
+            "프로젝트 내 유일 앱 개발자로 프로젝트 내 모든 기능 구현",
+            "앱인앱 구조로 커뮤니티 내 슈룹 서비스 구현하여 2가지(Bloc+GoRouter, GetX) 상태 관리를 동시에 사용할 수 있도록 구현",
+            "cursor와 같은 AI Agent를 적극적으로 활용하여 빠르게 프로젝트를 구축",
+            "커뮤니티 내 게시글 보기, 게시글 작성용 html 렌더링 기능 구현",
+          ],
+        },
+        {
           name: "슈룹 - 숏폼 드라마 플랫폼",
           description: [
             "<strong class='text-[#61dafb]'>DRM</strong> 적용된 <strong class='text-[#61dafb]'>HLS/DASH 스트리밍</strong> 방식 동영상 플레이어 개발하고, 불안정한 네트워크 환경에서 적절하게 화면이 보여질 수 있도록 지속적으로 기능 개선",
