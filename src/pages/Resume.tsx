@@ -73,7 +73,12 @@ const Resume = () => {
           name: (
             <>
               모픽 - 웹소설 콘텐츠 플랫폼 (
-              <a href="https://mofic.io" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 transition-colors">
+              <a
+                href="https://mofic.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white underline transition-colors"
+              >
                 웹사이트
               </a>{" "}
               /{" "}
@@ -81,7 +86,7 @@ const Resume = () => {
                 href="https://apps.apple.com/kr/app/%EB%AA%A8%ED%94%BD-%EB%8D%94-%EB%A7%8E%EC%9D%80-%EC%86%8C%EC%84%A4-%EC%86%8D%EC%9C%BC%EB%A1%9C/id6469601198"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-gray-400 hover:text-white underline transition-colors"
               >
                 AppStore
               </a>{" "}
@@ -90,7 +95,7 @@ const Resume = () => {
                 href="https://play.google.com/store/apps/details?id=com.toodat.android&hl=ko"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-gray-400 hover:text-white underline transition-colors"
               >
                 PlayStore
               </a>
@@ -127,7 +132,7 @@ const Resume = () => {
                 href="https://apps.apple.com/kr/app/%EA%B2%8C%EB%8D%94%EB%A7%81-%ED%95%A8%EA%BB%98-%EC%93%B0%EB%8A%94-%EA%B3%B5%EC%9C%A0-%EC%BA%98%EB%A6%B0%EB%8D%94/id1643475991"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-gray-400 hover:text-white underline transition-colors"
               >
                 AppStore
               </a>{" "}
@@ -136,7 +141,7 @@ const Resume = () => {
                 href="https://play.google.com/store/apps/details?id=day.gathering.app&hl=ko"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-300 transition-colors"
+                className="text-gray-400 hover:text-white underline transition-colors"
               >
                 PlayStore
               </a>
@@ -279,7 +284,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
               </div>
               <div className="flex items-center space-x-3">
                 <span className="text-white/70">✉️</span>
-                <a href={`mailto:${contact.email}`} className="text-sm text-gray-400 hover:text-white transition-colors">
+                <a href={`mailto:${contact.email}`} className="text-sm text-gray-400 hover:text-white hover:underline transition-colors">
                   {contact.email}
                 </a>
               </div>
@@ -289,7 +294,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                   href={contact.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-400 hover:text-white hover:underline transition-colors"
                 >
                   Github
                 </a>
@@ -358,7 +363,10 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                     <span className="px-3 py-1 rounded-md bg-white/10 text-gray-400 text-xs">{project.period}</span>
                   </div>
 
-                  <a href={project.link} className="text-gray-400 hover:text-white text-sm flex items-center space-x-1.5 transition-colors">
+                  <a
+                    href={project.link}
+                    className="text-gray-400 hover:text-white hover:underline text-sm flex items-center space-x-1.5 transition-colors"
+                  >
                     <span>자세히 보기</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -407,7 +415,9 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                     href={talk.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-gray-400 group-hover:text-white transition-colors block ${talk.link ? "" : "pointer-events-none"}`}
+                    className={`text-gray-400 group-hover:text-white hover:underline transition-colors block ${
+                      talk.link ? "" : "pointer-events-none"
+                    }`}
                   >
                     <div className="flex justify-between items-start">
                       <span className="text-sm">{talk.title}</span>
@@ -417,7 +427,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                             href={talk.youtube}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2 text-red-400 hover:text-red-300"
+                            className="p-2 text-red-400 hover:text-red-300 hover:underline"
                             onClick={(e) => e.stopPropagation()}
                           >
                             <svg
@@ -461,7 +471,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                     href={award.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors block group"
+                    className="text-gray-400 hover:text-white hover:underline transition-colors block group"
                   >
                     <div className="flex justify-between items-center">
                       <div>
