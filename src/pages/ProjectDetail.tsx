@@ -3,6 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink, Github, Smartphone, Store, Monitor, Youtube, Code, Brain } from "lucide-react";
 import { projects } from "./Projects";
 import Meta from "../components/Meta";
+import ReactMarkdown from "react-markdown";
+import "../styles/markdown.css";
 
 // 프로젝트 이미지 기반 OG 이미지 URL 생성 함수
 const getOgImageUrl = (projectId: string) => {
@@ -186,8 +188,10 @@ const ProjectDetail = () => {
                     <Code size={20} className="text-blue-400" />
                     프로젝트 개요
                   </h2>
-                  <div className="bg-[#1a1a1a] backdrop-blur-sm rounded-xl p-5 sm:p-8 border border-[#333333] text-gray-100 whitespace-pre-line leading-7 shadow-xl">
-                    <div className="prose prose-invert prose-sm sm:prose-base max-w-none">{project.longDescription}</div>
+                  <div className="bg-[#1a1a1a] backdrop-blur-sm rounded-xl p-5 sm:p-8 border border-[#333333] text-gray-100 leading-7 shadow-xl">
+                    <div className="prose prose-invert prose-sm sm:prose-base max-w-none markdown-body">
+                      <ReactMarkdown>{project.longDescription.trim()}</ReactMarkdown>
+                    </div>
                   </div>
                 </div>
 
@@ -198,8 +202,10 @@ const ProjectDetail = () => {
                       <Brain size={20} className="text-blue-400" />
                       개발 과정에서의 고민들
                     </h2>
-                    <div className="bg-[#1a1a1a] backdrop-blur-sm rounded-xl p-5 sm:p-8 border border-[#333333] text-gray-100 whitespace-pre-line leading-7 shadow-xl">
-                      <div className="prose prose-invert prose-sm sm:prose-base max-w-none">{project.challenges}</div>
+                    <div className="bg-[#1a1a1a] backdrop-blur-sm rounded-xl p-5 sm:p-8 border border-[#333333] text-gray-100 leading-7 shadow-xl">
+                      <div className="prose prose-invert prose-sm sm:prose-base max-w-none markdown-body">
+                        <ReactMarkdown>{project.challenges.trim()}</ReactMarkdown>
+                      </div>
                     </div>
                   </div>
                 )}
