@@ -62,9 +62,9 @@ const Section = ({ title, children, delay = 0, className = "" }: SectionProps) =
       initial="hidden"
       animate={controls}
       variants={fadeInUpVariants}
-      className={`relative space-y-6 p-8 rounded-xl bg-white/5 backdrop-blur-lg overflow-hidden ${className}`}
+      className={`relative space-y-4 p-4 sm:p-6 rounded-xl bg-white/5 backdrop-blur-lg overflow-hidden ${className}`}
     >
-      <h2 className="relative text-2xl font-semibold text-white z-10 border-b border-white/10 pb-3 mb-6">{title}</h2>
+      <h2 className="relative text-xl sm:text-2xl font-semibold text-white z-10 border-b border-white/10 pb-2 mb-4">{title}</h2>
       <div className="relative z-10">{children}</div>
     </motion.section>
   );
@@ -269,7 +269,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
         description="심상현(Eddy)의 개발자 이력서와 경력, 프로젝트 정보를 확인하세요. Flutter, React, TypeScript 등의 기술을 활용한 개발 경험을 소개합니다."
         keywords="심상현, 이력서, Flutter 개발자, 리액트 개발자, 풀스택 개발자, 모바일 앱 개발, 웹 개발"
       />
-      <div className="min-h-screen bg-[#121212] text-white py-24 px-5 sm:px-8 overflow-hidden">
+      <div className="min-h-screen bg-[#121212] text-white py-12 sm:py-16 px-3 sm:px-5 overflow-hidden pt-20 md:pt-24 lg:pt-28">
         <div className="w-full max-w-5xl mx-auto relative">
           {/* 배경 요소들 */}
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
@@ -292,19 +292,19 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-16 pb-10 border-b border-white/10"
+            className="mb-10 pb-6 border-b border-white/10"
           >
             <div className="relative">
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="flex justify-center items-center mb-8 md:mb-10"
+                className="flex justify-center items-center mb-6 md:mb-8"
               >
-                <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight">심상현</h1>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight">심상현</h1>
               </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mt-8">
                 <motion.div
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -347,7 +347,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
           </motion.header>
 
           {/* 메인 콘텐츠 */}
-          <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-16">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-10">
             {/* 경력 섹션 */}
             <Section title="경력" delay={0.4} className="experience-section">
               <div className="space-y-10">
@@ -356,11 +356,11 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                     key={index}
                     variants={itemVariants}
                     whileHover={hoverScale}
-                    className="bg-white/[0.03] hover:bg-white/[0.06] rounded-lg p-6 space-y-6 transition-all duration-300 border border-white/5 shadow-md shadow-black/10"
+                    className="bg-white/[0.03] hover:bg-white/[0.06] rounded-lg p-4 sm:p-6 space-y-4 sm:space-y-6 transition-all duration-300 border border-white/5 shadow-md shadow-black/10"
                   >
                     <div className="flex flex-col md:flex-row justify-between md:items-center gap-3">
                       <div className="space-y-1">
-                        <h3 className="text-xl font-medium text-white tracking-wide">{exp.position}</h3>
+                        <h3 className="text-base sm:text-lg font-medium text-white tracking-wide">{exp.position}</h3>
                         <span className="text-gray-400 text-sm tracking-wide">{exp.company}</span>
                       </div>
                       <div className="flex items-center">
@@ -372,14 +372,14 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                       {exp.projects.map((project, pIndex) => (
                         <div key={pIndex} className="space-y-4">
                           <motion.div
-                            className="flex items-center space-x-3 bg-white/[0.04] px-4 py-3 rounded-md border-l-2 border-white/50"
+                            className="flex items-center space-x-3 bg-white/[0.04] px-3 py-2 sm:px-4 sm:py-3 rounded-md border-l-2 border-white/50"
                             whileHover={{ x: 3 }}
                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
                           >
                             <h4 className="text-base font-medium text-white tracking-wide">{project.name}</h4>
                           </motion.div>
 
-                          <ul className="text-gray-400 space-y-3 list-none pl-4">
+                          <ul className="text-gray-400 space-y-2 sm:space-y-3 list-none pl-2 sm:pl-4">
                             {project.description.map((desc, i) => (
                               <motion.li
                                 key={i}
@@ -387,7 +387,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.05 }}
-                                className="relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 tracking-wide leading-relaxed"
+                                className="relative pl-4 text-xs sm:text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 tracking-wide leading-relaxed"
                                 dangerouslySetInnerHTML={{ __html: desc }}
                               />
                             ))}
@@ -408,17 +408,17 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                     key={index}
                     variants={itemVariants}
                     whileHover={hoverScale}
-                    className="bg-white/[0.03] hover:bg-white/[0.06] rounded-lg p-6 space-y-4 transition-all duration-300 border border-white/5 h-full shadow-md shadow-black/10"
+                    className="bg-white/[0.03] hover:bg-white/[0.06] rounded-lg p-4 sm:p-6 space-y-3 sm:space-y-4 transition-all duration-300 border border-white/5 h-full shadow-md shadow-black/10"
                   >
-                    <div className="flex justify-between items-start gap-3">
+                    <div className="flex justify-between items-start gap-2 sm:gap-3 flex-wrap">
                       <motion.h3
-                        className="text-lg font-medium text-white tracking-wide"
+                        className="text-base sm:text-lg font-medium text-white tracking-wide"
                         whileHover={{ x: 2 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
                         {project.name}
                       </motion.h3>
-                      <span className="px-3 py-1 rounded-md bg-white/10 text-gray-400 text-xs whitespace-nowrap">{project.period}</span>
+                      <span className="px-2 sm:px-3 py-1 rounded-md bg-white/10 text-gray-400 text-xs whitespace-nowrap">{project.period}</span>
                     </div>
 
                     <motion.a
@@ -432,7 +432,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                       </svg>
                     </motion.a>
 
-                    <ul className="text-gray-400 space-y-2.5 list-none">
+                    <ul className="text-gray-400 space-y-2 list-none">
                       {project.description.map((desc, i) => (
                         <motion.li
                           key={i}
@@ -440,7 +440,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: i * 0.05 }}
-                          className="relative pl-5 text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 tracking-wide leading-relaxed"
+                          className="relative pl-4 text-xs sm:text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 tracking-wide leading-relaxed"
                           dangerouslySetInnerHTML={{ __html: desc }}
                         />
                       ))}
@@ -452,13 +452,13 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
 
             {/* 기술 스택 섹션 */}
             <Section title="기술" delay={0.7}>
-              <div className="flex flex-wrap gap-2.5">
+              <div className="flex flex-wrap gap-2">
                 {skills.map((skill, index) => (
                   <motion.span
                     key={index}
                     variants={itemVariants}
                     whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.12)" }}
-                    className="bg-white/[0.06] px-4 py-2 rounded-md text-sm border border-white/10 hover:border-white/30 transition-all cursor-default tracking-wide text-white/90"
+                    className="bg-white/[0.06] px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm border border-white/10 hover:border-white/30 transition-all cursor-default tracking-wide text-white/90"
                   >
                     {skill}
                   </motion.span>
@@ -474,7 +474,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                     key={index}
                     variants={itemVariants}
                     whileHover={{ x: 5, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
-                    className="relative overflow-hidden group rounded-md p-4 transition-all cursor-pointer"
+                    className="relative overflow-hidden group rounded-md p-3 sm:p-4 transition-all cursor-pointer"
                   >
                     <a
                       href={talk.link}
@@ -485,7 +485,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                       }`}
                     >
                       <div className="flex justify-between items-center">
-                        <span className="tracking-wide text-sm">{talk.title}</span>
+                        <span className="tracking-wide text-xs sm:text-sm">{talk.title}</span>
                         <div className="flex items-center">
                           {talk.youtube && (
                             <a
@@ -540,7 +540,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                     key={index}
                     variants={itemVariants}
                     whileHover={{ x: 5 }}
-                    className="bg-white/[0.04] border-l-2 border-white/50 px-5 py-4 rounded-r-md"
+                    className="bg-white/[0.04] border-l-2 border-white/50 px-3 sm:px-5 py-3 sm:py-4 rounded-r-md"
                   >
                     <a
                       href={award.link}
@@ -550,8 +550,8 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                     >
                       <div className="flex justify-between items-center">
                         <div>
-                          <span className="font-medium text-white/90 tracking-wide text-sm">{award.title.split(",")[0]}</span>
-                          <span className="text-gray-400 tracking-wide text-sm">{", " + award.title.split(",")[1]}</span>
+                          <span className="font-medium text-white/90 tracking-wide text-xs sm:text-sm">{award.title.split(",")[0]}</span>
+                          <span className="text-gray-400 tracking-wide text-xs sm:text-sm">{", " + award.title.split(",")[1]}</span>
                         </div>
                         <motion.span
                           initial={{ opacity: 0 }}
@@ -577,10 +577,10 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                   key={index}
                   variants={itemVariants}
                   whileHover={hoverScale}
-                  className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-2 md:space-y-0 bg-white/[0.04] px-6 py-5 rounded-lg border border-white/5 shadow-md shadow-black/10"
+                  className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-2 md:space-y-0 bg-white/[0.04] px-4 sm:px-6 py-4 sm:py-5 rounded-lg border border-white/5 shadow-md shadow-black/10"
                 >
                   <div className="space-y-0.5">
-                    <h3 className="text-lg font-medium text-white tracking-wide">{edu.school}</h3>
+                    <h3 className="text-base sm:text-lg font-medium text-white tracking-wide">{edu.school}</h3>
                     <p className="text-gray-400 text-sm tracking-wide">{edu.major}</p>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-white/10 text-gray-400 text-xs">{edu.period}</span>
@@ -594,7 +594,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
-            className="mt-24 pt-10 border-t border-white/10 text-center text-gray-500 text-xs"
+            className="mt-16 sm:mt-24 pt-6 sm:pt-10 border-t border-white/10 text-center text-gray-500 text-xs"
           >
             <p>© 2025 심상현. All rights reserved.</p>
           </motion.footer>
