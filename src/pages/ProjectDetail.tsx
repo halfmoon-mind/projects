@@ -173,9 +173,12 @@ const ProjectDetail = () => {
 
                 {/* 프로젝트 개요 */}
                 <div className="space-y-3 sm:space-y-6">
-                  <h2 className="text-xl font-medium text-white mb-2">프로젝트 개요</h2>
-                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-8 border border-white/10 text-gray-300 whitespace-pre-line leading-relaxed shadow-lg">
-                    {project.longDescription}
+                  <h2 className="text-xl font-medium text-white mb-2 flex items-center gap-2">
+                    <Code size={20} className="text-blue-400" />
+                    프로젝트 개요
+                  </h2>
+                  <div className="bg-[#1a1a1a] backdrop-blur-sm rounded-xl p-5 sm:p-8 border border-[#333333] text-gray-100 whitespace-pre-line leading-7 shadow-xl">
+                    <div className="prose prose-invert prose-sm sm:prose-base max-w-none">{project.longDescription}</div>
                   </div>
                 </div>
 
@@ -186,8 +189,8 @@ const ProjectDetail = () => {
                       <Brain size={20} className="text-blue-400" />
                       개발 과정에서의 고민들
                     </h2>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-8 border border-white/10 text-gray-300 whitespace-pre-line leading-relaxed shadow-lg">
-                      {project.challenges}
+                    <div className="bg-[#1a1a1a] backdrop-blur-sm rounded-xl p-5 sm:p-8 border border-[#333333] text-gray-100 whitespace-pre-line leading-7 shadow-xl">
+                      <div className="prose prose-invert prose-sm sm:prose-base max-w-none">{project.challenges}</div>
                     </div>
                   </div>
                 )}
