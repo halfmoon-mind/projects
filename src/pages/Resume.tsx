@@ -235,7 +235,7 @@ const Resume = () => {
     },
     {
       title: "깨끗해질지도, 제11회 K-해커톤 장려상 [과학기술정보통신부]",
-      link: "https://github.com/May-Be-Clean",
+      link: "https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/%E1%84%81%E1%85%A2%E1%84%81%E1%85%B3%E1%86%BA%E1%84%92%E1%85%A2%E1%84%8C%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%B5%E1%84%83%E1%85%A9_%E1%84%87%E1%85%A1%E1%86%AF%E1%84%91%E1%85%AD.pdf",
     },
   ];
 
