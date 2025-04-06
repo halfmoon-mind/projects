@@ -179,34 +179,13 @@ const Resume = () => {
       ],
     },
     {
-      name: "정산봇",
-      period: "2023년 - 현재",
-      link: "https://slack.com/marketplace/A087W0YSC7N-",
+      name: "YDS (YourSSU Design System)",
+      period: "2023년 4월 - 2024년 1월",
+      link: "https://github.com/yourssu/YDS-iOS",
       description: [
-        "<strong class='text-[#61dafb]'>슬랙 워크스페이스</strong>에서 팀원들과의 비용 정산을 쉽고 빠르게 처리할 수 있도록 도와주는 봇",
-        "주요 기능: 계좌 등록, 정산 요청, <strong class='text-[#61dafb]'>토스 송금 연동</strong>",
-        "사용자 계좌 정보를 <strong class='text-[#61dafb]'>AES-256 암호화 알고리즘</strong>으로 안전하게 저장하고 관리",
-        "<strong class='text-[#61dafb]'>토스 송금 페이지 연동</strong>으로 버튼 클릭 한 번으로 자동 송금 기능 구현",
-        "1인당 금액 자동 계산 및 정산 대상자들에게 <strong class='text-[#61dafb]'>자동 DM 발송</strong> 기능 구현",
-      ],
-    },
-    {
-      name: "Nightary",
-      period: "2024년 1월",
-      link: "https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile",
-      description: [
-        "<strong class='text-[#61dafb]'>iOS HealthKit</strong> 활용하여 수면 시간과 질을 측정하고 적절한 수면 시간 확보 도우미 서비스",
-        "수면 시간이 어느 날짜에 해당하는지 결정하는 <strong class='text-[#61dafb]'>알고리즘</strong> 구현",
-        "<strong class='text-[#61dafb]'>iOS WidgetKit</strong> 활용해 유저가 수면이 부족한 시간에 도달하면 홈화면에서 바로 볼 수 있도록 구현",
-      ],
-    },
-    {
-      name: "깨끗해질지도",
-      period: "2023년 5월 - 6월",
-      link: "https://github.com/May-Be-Clean",
-      description: [
-        "소비를 통해서 친환경을 실천할 수 있도록 주변의 <strong class='text-[#61dafb]'>친환경 가게</strong>들을 소개해주는 서비스",
-        "<strong class='text-[#61dafb]'>google map sdk</strong> 활용해 지도를 구현하여 주변 친환경 가게를 찾고, <strong class='text-[#61dafb]'>debouncer</strong> 활용하여 화면 이동 시 너무 많은 api 호출 안되도록 최적화",
+        "개발 동아리 YourSSU의 <strong class='text-[#61dafb]'>iOS 디자인 시스템</strong>, YDS 구현",
+        "기존 <strong class='text-[#61dafb]'>UIKit</strong>으로만 구현되어 있는 디자인시스템을 <strong class='text-[#61dafb]'>SwiftUI</strong>로 구현",
+        "디자인 시스템 메인테이너로서 사용자인 개발자들에게 어떠한 <strong class='text-[#61dafb]'>DX</strong>를 제공하면 좋을지에 대한 고민",
       ],
     },
   ];
