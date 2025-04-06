@@ -170,6 +170,15 @@ const Resume = () => {
 
   const projects = [
     {
+      name: "Awesome Articles",
+      period: "2025년 1월 - 현재",
+      link: "https://github.com/yourssu/awesome-articles",
+      description: [
+        "좋은 아티클을 아카이빙하여 다른 사람들과 토론을 하고 공유하여 전반적인 <strong class='text-[#61dafb]'>엔지니어링 수준</strong> 높이도록 노력",
+        "<strong class='text-[#61dafb]'>Github Discussion</strong>을 통해 의견 교환을 하고, 1달마다 의견과 링크를 취합하여 업데이트",
+      ],
+    },
+    {
       name: "정산봇",
       period: "2023년 - 현재",
       link: "https://slack.com/marketplace/A087W0YSC7N-",
@@ -356,7 +365,8 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                                 desc.includes("Geek News, Toss Tech와 같은 뉴스레터") ||
                                 desc.includes("앱 배포 없이 Admin 페이지에서 손쉽게 메인페이지의 화면 구성") ||
                                 desc.includes("초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도") ||
-                                desc.includes("하드 코딩된 데이터 제거하고")
+                                desc.includes("하드 코딩된 데이터 제거하고") ||
+                                desc.includes("DB 레코드 ")
                                   ? "ml-4"
                                   : ""
                               }`}
