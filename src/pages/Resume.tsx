@@ -174,8 +174,10 @@ const Resume = () => {
       period: "2025년 1월 - 현재",
       link: "https://github.com/yourssu/awesome-articles",
       description: [
-        "좋은 아티클을 아카이빙하여 다른 사람들과 토론을 하고 공유하여 전반적인 <strong class='text-[#61dafb]'>엔지니어링 수준</strong> 높이도록 노력",
-        "<strong class='text-[#61dafb]'>Github Discussion</strong>을 통해 의견 교환을 하고, 1달마다 의견과 링크를 취합하여 업데이트",
+        "iOS, Android, 프론트엔드, 백엔드, 엔지니어링 등 <strong class='text-[#61dafb]'>다양한 분야의 아티클</strong>을 분류하여 체계적으로 아카이빙하는 오픈소스 프로젝트",
+        "다양한 개발자들이 함께 좋은 아티클을 공유하고 토론하며 전반적인 <strong class='text-[#61dafb]'>엔지니어링 수준</strong>을 높이는 지식 공유 플랫폼",
+        "<strong class='text-[#61dafb]'>MIT 라이선스</strong>로 운영되어 누구나 자유롭게 기여하고 활용할 수 있는 환경 구축",
+        "<strong class='text-[#61dafb]'>Github Discussion</strong>을 통해 의견 교환을 하고, 정기적으로 의견과 링크를 취합하여 업데이트",
       ],
     },
     {
@@ -362,7 +364,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
           </Section>
 
           {/* 사이드 프로젝트 섹션 */}
-          <Section title="사이드 프로젝트" delay={0.3}>
+          <Section title="오픈소스 기여" delay={0.3}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {projects.map((project, index) => (
                 <motion.div
