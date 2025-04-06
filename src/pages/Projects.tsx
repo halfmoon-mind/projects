@@ -211,6 +211,7 @@ Flutter를 기반으로 개발되었으며, Apple Watch의 센서 기반으로 H
     tech: ["Flutter", "React", "Spring Boot", "Python", "REST API"],
     links: {
       github: "https://github.com/DaITssu",
+      doc: "https://halfmoon-mind.notion.site/62aa28360b8d450d87aacefe41f2824c?pvs=4",
     },
     longDescription: `
 다잇슈는 숭실대학교 학생들을 위한 종합 커뮤니티 서비스로, 학교 생활에 필요한 다양한 기능을 한 곳에 모았습니다.
@@ -318,6 +319,8 @@ const getLinkIcon = (linkType: string) => {
       return <ExternalLink size={20} />;
     case "youtube":
       return <Youtube size={20} />;
+    case "doc":
+      return <ExternalLink size={20} />;
     default:
       return <ExternalLink size={20} />;
   }
@@ -339,6 +342,8 @@ const getLinkLabel = (linkType: string) => {
       return "Slack";
     case "youtube":
       return "데모 영상";
+    case "doc":
+      return "프로젝트 규칙";
     default:
       return "링크";
   }

@@ -51,6 +51,8 @@ const getLinkLabel = (linkType: string) => {
       return "Slack 마켓플레이스";
     case "youtube":
       return "데모 영상 보기";
+    case "doc":
+      return "문서 보기";
     default:
       return "링크 방문";
   }
