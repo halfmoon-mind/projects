@@ -210,7 +210,7 @@ Flutter를 기반으로 개발되었으며, Apple Watch의 센서 기반으로 H
     title: '다잇슈',
     description: '숭실대 학생들을 위한 종합 커뮤니티 서비스',
     image: daItssuImg,
-    tech: ['Next.js', 'React.js', 'Spring Boot', 'Python'],
+    tech: ['Next.js', 'React.js', 'Emotion.js', 'Storybook', 'Spring Boot', 'Python'],
     links: {
       github: 'https://github.com/DaITssu',
       doc: 'https://halfmoon-mind.notion.site/62aa28360b8d450d87aacefe41f2824c?pvs=4',
@@ -221,6 +221,8 @@ Flutter를 기반으로 개발되었으며, Apple Watch의 센서 기반으로 H
 
 23명의 숭실대학교 학생들로 구성된 개발팀에서 프로젝트 리더로 참여하여 프론트엔드, 백엔드, 디자인, 인프라 팀을 총괄하며 개발을 이끌었습니다.
 프론트엔드(React), 백엔드(Spring Boot, Python), 디자인 팀을 나누어 각 팀별 정기 회의와 팀장들과의 주간 회의를 통해 개발 진행을 관리했습니다.
+
+프론트엔드 파트에 주로 참여하여 개발을 하였으며, Storybook을 통해 컴포넌트화를 진행하였고, Emotion.js를 통해 스타일링을 진행하였습니다.
 
 학생들의 실제 니즈를 반영하여 설계된 이 서비스는 학생들의 학습 관리를 돕고, 학교 생활에 필요한 정보를 한 곳에서 확인할 수 있도록 했습니다.
 학교 공식 시스템과 웹크롤링을 통해 최신 정보를 제공하며, 커뮤니티 기능을 통해 학생들 간의 소통도 원활하게 할 수 있도록 구성했습니다.
