@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import Meta from "../components/Meta";
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import Meta from '../components/Meta';
 
 // 애니메이션 변수
 const containerVariants = {
@@ -19,7 +19,7 @@ const itemVariants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 120, damping: 12 },
+    transition: { type: 'spring', stiffness: 120, damping: 12 },
   },
 };
 
@@ -30,12 +30,12 @@ interface SectionProps {
   className?: string;
 }
 
-const Section = ({ title, children, delay = 0, className = "" }: SectionProps) => {
+const Section = ({ title, children, delay = 0, className = '' }: SectionProps) => {
   const controls = useAnimation();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      controls.start("visible");
+      controls.start('visible');
     }, delay * 1000);
 
     return () => clearTimeout(timeout);
@@ -57,12 +57,12 @@ const Section = ({ title, children, delay = 0, className = "" }: SectionProps) =
 const Resume = () => {
   const experiences = [
     {
-      company: "어터",
-      position: "Flutter Mobile Engineer",
-      period: "2023년 10월 - 현재",
+      company: '어터',
+      position: 'Flutter Mobile Engineer',
+      period: '2023년 10월 - 현재',
       projects: [
         {
-          name: "[비공개] - 영화 커뮤니티",
+          name: '[비공개] - 영화 커뮤니티',
           description: [
             "프로젝트 내 <strong class='text-[#61dafb]'>유일 앱 개발자</strong>로 프로젝트 내 모든 기능 구현",
             "<strong class='text-[#61dafb]'>앱인앱 구조</strong>로 커뮤니티 내 슈룹 서비스 구현하여 2가지(<strong class='text-[#61dafb]'>Bloc+GoRouter, GetX</strong>) 상태 관리를 동시에 사용할 수 있도록 구현",
@@ -71,7 +71,7 @@ const Resume = () => {
           ],
         },
         {
-          name: "슈룹 - 숏폼 드라마 플랫폼",
+          name: '슈룹 - 숏폼 드라마 플랫폼',
           description: [
             "<strong class='text-[#61dafb]'>DRM</strong> 적용된 <strong class='text-[#61dafb]'>HLS/DASH 스트리밍</strong> 방식 동영상 플레이어 개발하고, 불안정한 네트워크 환경에서 적절하게 화면이 보여질 수 있도록 지속적으로 기능 개선",
             "전세계 스토어 대상으로 배포하여 <strong class='text-[#61dafb]'>다국어 지원</strong> 어플리케이션 개발 경험",
@@ -89,8 +89,8 @@ const Resume = () => {
                 className="text-gray-400 hover:text-white underline transition-colors"
               >
                 웹사이트
-              </a>{" "}
-              /{" "}
+              </a>{' '}
+              /{' '}
               <a
                 href="https://apps.apple.com/kr/app/%EB%AA%A8%ED%94%BD-%EB%8D%94-%EB%A7%8E%EC%9D%80-%EC%86%8C%EC%84%A4-%EC%86%8D%EC%9C%BC%EB%A1%9C/id6469601198"
                 target="_blank"
@@ -98,8 +98,8 @@ const Resume = () => {
                 className="text-gray-400 hover:text-white underline transition-colors"
               >
                 AppStore
-              </a>{" "}
-              /{" "}
+              </a>{' '}
+              /{' '}
               <a
                 href="https://play.google.com/store/apps/details?id=com.toodat.android&hl=ko"
                 target="_blank"
@@ -116,22 +116,22 @@ const Resume = () => {
             "<strong class='text-[#61dafb]'>Amplitude</strong>를 활용하여 유저 사용시간 분석하고, 야간 시간대 유저 참여를 높이기 위해 주도적으로 <strong class='text-[#61dafb]'>다크모드</strong>의 기능 우선순위를 조정하여 개발",
             "기능 추가 이후 야간 시간대 기존와 대비하여 유저 session <strong class='text-[#61dafb]'>35% 증가</strong>",
             "팀 내 모바일 엔지니어링을 주도하며 <strong class='text-[#61dafb]'>Clean Architecture</strong>, <strong class='text-[#61dafb]'>MVVM</strong> 구조를 설계하여 앱을 제작",
-            "Geek News, Toss Tech와 같은 뉴스레터, 테크블로그를 읽으며 기존 앱 아키텍쳐를 지속적으로 개선",
+            'Geek News, Toss Tech와 같은 뉴스레터, 테크블로그를 읽으며 기존 앱 아키텍쳐를 지속적으로 개선',
             "<strong class='text-[#61dafb]'>Sentry</strong>를 로그 레벨과 <strong class='text-[#61dafb]'>Stack Trace</strong>, <strong class='text-[#61dafb]'>Routing history</strong>를 적극적으로 활용하여 Sentry 도입 이후 버그 픽스 소요 시간 <strong class='text-[#61dafb]'>30% 단축</strong>",
             "신속한 비즈니스 검증 및 요구사항 수정을 빠르게 반영하기 위해 <strong class='text-[#61dafb]'>Server Driven UI</strong>를 적용",
             "앱 배포 없이 <strong class='text-[#61dafb]'>Admin 페이지</strong>에서 손쉽게 메인페이지의 화면 구성을 수정할 수 있도록 구현",
             "Flutter에서 지원하는 <strong class='text-[#61dafb]'>EPUB</strong> 파일 뷰어 패키지가 없어 웹소설 뷰어 패키지 제작",
             "초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도 <strong class='text-[#61dafb]'>40% 감소</strong>",
-            "앱 리브랜딩 경험",
+            '앱 리브랜딩 경험',
             "하드 코딩된 데이터 제거하고, 관리 포인트를 각 페이지가 아니라 <strong class='text-[#61dafb]'>하나의 모듈</strong>에서 관리하도록 설정",
           ],
         },
       ],
     },
     {
-      company: "허슬러즈",
-      position: "Software Engineer",
-      period: "2022년 4월 - 2023년 5월 (1년 1개월)",
+      company: '허슬러즈',
+      position: 'Software Engineer',
+      period: '2022년 4월 - 2023년 5월 (1년 1개월)',
       projects: [
         {
           name: (
@@ -144,8 +144,8 @@ const Resume = () => {
                 className="text-gray-400 hover:text-white underline transition-colors"
               >
                 AppStore
-              </a>{" "}
-              /{" "}
+              </a>{' '}
+              /{' '}
               <a
                 href="https://play.google.com/store/apps/details?id=day.gathering.app&hl=ko"
                 target="_blank"
@@ -170,9 +170,9 @@ const Resume = () => {
 
   const projects = [
     {
-      name: "Awesome Articles",
-      period: "2025년 1월 - 현재",
-      link: "https://github.com/yourssu/awesome-articles",
+      name: 'Awesome Articles',
+      period: '2025년 1월 - 현재',
+      link: 'https://github.com/yourssu/awesome-articles',
       description: [
         "iOS, Android, 프론트엔드, 백엔드, 엔지니어링 등 <strong class='text-[#61dafb]'>다양한 분야의 아티클</strong>을 분류하여 체계적으로 아카이빙하는 오픈소스 프로젝트",
         "다양한 개발자들이 함께 좋은 아티클을 공유하고 토론하며 전반적인 <strong class='text-[#61dafb]'>엔지니어링 수준</strong>을 높이는 지식 공유 플랫폼",
@@ -181,11 +181,11 @@ const Resume = () => {
       ],
     },
     {
-      name: "YDS (YourSSU Design System)",
-      period: "2023년 4월 - 2024년 1월",
-      link: "https://github.com/yourssu/YDS-iOS",
+      name: 'YDS (YourSSU Design System)',
+      period: '2023년 4월 - 2024년 1월',
+      link: 'https://github.com/yourssu/YDS-iOS',
       description: [
-        "개발 동아리 YourSSU의 <strong class='text-[#61dafb]'>iOS 디자인 시스템</strong>, YDS 구현",
+        "YourSSU에서 개발한 YourSSU Design System(YDS)의 <strong class='text-[#61dafb]'>iOS 파트</strong> 구현",
         "기존 <strong class='text-[#61dafb]'>UIKit</strong>으로만 구현되어 있는 디자인시스템을 <strong class='text-[#61dafb]'>SwiftUI</strong>로 구현",
         "디자인 시스템 메인테이너로서 사용자인 개발자들에게 어떠한 <strong class='text-[#61dafb]'>DX</strong>를 제공하면 좋을지에 대한 고민",
       ],
@@ -194,46 +194,55 @@ const Resume = () => {
 
   const talks = [
     {
-      title: "2025 YourSSU 홈커밍 - 주니어와 취준생에게 전하는 Flutter 사용 경험",
-      link: "",
+      title: '2025 YourSSU 홈커밍 - 주니어와 취준생에게 전하는 Flutter 사용 경험',
+      link: '',
     },
     {
-      title: "2024 GDXC - 과거의 나, 현재의 나",
-      link: "",
+      title: '2024 GDXC - 과거의 나, 현재의 나',
+      link: '',
     },
     {
-      title: "GDSC 2024 Final Event - 학교에서 배운 내용으로 현업에서 써먹기",
-      link: "https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/EDDY_3%E1%84%80%E1%85%B5_GDSC_FinalEvent.pdf",
+      title: 'GDSC 2024 Final Event - 학교에서 배운 내용으로 현업에서 써먹기',
+      link: 'https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/EDDY_3%E1%84%80%E1%85%B5_GDSC_FinalEvent.pdf',
     },
     {
-      title: "2024 SSU DEVCON - Flutter로 다채로운 이벤트 페이지 구축하기",
-      link: "https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%AE%E1%86%BC%E1%84%89%E1%85%B5%E1%86%AFDEVCON+-+%E1%84%89%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%92%E1%85%A7%E1%86%AB+%E1%84%87%E1%85%A1%E1%86%AF%E1%84%91%E1%85%AD.pdf",
-      youtube: "https://www.youtube.com/watch?v=JpzyT2XPNqw&ab_channel=GDSCSoongsil",
+      title: '2024 SSU DEVCON - Flutter로 다채로운 이벤트 페이지 구축하기',
+      link: 'https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/%E1%84%89%E1%85%AE%E1%86%BC%E1%84%89%E1%85%B5%E1%86%AFDEVCON+-+%E1%84%89%E1%85%B5%E1%86%B7%E1%84%89%E1%85%A1%E1%86%BC%E1%84%92%E1%85%A7%E1%86%AB+%E1%84%87%E1%85%A1%E1%86%AF%E1%84%91%E1%85%AD.pdf',
+      youtube: 'https://www.youtube.com/watch?v=JpzyT2XPNqw&ab_channel=GDSCSoongsil',
     },
     {
-      title: "2023 GDSC SSUMall Seminar - 플러터, 어디까지 배워볼래?",
-      link: "https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%90%E1%85%A5_%E1%84%8B%E1%85%A5%E1%84%83%E1%85%B5%E1%84%81%E1%85%A1%E1%84%8C%E1%85%B5_%E1%84%87%E1%85%A2%E1%84%8B%E1%85%AF%E1%84%87%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A2.pdf",
+      title: '2023 GDSC SSUMall Seminar - 플러터, 어디까지 배워볼래?',
+      link: 'https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%90%E1%85%A5_%E1%84%8B%E1%85%A5%E1%84%83%E1%85%B5%E1%84%81%E1%85%A1%E1%84%8C%E1%85%B5_%E1%84%87%E1%85%A2%E1%84%8B%E1%85%AF%E1%84%87%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A2.pdf',
     },
   ];
 
-  const skills = ["React.js", "Next.js", "AWS (EC2, S3, Lambda 등)", "Flutter", "SwiftUI", "Amplitude", "Google Analytics", "Appsflyer"];
+  const skills = [
+    'React.js',
+    'Next.js',
+    'AWS (EC2, S3, Lambda 등)',
+    'Flutter',
+    'SwiftUI',
+    'Amplitude',
+    'Google Analytics',
+    'Appsflyer',
+  ];
 
   const awards = [
     {
-      title: "Nightary, 2024 GDSC 해커톤 대상",
-      link: "https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile",
+      title: 'Nightary, 2024 GDSC 해커톤 대상',
+      link: 'https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile',
     },
     {
-      title: "깨끗해질지도, 제11회 K-해커톤 장려상 [과학기술정보통신부]",
-      link: "https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/%E1%84%81%E1%85%A2%E1%84%81%E1%85%B3%E1%86%BA%E1%84%92%E1%85%A2%E1%84%8C%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%B5%E1%84%83%E1%85%A9_%E1%84%87%E1%85%A1%E1%86%AF%E1%84%91%E1%85%AD.pdf",
+      title: '깨끗해질지도, 제11회 K-해커톤 장려상 [과학기술정보통신부]',
+      link: 'https://archive-halfmoon-mind.s3.ap-northeast-2.amazonaws.com/%E1%84%81%E1%85%A2%E1%84%81%E1%85%B3%E1%86%BA%E1%84%92%E1%85%A2%E1%84%8C%E1%85%B5%E1%86%AF%E1%84%8C%E1%85%B5%E1%84%83%E1%85%A9_%E1%84%87%E1%85%A1%E1%86%AF%E1%84%91%E1%85%AD.pdf',
     },
   ];
 
   const education = [
     {
-      school: "숭실대학교",
-      major: "컴퓨터학부",
-      period: "2019년 3월 - 2024년 2월",
+      school: '숭실대학교',
+      major: '컴퓨터학부',
+      period: '2019년 3월 - 2024년 2월',
     },
   ];
 
@@ -245,9 +254,9 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
 또한 <strong class='text-[#61dafb]'>AI</strong>를 적극적으로 활용하여 Product에 빠르게 <strong class='text-[#61dafb]'>비즈니스 임팩트</strong>를 낼 수 있는 방안을 항상 고민하고 적극적으로 제시하는 <strong class='text-[#61dafb]'>Product Engineer</strong>입니다.`;
 
   const contact = {
-    phone: "010-5378-8095",
-    email: "simsanghyeon00@gmail.com",
-    github: "https://github.com/halfmoon-mind",
+    phone: '010-5378-8095',
+    email: 'simsanghyeon00@gmail.com',
+    github: 'https://github.com/halfmoon-mind',
   };
 
   return (
@@ -259,7 +268,12 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
         ogImage="/assets/og-image.png"
         ogUrl="https://halfmoon-mind.vercel.app/resume"
       />
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto"
+      >
         {/* 헤더 섹션 */}
         <motion.header
           initial={{ y: 20, opacity: 0 }}
@@ -285,7 +299,10 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
               </div>
               <div className="flex items-center space-x-3">
                 <span className="text-white/70">✉️</span>
-                <a href={`mailto:${contact.email}`} className="text-sm text-gray-400 hover:text-white hover:underline transition-colors">
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="text-sm text-gray-400 hover:text-white hover:underline transition-colors"
+                >
                   {contact.email}
                 </a>
               </div>
@@ -302,9 +319,17 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="md:col-span-2">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="md:col-span-2"
+            >
               <h3 className="text-xs uppercase tracking-widest text-white/60 mb-4 font-medium">소개</h3>
-              <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line" dangerouslySetInnerHTML={{ __html: intro }} />
+              <p
+                className="text-gray-400 text-sm leading-relaxed whitespace-pre-line"
+                dangerouslySetInnerHTML={{ __html: intro }}
+              />
             </motion.div>
           </div>
         </motion.header>
@@ -315,7 +340,11 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
           <Section title="경력" delay={0.2} className="experience-section">
             <div className="space-y-6">
               {experiences.map((exp, index) => (
-                <motion.div key={index} variants={itemVariants} className="bg-white/[0.03] rounded-lg p-3 md:p-5 space-y-4 border border-white/5">
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="bg-white/[0.03] rounded-lg p-3 md:p-5 space-y-4 border border-white/5"
+                >
                   <div className="flex flex-col md:flex-row justify-between md:items-center gap-3">
                     <div className="space-y-1">
                       <h3 className="text-lg font-medium text-white">{exp.position}</h3>
@@ -342,14 +371,14 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                               viewport={{ once: true }}
                               transition={{ delay: i * 0.05 }}
                               className={`relative pl-4 text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 ${
-                                desc.includes("기능 추가 이후 야간 시간대 기존와 대비하여 유저 session") ||
-                                desc.includes("Geek News, Toss Tech와 같은 뉴스레터") ||
-                                desc.includes("앱 배포 없이 Admin 페이지에서 손쉽게 메인페이지의 화면 구성") ||
-                                desc.includes("초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도") ||
-                                desc.includes("하드 코딩된 데이터 제거하고") ||
-                                desc.includes("DB 레코드 ")
-                                  ? "ml-4"
-                                  : ""
+                                desc.includes('기능 추가 이후 야간 시간대 기존와 대비하여 유저 session') ||
+                                desc.includes('Geek News, Toss Tech와 같은 뉴스레터') ||
+                                desc.includes('앱 배포 없이 Admin 페이지에서 손쉽게 메인페이지의 화면 구성') ||
+                                desc.includes('초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도') ||
+                                desc.includes('하드 코딩된 데이터 제거하고') ||
+                                desc.includes('DB 레코드 ')
+                                  ? 'ml-4'
+                                  : ''
                               }`}
                               dangerouslySetInnerHTML={{ __html: desc }}
                             />
@@ -382,7 +411,13 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                     className="text-gray-400 hover:text-white hover:underline text-sm flex items-center space-x-1.5 transition-colors"
                   >
                     <span>자세히 보기</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-3 w-3"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </a>
@@ -396,13 +431,13 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.05 }}
                         className={`relative pl-4 text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 ${
-                          desc.includes("기능 추가 이후 야간 시간대 기존와 대비하여 유저 session") ||
-                          desc.includes("Geek News, Toss Tech와 같은 뉴스레터") ||
-                          desc.includes("앱 배포 없이 Admin 페이지에서 손쉽게 메인페이지의 화면 구성") ||
-                          desc.includes("초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도") ||
-                          desc.includes("하드 코딩된 데이터 제거하고")
-                            ? "ml-4"
-                            : ""
+                          desc.includes('기능 추가 이후 야간 시간대 기존와 대비하여 유저 session') ||
+                          desc.includes('Geek News, Toss Tech와 같은 뉴스레터') ||
+                          desc.includes('앱 배포 없이 Admin 페이지에서 손쉽게 메인페이지의 화면 구성') ||
+                          desc.includes('초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도') ||
+                          desc.includes('하드 코딩된 데이터 제거하고')
+                            ? 'ml-4'
+                            : ''
                         }`}
                         dangerouslySetInnerHTML={{ __html: desc }}
                       />
@@ -432,13 +467,17 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
           <Section title="발표" delay={0.5}>
             <div className="space-y-3">
               {talks.map((talk, index) => (
-                <motion.div key={index} variants={itemVariants} className="group rounded-md p-2 md:p-3 transition-all hover:bg-white/[0.05]">
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="group rounded-md p-2 md:p-3 transition-all hover:bg-white/[0.05]"
+                >
                   <a
                     href={talk.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`text-gray-400 group-hover:text-white hover:underline transition-colors block ${
-                      talk.link ? "" : "pointer-events-none"
+                      talk.link ? '' : 'pointer-events-none'
                     }`}
                   >
                     <div className="flex justify-between items-start">
@@ -466,7 +505,13 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                         )}
                         {talk.link && (
                           <span className="text-white/40 group-hover:text-white/80">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-4 w-4"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
                               <path
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
@@ -501,11 +546,17 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                   >
                     <div className="flex justify-between items-center">
                       <div>
-                        <span className="font-medium text-white/90 text-sm">{award.title.split(",")[0]}</span>
-                        <span className="text-gray-400 text-sm">{", " + award.title.split(",")[1]}</span>
+                        <span className="font-medium text-white/90 text-sm">{award.title.split(',')[0]}</span>
+                        <span className="text-gray-400 text-sm">{', ' + award.title.split(',')[1]}</span>
                       </div>
                       <span className="text-white/40 group-hover:text-white/80">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
                         </svg>
                       </span>
