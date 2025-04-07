@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowLeft, Clock, Calendar } from "lucide-react";
-import { format } from "date-fns";
-import ReactMarkdown from "react-markdown";
-import { getBlogPost } from "../data/blogPosts";
-import { loadMarkdownContent } from "../utils/markdownLoader";
-import "../styles/markdown.css";
-import Meta from "../components/Meta";
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowLeft, Clock, Calendar } from 'lucide-react';
+import { format } from 'date-fns';
+import ReactMarkdown from 'react-markdown';
+import { getBlogPost } from '../data/blogPosts';
+import { loadMarkdownContent } from '../utils/markdownLoader';
+import '../styles/markdown.css';
+import Meta from '../components/Meta';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const [content, setContent] = useState<string>("");
+  const [content, setContent] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
-  const post = getBlogPost(slug || "");
+  const post = getBlogPost(slug || '');
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -23,7 +23,7 @@ const BlogPost = () => {
           const markdownContent = await loadMarkdownContent(post.contentPath);
           setContent(markdownContent);
         } catch (error) {
-          console.error("Error loading blog content:", error);
+          console.error('Error loading blog content:', error);
         } finally {
           setLoading(false);
         }
@@ -50,12 +50,20 @@ const BlogPost = () => {
     <>
       <Meta
         title={`${post.title} | 심상현 (Eddy) 블로그`}
-        description={post.excerpt || "심상현(Eddy)의 블로그 포스트입니다."}
-        keywords={post.tags ? post.tags.join(", ") : "블로그, 개발, 프로그래밍"}
+        description=""
+        keywords={'블로그, 개발, 프로그래밍'}
         ogImage={post.coverImage}
       />
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 px-4 max-w-4xl mx-auto pb-20">
-        <Link to="/blog" className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors mb-8">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="min-h-screen pt-20 px-4 max-w-4xl mx-auto pb-20"
+      >
+        <Link
+          to="/blog"
+          className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors mb-8"
+        >
           <ArrowLeft size={20} />
           <span>Back to Blog</span>
         </Link>
@@ -70,7 +78,7 @@ const BlogPost = () => {
                 <div className="flex items-center space-x-6 text-gray-200">
                   <div className="flex items-center space-x-2">
                     <Calendar size={20} />
-                    <time>{format(new Date(post.date), "yyyy년 MM월 dd일")}</time>
+                    <time>{format(new Date(post.date), 'yyyy년 MM월 dd일')}</time>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Clock size={20} />
