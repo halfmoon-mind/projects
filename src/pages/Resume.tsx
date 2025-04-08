@@ -383,7 +383,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                               className={`relative pl-4 text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 ${
                                 desc.includes('기능 추가 이후 야간 시간대 기존와 대비하여 유저 session') ||
                                 desc.includes('Geek News, Toss Tech와 같은 뉴스레터') ||
-                                desc.includes('앱 배포 없이 Admin 페이지에서 손쉽게 메인페이지의 화면 구성') ||
+                                desc.includes('앱 배포 없이') ||
                                 desc.includes('초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도') ||
                                 desc.includes('하드 코딩된 데이터 제거하고') ||
                                 desc.includes('DB 레코드 ')
@@ -443,7 +443,7 @@ Flutter 뿐 아니라 다양한 분야의 지식을 배우면서 <strong class='
                         className={`relative pl-4 text-sm before:content-['•'] before:absolute before:left-0 before:top-0 before:text-white/50 hover:text-white/90 transition-colors duration-200 ${
                           desc.includes('기능 추가 이후 야간 시간대 기존와 대비하여 유저 session') ||
                           desc.includes('Geek News, Toss Tech와 같은 뉴스레터') ||
-                          desc.includes('앱 배포 없이 Admin 페이지에서 손쉽게 메인페이지의 화면 구성') ||
+                          desc.includes('앱 배포 없이') ||
                           desc.includes('초기에 만든 웹뷰를 활용한 epub.js 뷰어보다 로딩 속도') ||
                           desc.includes('하드 코딩된 데이터 제거하고')
                             ? 'ml-4'
