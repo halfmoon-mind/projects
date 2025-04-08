@@ -190,6 +190,16 @@ const Resume = () => {
         "디자인 시스템 메인테이너로서 사용자인 개발자들에게 어떠한 <strong class='text-[#61dafb]'>DX</strong>를 제공하면 좋을지에 대한 고민",
       ],
     },
+
+    {
+      name: 'Style Parser',
+      period: '2024년 6월 - 2024년 7월',
+      link: 'https://github.com/halfmoon-mind/style-parser',
+      description: [
+        "html 형태와 epub 파싱 데이터를 위한 <strong class='text-[#61dafb]'>스타일 파서</strong> 패키지",
+        '파싱한 스타일을 기반으로 TextSpan을 구현하여, 텍스트 페이지네이션와 같은 유저의 기호에 따라 화면을 구현하도록 유도',
+      ],
+    },
   ];
 
   const talks = [
