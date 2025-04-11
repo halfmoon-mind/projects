@@ -28,9 +28,9 @@ const Navbar = () => {
             <NavLink to="/projects" className="nav-link">
               Projects
             </NavLink>
-            {/* <NavLink to="/blog" className="nav-link">
+            <NavLink to="/blog" className="nav-link">
               Blog
-            </NavLink> */}
+            </NavLink>
           </div>
 
           <div className="md:hidden">
@@ -53,9 +53,9 @@ const Navbar = () => {
             <NavLink to="/projects" className="block px-3 py-2 text-white hover:bg-white/10 rounded-md" onClick={closeMenu}>
               Projects
             </NavLink>
-            {/* <NavLink to="/blog" className="block px-3 py-2 text-white hover:bg-white/10 rounded-md" onClick={closeMenu}>
+            <NavLink to="/blog" className="block px-3 py-2 text-white hover:bg-white/10 rounded-md" onClick={closeMenu}>
               Blog
-            </NavLink> */}
+            </NavLink>
           </div>
         </motion.div>
       )}
