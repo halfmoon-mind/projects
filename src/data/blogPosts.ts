@@ -1,6 +1,15 @@
 import { BlogPost, BLOG_CONTENT_DIR } from "../types/BlogPost";
 
 export const blogPosts: Record<string, BlogPost> = {
+  "개발의-문서화와-문서-공유": {
+    slug: "개발의-문서화와-문서-공유",
+    title: "개발의 문서화와 문서 공유",
+    date: "2024-05-06",
+    readingTime: "5 min read",
+    coverImage: "/버스지수.png",
+    contentPath: `${BLOG_CONTENT_DIR}/개발의-문서화와-문서-공유.md`,
+    excerpt: "버스 지수란 개념과 팀의 효율적인 지식 공유 방법에 대한 고찰",
+  },
   "MySQL에서-emoji-저장": {
     slug: "MySQL에서-emoji-저장",
     title: "MySQL에서 emoji 저장",
