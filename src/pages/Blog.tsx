@@ -36,11 +36,12 @@ const Blog = () => {
                 <Link to={`/blog/${post.slug}`} className="block">
                   <div className="md:flex">
                     <div className="md:w-1/3">
-                      <div className="h-48 md:h-full relative overflow-hidden">
+                      <div className="h-48 md:h-[200px] relative overflow-hidden">
                         <img
                           src={post.coverImage}
                           alt={post.title}
                           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                          style={{ height: "200px", objectPosition: "center" }}
                         />
                       </div>
                     </div>
