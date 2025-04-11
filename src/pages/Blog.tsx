@@ -4,26 +4,10 @@ import { Link } from "react-router-dom";
 import { format } from "date-fns";
 import { Clock, ArrowRight } from "lucide-react";
 import Meta from "../components/Meta";
+import { getAllBlogPosts } from "../data/blogPosts";
 
-// This would typically come from your API or file system
-const posts = [
-  {
-    slug: "getting-started-with-react",
-    title: "Getting Started with React",
-    excerpt: "Learn the basics of React and how to build your first component.",
-    date: "2024-03-15",
-    readingTime: "5 min read",
-    coverImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "typescript-best-practices",
-    title: "TypeScript Best Practices",
-    excerpt: "Essential TypeScript patterns and practices for clean, maintainable code.",
-    date: "2024-03-10",
-    readingTime: "8 min read",
-    coverImage: "https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&w=800&q=80",
-  },
-];
+// 블로그 데이터를 불러옵니다
+const posts = getAllBlogPosts();
 
 const Blog = () => {
   return (

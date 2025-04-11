@@ -1,21 +1,14 @@
-import { BlogPost, BLOG_CONTENT_DIR } from '../types/BlogPost';
+import { BlogPost, BLOG_CONTENT_DIR } from "../types/BlogPost";
 
 export const blogPosts: Record<string, BlogPost> = {
-  'getting-started-with-react': {
-    slug: 'getting-started-with-react',
-    title: 'Getting Started with React',
-    date: '2024-03-15',
-    readingTime: '5 min read',
-    coverImage: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=800&q=80',
-    contentPath: `${BLOG_CONTENT_DIR}/getting-started-with-react.md`,
-  },
-  'typescript-best-practices': {
-    slug: 'typescript-best-practices',
-    title: 'TypeScript Best Practices',
-    date: '2024-03-10',
-    readingTime: '8 min read',
-    coverImage: 'https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&w=800&q=80',
-    contentPath: `${BLOG_CONTENT_DIR}/typescript-best-practices.md`,
+  "MySQL에서-emoji-저장": {
+    slug: "MySQL에서-emoji-저장",
+    title: "MySQL에서 emoji 저장",
+    date: "2023-04-30",
+    readingTime: "3 min read",
+    coverImage: "https://velog.velcdn.com/images/halfmoon_mind/post/642cf83f-eaea-40c0-bbfd-8e540365f7c3/image.png",
+    contentPath: `${BLOG_CONTENT_DIR}/MySQL에서-emoji-저장.md`,
+    excerpt: "MySQL에서 emoji를 저장할 때, 정상적으로 저장이 안되는 문제를 해결해보기",
   },
 };
 
