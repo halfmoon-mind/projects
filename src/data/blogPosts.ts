@@ -6,7 +6,7 @@ export const blogPosts: Record<string, BlogPost> = {
     title: "개발의 문서화와 문서 공유",
     date: "2024-05-06",
     readingTime: "5 min read",
-    coverImage: "/src/assets/blog_images/버스지수.png",
+    coverImage: "/assets/blog_images/버스지수.png",
     contentPath: `${BLOG_CONTENT_DIR}/개발의-문서화와-문서-공유.md`,
     excerpt: "버스 지수란 개념과 팀의 효율적인 지식 공유 방법에 대한 고찰",
   },
