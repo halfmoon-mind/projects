@@ -1,18 +1,18 @@
-import React, { CSSProperties } from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Smartphone, Monitor, Store, Youtube } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Meta from '../components/Meta';
+import React, { CSSProperties } from "react";
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Smartphone, Monitor, Store, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
+import Meta from "../components/Meta";
 
 // 이미지 임포트 추가
-import nightaryImg from '../assets/nightary.png';
-import mayBeCleanImg from '../assets/may_be_clean.png';
-import easyImageDownloaderImg from '../assets/easy_image_downloader.png';
-import pickiverseImg from '../assets/pickiverse.png';
-import paybotImg from '../assets/paybot.png';
-import qrMakerImg from '../assets/qr_maker.png';
-import multipleWindowConnectionImg from '../assets/multiple_window_connection.png';
-import daItssuImg from '../assets/da_it_ssu.png';
+import nightaryImg from "../assets/nightary.png";
+import mayBeCleanImg from "../assets/may_be_clean.png";
+import easyImageDownloaderImg from "../assets/easy_image_downloader.png";
+import pickiverseImg from "../assets/pickiverse.png";
+import paybotImg from "../assets/paybot.png";
+import qrMakerImg from "../assets/qr_maker.png";
+import multipleWindowConnectionImg from "../assets/multiple_window_connection.png";
+import daItssuImg from "../assets/da_it_ssu.png";
 
 // 프로젝트 타입 정의
 interface Project {
@@ -32,16 +32,16 @@ interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'pickiverse',
-    title: '피키버스',
-    description: '이상형 월드컵 플랫폼',
+    id: "pickiverse",
+    title: "피키버스",
+    description: "이상형 월드컵 플랫폼",
     image: pickiverseImg,
-    containerStyle: { backgroundColor: 'white' },
-    tech: ['Flutter', 'Fastlane', 'Bloc', 'Nest.js', 'Next.js', 'Cloudflare Images', 'Mantine UI', 'Supabase'],
+    containerStyle: { backgroundColor: "white" },
+    tech: ["Flutter", "Fastlane", "Bloc", "Nest.js", "Next.js", "Cloudflare Images", "Mantine UI", "Supabase"],
     links: {
-      ios: 'https://apps.apple.com/kr/app/%ED%94%BC%ED%82%A4%EB%B2%84%EC%8A%A4/id6742077036?uo=2',
-      android: 'https://play.google.com/store/apps/details?id=com.pickiverse.app',
-      web: 'https://pickiverse.com',
+      ios: "https://apps.apple.com/kr/app/%ED%94%BC%ED%82%A4%EB%B2%84%EC%8A%A4/id6742077036?uo=2",
+      android: "https://play.google.com/store/apps/details?id=com.pickiverse.app",
+      web: "https://pickiverse.com",
     },
     longDescription: `
 피키버스는 사용자들이 자신만의 이상형 월드컵을 쉽게 만들고 공유할 수 있는 플랫폼입니다.
@@ -87,22 +87,22 @@ export const projects: Project[] = [
 - PlayStore, AppStore에 있는 다른 앱들을 참고하여 키워드 및 게시글을 지속적으로 개선하고 있습니다.
     `,
     features: [
-      '사용자 커스텀 이상형 월드컵 생성',
-      '실시간 결과 공유 및 통계',
-      '크로스 플랫폼 지원 (iOS/Android/Web)',
-      '소셜 로그인 및 계정 연동',
-      '국제화 지원',
-      '최근 댓글, 하루 동안 가장 많이 참여한 월드컵 등 다양한 기능',
+      "사용자 커스텀 이상형 월드컵 생성",
+      "실시간 결과 공유 및 통계",
+      "크로스 플랫폼 지원 (iOS/Android/Web)",
+      "소셜 로그인 및 계정 연동",
+      "국제화 지원",
+      "최근 댓글, 하루 동안 가장 많이 참여한 월드컵 등 다양한 기능",
     ],
   },
   {
-    id: 'paybot',
-    title: '정산봇',
-    description: 'Slack 봇으로 정산을 간편하게',
+    id: "paybot",
+    title: "정산봇",
+    description: "Slack 봇으로 정산을 간편하게",
     image: paybotImg,
-    tech: ['Slack API', 'Bolt.js', 'Node.js', 'MongoDB', 'nginx'],
+    tech: ["Slack API", "Bolt.js", "Node.js", "MongoDB", "nginx"],
     links: {
-      slack: 'https://slack.com/marketplace/A087W0YSC7N-',
+      slack: "https://slack.com/marketplace/A087W0YSC7N-",
     },
     longDescription: `
 정산봇은 Slack 워크스페이스 내에서 팀원들 간의 정산을 간편하게 도와주는 봇 서비스입니다.
@@ -139,22 +139,22 @@ AWS RDS를 처음에 사용할까 생각하였는데, 비싼 RDS를 대신하여
     features: [
       "'/계좌등록' 명령어로 계좌 정보 암호화 저장",
       "'/정산하기' 명령어로 특정 유저들과 1/N 정산 요청",
-      '정산 요청 시 자동 DM 발송 기능',
-      '토스 송금하기로 자동 연결, 금액 및 계좌 정보 자동 연동',
-      '암호화된 계좌 정보 관리 시스템',
+      "정산 요청 시 자동 DM 발송 기능",
+      "토스 송금하기로 자동 연결, 금액 및 계좌 정보 자동 연동",
+      "암호화된 계좌 정보 관리 시스템",
     ],
   },
   {
-    id: 'may-be-clean',
-    title: '깨끗해질지도',
-    description: '소비로서 친환경을 실천할 수 있게 도와주는 서비스',
+    id: "may-be-clean",
+    title: "깨끗해질지도",
+    description: "소비로서 친환경을 실천할 수 있게 도와주는 서비스",
     image: mayBeCleanImg,
     isVertical: true,
-    tech: ['Flutter', 'Google Maps API', 'GetX', 'Spring Boot'],
+    tech: ["Flutter", "Google Maps API", "GetX", "Spring Boot"],
     links: {
-      ios: 'https://apps.apple.com/kr/app/%EA%B9%A8%EB%81%97%ED%95%B4%EC%A7%88%EC%A7%80%EB%8F%84/id6449622294',
-      android: 'https://play.google.com/store/apps/details?id=com.may_be_clean.plant',
-      github: 'https://github.com/May-Be-Clean',
+      ios: "https://apps.apple.com/kr/app/%EA%B9%A8%EB%81%97%ED%95%B4%EC%A7%88%EC%A7%80%EB%8F%84/id6449622294",
+      android: "https://play.google.com/store/apps/details?id=com.may_be_clean.plant",
+      github: "https://github.com/May-Be-Clean",
     },
     longDescription: `
 깨끗해질지도는 친환경 소비를 실천할 수 있는 장소들을 지도 기반으로 제공하는 모바일 애플리케이션입니다.
@@ -167,21 +167,21 @@ Flutter를 활용하여 개발되었으며, Google Maps API를 통합하여 사�
 친환경 소비에 대한 정보와 팁을 제공하여 사용자들의 환경 의식을 높이는 데 기여하고 있습니다.
     `,
     features: [
-      '지도 기반 친환경 장소 탐색',
-      '카테고리 및 거리별 필터링',
-      '사용자 리뷰 및 평가 시스템',
-      '사용자 주도의 친환경 가게 등록',
-      '친환경 소비 가이드 및 정보 제공',
+      "지도 기반 친환경 장소 탐색",
+      "카테고리 및 거리별 필터링",
+      "사용자 리뷰 및 평가 시스템",
+      "사용자 주도의 친환경 가게 등록",
+      "친환경 소비 가이드 및 정보 제공",
     ],
   },
   {
-    id: 'nightary',
-    title: 'Nightary',
-    description: '수면 상태를 배터리 형태로 보여주는 수면 측정 트래커',
+    id: "nightary",
+    title: "Nightary",
+    description: "수면 상태를 배터리 형태로 보여주는 수면 측정 트래커",
     image: nightaryImg,
-    tech: ['Flutter', 'HealthKit', 'WidgetKit', 'Local Storage'],
+    tech: ["Flutter", "HealthKit", "WidgetKit", "Local Storage"],
     links: {
-      github: 'https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile',
+      github: "https://github.com/GDSC-snowflowerthon/Nightary-team12-mobile",
     },
     longDescription: `
 Nightary는 사용자의 수면 패턴을 분석하고 수면 상태를 배터리 형태로 시각화하여 보여주는 수면 측정 트래커 앱입니다.
@@ -199,22 +199,22 @@ Flutter를 기반으로 개발되었으며, Apple Watch의 센서 기반으로 H
 - 이를 단순하게 수면이 연속적이지 않다고 판단하는게 아니라, 끊긴 시점에서 5~10분 내로 수면이 이어져 있으면 수면이 이어져 있는 것으로 판단하여 수면 데이터를 분석하였습니다.
     `,
     features: [
-      '배터리 형태의 직관적인 수면 상태 시각화',
-      '수면 패턴 분석 및 통계',
-      '맞춤형 수면 개선 조언',
-      '수면 목표 설정 및 알림',
-      '야간 모드 및 수면 환경 최적화 기능',
+      "배터리 형태의 직관적인 수면 상태 시각화",
+      "수면 패턴 분석 및 통계",
+      "맞춤형 수면 개선 조언",
+      "수면 목표 설정 및 알림",
+      "야간 모드 및 수면 환경 최적화 기능",
     ],
   },
   {
-    id: 'da-it-ssu',
-    title: '다잇슈',
-    description: '숭실대 학생들을 위한 종합 커뮤니티 서비스',
+    id: "da-it-ssu",
+    title: "다잇슈",
+    description: "숭실대 학생들을 위한 종합 커뮤니티 서비스",
     image: daItssuImg,
-    tech: ['Next.js', 'React.js', 'Emotion.js', 'Storybook', 'Spring Boot', 'Python'],
+    tech: ["Next.js", "React.js", "Emotion.js", "Storybook", "Spring Boot", "Python"],
     links: {
-      github: 'https://github.com/DaITssu',
-      doc: 'https://halfmoon-mind.notion.site/62aa28360b8d450d87aacefe41f2824c?pvs=4',
+      github: "https://github.com/DaITssu",
+      doc: "https://halfmoon-mind.notion.site/62aa28360b8d450d87aacefe41f2824c?pvs=4",
     },
     longDescription: `
 다잇슈는 숭실대학교 학생들을 위한 종합 커뮤니티 서비스로, 학교 생활에 필요한 다양한 기능을 한 곳에 모았습니다.
@@ -240,23 +240,22 @@ Flutter를 기반으로 개발되었으며, Apple Watch의 센서 기반으로 H
 - 사용자가 원하는 키워드나 카테고리별로 구독 기능을 제공하여 맞춤형 알림 서비스를 구현했습니다.
     `,
     features: [
-      '학생 인증 기반 로그인 시스템',
-      '학과별/전체 공지사항 키워드 기반 구독 알림',
-      '스마트캠퍼스 연동 강의 및 과제 마감일 통합 대시보드',
-      '커뮤니티 게시글 및 댓글 기능',
-      '학식 정보 제공',
+      "학생 인증 기반 로그인 시스템",
+      "학과별/전체 공지사항 키워드 기반 구독 알림",
+      "스마트캠퍼스 연동 강의 및 과제 마감일 통합 대시보드",
+      "커뮤니티 게시글 및 댓글 기능",
+      "학식 정보 제공",
     ],
   },
   {
-    id: 'easy-image-downloader',
-    title: 'Easy Image Downloader',
-    description: '이미지 손쉽게 다운로드 할 수 있는 Chrome Extension',
+    id: "easy-image-downloader",
+    title: "Easy Image Downloader",
+    description: "이미지 손쉽게 다운로드 할 수 있는 Chrome Extension",
     image: easyImageDownloaderImg,
-    tech: ['JavaScript', 'Chrome Extension API'],
+    tech: ["JavaScript", "Chrome Extension API"],
     links: {
-      store:
-        'https://chromewebstore.google.com/detail/easy-image-downloader/lnldmkhkjnkcfndnhibbnaohplecldmb?authuser=0&hl=ko',
-      youtube: 'https://www.youtube.com/watch?v=iLoTBTHKjzk&ab_channel=HALFMOON',
+      store: "https://chromewebstore.google.com/detail/easy-image-downloader/lnldmkhkjnkcfndnhibbnaohplecldmb?authuser=0&hl=ko",
+      youtube: "https://www.youtube.com/watch?v=iLoTBTHKjzk&ab_channel=HALFMOON",
     },
     longDescription: `
 Easy Image Downloader는 구글 검색, 나무위키 내 이미지를 손쉽게 다운로드할 수 있는 크롬 확장 프로그램입니다.
@@ -264,17 +263,17 @@ Easy Image Downloader는 구글 검색, 나무위키 내 이미지를 손쉽게 
 
 순수 JavaScript와 Chrome Extension API를 활용하여 개발되었으며, 불필요한 광고나 추적 코드 없이 가볍고 빠른 성능을 자랑합니다.
     `,
-    features: ['원클릭 이미지 다운로드', '이미지 해상도 및 크기별 필터링', '맞춤형 저장 경로 및 파일명 설정'],
+    features: ["원클릭 이미지 다운로드", "이미지 해상도 및 크기별 필터링", "맞춤형 저장 경로 및 파일명 설정"],
   },
   {
-    id: 'qr-maker',
-    title: 'QR Maker',
-    description: '광고 없는 QR코드 생성기',
+    id: "qr-maker",
+    title: "QR Maker",
+    description: "광고 없는 QR코드 생성기",
     image: qrMakerImg,
-    tech: ['React', 'Vite'],
+    tech: ["React", "Vite"],
     links: {
-      web: 'https://www.qrmaker.site/',
-      github: 'https://github.com/halfmoon-mind/qr-maker',
+      web: "https://www.qrmaker.site/",
+      github: "https://github.com/halfmoon-mind/qr-maker",
     },
     longDescription: `
 QR Maker는 불필요한 광고 없이 빠르고 쉽게 QR 코드를 생성할 수 있는 웹 애플리케이션입니다.
@@ -286,21 +285,17 @@ URL, 텍스트, 연락처, Wi-Fi 정보 등 다양한 데이터 유형의 QR 코
 
 어렵지 않은 기술로 많은 사람들에게 도움을 주기 위해서 만들게 되었습니다.
     `,
-    features: [
-      '다양한 데이터 유형 QR 코드 생성 (URL, 텍스트, 연락처, Wi-Fi 등)',
-      '커스텀 색상 및 디자인 옵션',
-      '광고 없는 깨끗한 사용자 경험',
-    ],
+    features: ["다양한 데이터 유형 QR 코드 생성 (URL, 텍스트, 연락처, Wi-Fi 등)", "커스텀 색상 및 디자인 옵션", "광고 없는 깨끗한 사용자 경험"],
   },
   {
-    id: 'multiple-window-connection',
-    title: 'Multiple Window Connection',
-    description: '여러 개의 웹브라우저가 동적으로 연결되는 시스템',
+    id: "multiple-window-connection",
+    title: "Multiple Window Connection",
+    description: "여러 개의 웹브라우저가 동적으로 연결되는 시스템",
     image: multipleWindowConnectionImg,
-    tech: ['Flutter Web', 'JavaScript', 'Method Channel', 'Local Storage'],
+    tech: ["Flutter Web", "JavaScript", "Method Channel", "Local Storage"],
     links: {
-      web: 'https://mutliple-windows.s3.ap-northeast-2.amazonaws.com/index.html',
-      github: 'https://github.com/halfmoon-mind/multiple-window-connection',
+      web: "https://mutliple-windows.s3.ap-northeast-2.amazonaws.com/index.html",
+      github: "https://github.com/halfmoon-mind/multiple-window-connection",
     },
     longDescription: `
 Multiple Window Connection은 여러 웹 브라우저 창이 실시간으로 연결된 선을 지속적으로 이어지게 보여주는 서비스입니다.
@@ -309,27 +304,27 @@ Multiple Window Connection은 여러 웹 브라우저 창이 실시간으로 연
 
 [해당 게시글](https://www.linkedin.com/feed/update/urn:li:activity:7135781966477438976/?utm_source=share&utm_medium=member_desktop)에서 영감을 받아 구현해보았습니다.
     `,
-    features: ['실시간 창 간 데이터 동기화', '드래그를 통해 창 이동 시 지속적인 연결된 것처럼 보이도록 구현'],
+    features: ["실시간 창 간 데이터 동기화", "드래그를 통해 창 이동 시 지속적인 연결된 것처럼 보이도록 구현"],
   },
 ];
 
 const getLinkIcon = (linkType: string) => {
   switch (linkType) {
-    case 'github':
+    case "github":
       return <Github size={20} />;
-    case 'ios':
+    case "ios":
       return <Smartphone size={20} />;
-    case 'android':
+    case "android":
       return <Smartphone size={20} />;
-    case 'web':
+    case "web":
       return <Monitor size={20} />;
-    case 'store':
+    case "store":
       return <Store size={20} />;
-    case 'slack':
+    case "slack":
       return <ExternalLink size={20} />;
-    case 'youtube':
+    case "youtube":
       return <Youtube size={20} />;
-    case 'doc':
+    case "doc":
       return <ExternalLink size={20} />;
     default:
       return <ExternalLink size={20} />;
@@ -338,24 +333,24 @@ const getLinkIcon = (linkType: string) => {
 
 const getLinkLabel = (linkType: string) => {
   switch (linkType) {
-    case 'github':
-      return 'GitHub';
-    case 'ios':
-      return 'iOS';
-    case 'android':
-      return 'Android';
-    case 'web':
-      return '웹사이트';
-    case 'store':
-      return '스토어';
-    case 'slack':
-      return 'Slack';
-    case 'youtube':
-      return '데모 영상';
-    case 'doc':
-      return '프로젝트 규칙';
+    case "github":
+      return "GitHub";
+    case "ios":
+      return "iOS";
+    case "android":
+      return "Android";
+    case "web":
+      return "웹사이트";
+    case "store":
+      return "스토어";
+    case "slack":
+      return "Slack";
+    case "youtube":
+      return "데모 영상";
+    case "doc":
+      return "프로젝트 규칙";
     default:
-      return '링크';
+      return "링크";
   }
 };
 
@@ -363,25 +358,12 @@ const Projects = () => {
   return (
     <>
       <Meta
-        title="프로젝트 | 심상현 (Eddy) | 풀스택 개발자 & 플러터 엔지니어"
-        description="심상현(Eddy)의 주요 개발 프로젝트 포트폴리오입니다. Flutter, React, Firebase를 활용한 모바일 앱과 웹 애플리케이션, 크롬 확장 프로그램 등 다양한 프로젝트를 확인해보세요."
-        keywords="프로젝트, Flutter, React, 모바일 앱, 웹 애플리케이션, 포트폴리오, Firebase, 크롬 확장 프로그램, 풀스택 개발"
-        ogImage="/assets/og-image.png"
-        ogUrl="https://halfmoon-mind.vercel.app/projects"
+        title="프로젝트 | 심상현 | 풀스택 개발자 & 플러터 엔지니어"
+        description="심상현의 주요 개발 프로젝트 포트폴리오입니다. Flutter, React, Firebase를 활용한 모바일 앱과 웹 애플리케이션, 크롬 확장 프로그램 등 다양한 프로젝트를 확인해보세요."
       />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto"
-      >
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto">
         <div className="space-y-12">
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-center space-y-4"
-          >
+          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="text-center space-y-4">
             <h1 className="text-4xl font-bold">Projects</h1>
             <p className="text-gray-400">제가 작업한 주요 프로젝트들입니다</p>
           </motion.div>
@@ -398,7 +380,7 @@ const Projects = () => {
                 <Link to={`/projects/${project.id}`} className="block">
                   <div
                     className={`relative overflow-hidden h-48 flex items-center justify-center ${
-                      project.id === 'pickiverse' ? 'bg-white' : 'bg-gray-700/30'
+                      project.id === "pickiverse" ? "bg-white" : "bg-gray-700/30"
                     }`}
                     style={project.containerStyle}
                   >
@@ -406,7 +388,7 @@ const Projects = () => {
                       src={project.image}
                       alt={project.title}
                       className={`transform group-hover:scale-110 transition-transform duration-500 ${
-                        project.isVertical ? 'h-full object-contain' : 'w-full object-contain'
+                        project.isVertical ? "h-full object-contain" : "w-full object-contain"
                       }`}
                       style={project.imageStyle}
                     />

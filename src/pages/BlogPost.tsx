@@ -58,20 +58,17 @@ const BlogPost = () => {
   const isoDate = new Date(post.date).toISOString();
 
   // 블로그 URL
-  const blogUrl = `https://halfmoon-mind.vercel.app/blog/${post.slug}`;
+  // const blogUrl = `https://halfmoon-mind.vercel.app/blog/${post.slug}`;
 
   return (
     <>
       <Meta
         title={post.title}
         description={description}
-        keywords={`${post.title}, 블로그, 개발, 프로그래밍`}
-        ogImage={post.ogImage || post.coverImage}
-        ogUrl={blogUrl}
+        ogImage={post.coverImage}
         articlePublishedTime={isoDate}
-        articleModifiedTime={isoDate}
         articleSection="Technology"
-        articleAuthor="심상현(Eddy)"
+        articleAuthor="심상현"
       />
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 px-4 max-w-4xl mx-auto pb-20">
         <Link to="/blog" className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors mb-8">
