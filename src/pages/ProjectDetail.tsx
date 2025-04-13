@@ -83,15 +83,18 @@ const ProjectDetail = () => {
     );
   }
 
+  // 프로젝트 URL
+  const projectUrl = `https://halfmoon-mind.vercel.app/projects/${project.id}`;
+
+  // 기술 스택을 쉼표로 구분된 문자열로 변환
+  const techKeywords = project.tech.join(", ");
+
+  // 프로젝트 이미지
+  const ogImage = getOgImageUrl(project.id);
+
   return (
     <>
-      <Meta
-        title={`${project.title} | 심상현 (Eddy) 프로젝트`}
-        description={project.description}
-        keywords={project.tech.join(", ")}
-        ogImage={getOgImageUrl(project.id)}
-        ogUrl={`https://halfmoon-mind.vercel.app/projects/${project.id}`}
-      />
+      <Meta title={project.title} description={project.description} keywords={techKeywords} ogImage={ogImage} ogUrl={projectUrl} />
       <div className="min-h-screen bg-[#111111] overflow-hidden">
         {/* 헤더 영역 */}
         <header className="fixed top-0 left-0 right-0 z-10 backdrop-blur-md bg-black/70 border-b border-white/10">

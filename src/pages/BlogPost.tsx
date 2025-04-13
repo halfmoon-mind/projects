@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { format } from 'date-fns';
-import ReactMarkdown from 'react-markdown';
-import { getBlogPost } from '../data/blogPosts';
-import { loadMarkdownContent } from '../utils/markdownLoader';
-import '../styles/markdown.css';
-import Meta from '../components/Meta';
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowLeft, Clock, Calendar } from "lucide-react";
+import { format } from "date-fns";
+import ReactMarkdown from "react-markdown";
+import { getBlogPost } from "../data/blogPosts";
+import { loadMarkdownContent } from "../utils/markdownLoader";
+import "../styles/markdown.css";
+import Meta from "../components/Meta";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const [content, setContent] = useState<string>('');
+  const [content, setContent] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
-  const post = getBlogPost(slug || '');
+  const post = getBlogPost(slug || "");
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -23,7 +23,7 @@ const BlogPost = () => {
           const markdownContent = await loadMarkdownContent(post.contentPath);
           setContent(markdownContent);
         } catch (error) {
-          console.error('Error loading blog content:', error);
+          console.error("Error loading blog content:", error);
         } finally {
           setLoading(false);
         }
@@ -31,6 +31,7 @@ const BlogPost = () => {
     };
 
     fetchContent();
+    window.scrollTo(0, 0);
   }, [post]);
 
   if (!post) {
@@ -46,24 +47,34 @@ const BlogPost = () => {
     );
   }
 
+  // 블로그 포스트의 첫 번째 단락을 추출하여 description으로 사용
+  const firstParagraph = content
+    .split("\n\n")[0]
+    .replace(/[#*_`]/g, "")
+    .trim();
+  const description = firstParagraph || post.excerpt;
+
+  // ISO 형식의 날짜
+  const isoDate = new Date(post.date).toISOString();
+
+  // 블로그 URL
+  const blogUrl = `https://halfmoon-mind.vercel.app/blog/${post.slug}`;
+
   return (
     <>
       <Meta
-        title={`${post.title} | 심상현 (Eddy) 블로그`}
-        description=""
-        keywords={'블로그, 개발, 프로그래밍'}
-        ogImage={post.coverImage}
+        title={post.title}
+        description={description}
+        keywords={`${post.title}, 블로그, 개발, 프로그래밍`}
+        ogImage={post.ogImage || post.coverImage}
+        ogUrl={blogUrl}
+        articlePublishedTime={isoDate}
+        articleModifiedTime={isoDate}
+        articleSection="Technology"
+        articleAuthor="심상현(Eddy)"
       />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="min-h-screen pt-20 px-4 max-w-4xl mx-auto pb-20"
-      >
-        <Link
-          to="/blog"
-          className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors mb-8"
-        >
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 px-4 max-w-4xl mx-auto pb-20">
+        <Link to="/blog" className="inline-flex items-center space-x-2 text-gray-400 hover:text-white transition-colors mb-8">
           <ArrowLeft size={20} />
           <span>Back to Blog</span>
         </Link>
@@ -78,7 +89,7 @@ const BlogPost = () => {
                 <div className="flex items-center space-x-6 text-gray-200">
                   <div className="flex items-center space-x-2">
                     <Calendar size={20} />
-                    <time>{format(new Date(post.date), 'yyyy년 MM월 dd일')}</time>
+                    <time>{format(new Date(post.date), "yyyy년 MM월 dd일")}</time>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Clock size={20} />

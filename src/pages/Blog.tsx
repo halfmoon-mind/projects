@@ -10,12 +10,21 @@ import { getAllBlogPosts } from "../data/blogPosts";
 const posts = getAllBlogPosts();
 
 const Blog = () => {
+  // 블로그 메인 URL
+  const blogUrl = "https://halfmoon-mind.vercel.app/blog";
+
+  // OG 이미지 - 최신 블로그 글의 이미지 사용 또는 기본 이미지
+  const latestPost = posts[0]; // 포스트가 날짜순으로 정렬되어 있다고 가정
+  const ogImage = latestPost ? latestPost.coverImage : "/assets/og-image.png";
+
   return (
     <>
       <Meta
-        title="블로그 | 심상현 (Eddy)"
+        title="블로그"
         description="심상현(Eddy)의 개발 블로그입니다. 개발 경험, 기술 팁, 그리고 업계 인사이트를 공유합니다."
         keywords="개발 블로그, 기술 블로그, 프로그래밍, Flutter, React, 개발자 경험"
+        ogImage={ogImage}
+        ogUrl={blogUrl}
       />
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen pt-20 px-4 max-w-4xl mx-auto">
         <div className="space-y-12">
