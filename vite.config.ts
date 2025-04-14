@@ -7,4 +7,11 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    outDir: 'dist',
+    ssrManifest: true,
+  },
+  ssr: {
+    noExternal: ['react-helmet-async'],
+  },
 });
